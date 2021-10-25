@@ -32,11 +32,13 @@ repos:
   hooks:
     - id: codespell # Spellchecker
 
-- repo: https://github.com/cheshirekow/cmake-format-precommit
-  rev: v0.6.13
+- repo: https://github.com/Kr4is/cmake-format-precommit.git
+  rev: v0.6.14
   hooks:
     - id: cmake-format
+      args: ['--config=.cmake-format.yaml']
     - id: cmake-lint
+      args: ['--config=.cmake-format.yaml']
 
 - repo: https://github.com/pocc/pre-commit-hooks
   rev: v1.3.4
