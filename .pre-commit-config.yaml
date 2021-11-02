@@ -42,6 +42,7 @@ repos:
       args: ['--config=.cmake-format.yaml']
 
 - repo: https://github.com/cmake-lint/cmake-lint
+  rev: v1.4.1
   hooks:
     - id: cmakelint
       args: ['--config=.cmake-format.yaml']
