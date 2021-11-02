@@ -40,7 +40,10 @@ repos:
   hooks:
     - id: cmake-format
       args: ['--config=.cmake-format.yaml']
-    - id: cmake-lint
+
+- repo: https://github.com/cmake-lint/cmake-lint
+  hooks:
+    - id: cmakelint
       args: ['--config=.cmake-format.yaml']
 
 - repo: https://github.com/pre-commit/mirrors-clang-format
