@@ -31,12 +31,12 @@ jobs:
         && pip3 install sphinx-sitemap
         && pip3 install sphinxcontrib-moderncmakedomain
         && pip3 install breathe
-        
+
     - name: '🟨 Install Latex'
       if: ${{github.event_name == 'push'}}
       run: brew install basictex
            && brew install graphviz
-        
+
     - name: '🟨 Setup CMake'
       uses: jwlawson/actions-setup-cmake@v1.11
       with:
@@ -44,7 +44,7 @@ jobs:
         github-api-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: '🔧 Configure'
-      run: cmake -S . -B ${{ env.CMAKE_BUILD_PREFIX }} -D CMAKE_BUILD_TYPE=${{ env.CMAKE_BUILD_TYPE }} -D BUILD_ONLY_DOCS=ON
+      run: cmake -S . -B ${{ env.CMAKE_BUILD_PREFIX }} -D CMAKE_BUILD_TYPE=${{ env.CMAKE_BUILD_TYPE }} -D BUILD_DOCS=ON -D BUILD_TESTS=OFF -D BUILD_EXAMPLES=OFF
 
     - name: '⚙️ Build'
       run: cmake --build ${{ env.CMAKE_BUILD_PREFIX }} --config ${{ env.CMAKE_BUILD_TYPE }} --parallel 2 --target docs
@@ -53,6 +53,7 @@ jobs:
       if: ${{github.event_name == 'push'}}
       run: cmake --install ${{ env.CMAKE_BUILD_PREFIX }} --prefix ${{ github.workspace }}/bin --strip
         && touch ${{ github.workspace }}/bin/docs/html/.nojekyll
+        && mv ${{ github.workspace }}/bin/docs/latex/refman.pdf ${{ github.workspace }}/bin/docs/html/Manual.pdf
 
     - name: '🎉 Deploy'
       if: ${{github.event_name == 'push'}}

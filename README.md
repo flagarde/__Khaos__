@@ -14,12 +14,20 @@
 
 </h1>
 
+##  Documentation
+
 <h1 align="center">
   <a href="https://flagarde.github.io/Khaos/">
 
   ```markdown
-  📖 Documentation
+  🌍 Online
   ```
 
+  </a>
+  <a href="https://github.com/flagarde/Khaos/raw/gh-pages/Manual.pdf">
+
+  ```markdown
+  📖 PDF
+  ```
   </a>
 </h1>
