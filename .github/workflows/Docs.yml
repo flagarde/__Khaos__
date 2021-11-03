@@ -36,6 +36,7 @@ jobs:
       if: ${{github.event_name == 'push'}}
       run: brew install basictex
            && brew install graphviz
+           && eval "$(/usr/libexec/path_helper)"
 
     - name: '🟨 Setup CMake'
       uses: jwlawson/actions-setup-cmake@v1.11
