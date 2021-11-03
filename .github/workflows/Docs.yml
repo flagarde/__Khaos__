@@ -5,7 +5,11 @@ env:
   CMAKE_BUILD_TYPE: 'Release'
   CMAKE_BUILD_PREFIX: './build'
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   docs:
