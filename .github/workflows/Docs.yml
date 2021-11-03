@@ -34,6 +34,7 @@ jobs:
     - name: '🟨 Install Latex'
       if: ${{github.event_name == 'push'}}
       run: sudo apt-get install texlive-base
+           && sudo apt-get install texlive-binaries
            && sudo apt-get install graphviz
 
     - name: '🟨 Setup CMake'
