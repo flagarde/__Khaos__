@@ -33,8 +33,8 @@ jobs:
 
     - name: '🟨 Install Latex'
       if: ${{github.event_name == 'push'}}
-      run: sudo apt-get install texlive-full
-           && sudo apt-get install graphviz
+      run: sudo apt-get install graphviz
+           && sudo apt-get install texlive-latex-recommended
 
     - name: '🟨 Setup CMake'
       uses: jwlawson/actions-setup-cmake@v1.11
@@ -52,7 +52,7 @@ jobs:
       if: ${{github.event_name == 'push'}}
       run: cmake --install ${{ env.CMAKE_BUILD_PREFIX }} --prefix ${{ github.workspace }}/bin --strip
         && touch ${{ github.workspace }}/bin/docs/html/.nojekyll
-        && mv ${{ github.workspace }}/bin/docs/latex/refman.pdf ${{ github.workspace }}/bin/docs/html/Manual.pdf
+        && mv ${{ github.workspace }}/bin/docs/latex/refman.pdf ${{ github.workspace }}/build/docs/html/Manual.pdf
 
     - name: '🎉 Deploy'
       if: ${{github.event_name == 'push'}}
