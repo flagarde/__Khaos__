@@ -35,16 +35,16 @@ jobs:
           path: .github/workflows/.env/
           mode: windows_msvc
 
-      - name: '🟨 Setup CMake'
+      - name: '${{ matrix.icon }} Setup CMake'
         uses: jwlawson/actions-setup-cmake@v1.11
         with:
           cmake-version: '${{env.CMAKE_VERSION}}'
           github-api-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: '🟨 Setup Visual Studio'
+      - name: '${{ matrix.icon }} Setup Visual Studio'
         uses: ilammy/msvc-dev-cmd@v1.10.0
 
-      - name: '🟨 Install package'
+      - name: '${{ matrix.icon }} Install package'
         run: choco install git ${{env.INSTALL_PACKAGES}}
 
       - name: '🔧 Configure'
