@@ -1,0 +1,44 @@
+name: 'Windows MSVC'
+
+env:
+  CMAKE_VERSION: '3.16.x'
+  CMAKE_BUILD_TYPE: 'Release'
+  CMAKE_BUILD_PREFIX: './build'
+  BUILD_TESTS: TRUE
+  BUILD_DOCS: FALSE
+  BUILD_EXAMPLES: TRUE
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    name: '🚧 🟨 MSVC'
+
+    steps:
+
+      - name: '🧰 Checkout'
+        uses: actions/checkout@v2.3.5
+        with:
+          fetch-depth: 0
+
+      - name: '🟨 Setup CMake'
+        uses: jwlawson/actions-setup-cmake@v1.11
+        with:
+          cmake-version: '${{env.CMAKE_VERSION}}'
+          github-api-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: '🟨 Setup Visual Studio'
+        uses: ilammy/msvc-dev-cmd@v1.10.0
+
+      - name: '🔧 Configure'
+        run: cmake -S ${{ github.workspace }} -B ${{ env.CMAKE_BUILD_PREFIX }} -Thost=x64  -DBUILD_TESTS=${{ env.BUILD_TESTS }} -DBUILD_DOCS=${{ env.BUILD_DOCS }} -DBUILD_EXAMPLES=${{ env.BUILD_EXAMPLES }}
+
+      - name: '⚙️ Build'
+        run: cmake --build ${{ env.CMAKE_BUILD_PREFIX }} --config ${{ env.CMAKE_BUILD_TYPE }} --parallel 2
+
+      - name: '🧪 Run tests'
+        working-directory: ${{ env.CMAKE_BUILD_PREFIX }}
+        run: ctest -C ${{ env.CMAKE_BUILD_TYPE }} -j2 -VV --output-on-failure
