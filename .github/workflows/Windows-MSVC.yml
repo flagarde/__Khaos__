@@ -15,7 +15,7 @@ jobs:
           - { icon: '🟦', env: x64, toolset: x64 }
           - { icon: '🟩', env: ARM, toolset: x86 }
           - { icon: '🟥', env: ARM64, toolset: x64 }
-    name: '🚧 🟨 MSVC'
+    name: '🚧 ${{ matrix.icon }} MSVC'
 
     steps:
 
