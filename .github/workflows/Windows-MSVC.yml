@@ -13,8 +13,8 @@ jobs:
         include:
           - { icon: '🟨', env: Win32, toolset: x86  }
           - { icon: '🟦', env: x64, toolset: x64 }
-          - { icon: '🟩', env: ARM, toolset: x86 }
-          - { icon: '🟥', env: ARM64, toolset: x64 }
+          #- { icon: '🟩', env: ARM, toolset: x86 }
+          #- { icon: '🟥', env: ARM64, toolset: x64 }
     name: '🚧 ${{ matrix.icon }} ${{ matrix.env }}'
 
     steps:
