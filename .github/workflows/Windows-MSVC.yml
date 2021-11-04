@@ -7,6 +7,14 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { icon: '🟨', env: Win32, toolset: x86  }
+          - { icon: '🟦', env: x64, toolset: x64 }
+          - { icon: '🟩', env: ARM, toolset: x86 }
+          - { icon: '🟥', env: ARM64, toolset: x64 }
     name: '🚧 🟨 MSVC'
 
     steps:
@@ -40,7 +48,7 @@ jobs:
         run: choco install git ${{env.INSTALL_PACKAGES}}
 
       - name: '🔧 Configure'
-        run: cmake -S ${{ github.workspace }} -B ${{ env.CMAKE_BUILD_PREFIX }} -Thost=x64  -DBUILD_TESTS=${{ env.BUILD_TESTS }} -DBUILD_DOCS=${{ env.BUILD_DOCS }} -DBUILD_EXAMPLES=${{ env.BUILD_EXAMPLES }}
+        run: cmake -S ${{ github.workspace }} -B ${{ env.CMAKE_BUILD_PREFIX }} -A ${{matrix.env}} -T host=${{matrix.toolset}} -DBUILD_TESTS=${{ env.BUILD_TESTS }} -DBUILD_DOCS=${{ env.BUILD_DOCS }} -DBUILD_EXAMPLES=${{ env.BUILD_EXAMPLES }}
 
       - name: '⚙️ Build'
         run: cmake --build ${{ env.CMAKE_BUILD_PREFIX }} --config ${{ env.CMAKE_BUILD_TYPE }} --parallel ${{ env.CMAKE_NUMBER_JOBS }}
