@@ -1,13 +1,5 @@
 name: 'Windows MSYS2'
 
-env:
-  CMAKE_VERSION: '3.16.x'
-  CMAKE_BUILD_TYPE: 'Release'
-  CMAKE_BUILD_PREFIX: './build'
-  BUILD_TESTS: TRUE
-  BUILD_DOCS: FALSE
-  BUILD_EXAMPLES: TRUE
-
 on:
   push:
   pull_request:
@@ -30,10 +22,21 @@ jobs:
 
     steps:
 
+      - name: '📥 Load .env file'
+        if: hashFiles('.github/.env/.env') != ''
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          path: .github/.env
+
+      - name: '📥 Load .env.windows_msys2 file'
+        if: hashFiles('.github/.env/.env.windows_msys2') != ''
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          path: .github/.env
+          mode: windows_msys2
+
       - name: '🧰 Checkout'
         uses: actions/checkout@v2.3.5
-        with:
-          fetch-depth: 0
 
       - name: '${{ matrix.icon }} Setup MSYS2'
         uses: msys2/setup-msys2@v2

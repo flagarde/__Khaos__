@@ -1,10 +1,5 @@
 name: 'Docs'
 
-env:
-  CMAKE_VERSION: '3.16.x'
-  CMAKE_BUILD_TYPE: 'Release'
-  CMAKE_BUILD_PREFIX: './build'
-
 on:
   push:
     branches:
@@ -17,6 +12,19 @@ jobs:
     name: '📚 Docs'
 
     steps:
+
+    - name: '📥 Load .env file'
+      if: hashFiles('.github/.env/.env') != ''
+      uses: xom9ikk/dotenv@v1.0.2
+      with:
+        path: .github/.env
+
+    - name: '📥 Load .env.docs file'
+      if: hashFiles('.github/.env/.env.docs') != ''
+      uses: xom9ikk/dotenv@v1.0.2
+      with:
+        path: .github/.env
+        mode: docs
 
     - name: '🧰 Checkout'
       uses: actions/checkout@v2.4.0
