@@ -13,7 +13,7 @@ on:
 
 jobs:
   docs:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: '📚 Docs'
 
     steps:
@@ -21,26 +21,21 @@ jobs:
     - name: '🧰 Checkout'
       uses: actions/checkout@v2.4.0
 
-    - name: Setup conda
-      uses: s-weigand/setup-conda@v1
-      with:
-        update-conda: true
-        conda-channels: anaconda, conda-forge
-        
     - name: '🟨 Install required packages'
       if: ${{github.event_name == 'pull_request' || github.event_name == 'push'}}
-      run: sudo apt-get install mscgen
-        && sudo apt-get install dia2code
-        && conda install -c conda-forge doxygen
-        && conda install -c conda-forge sphinx
-        && conda install -c conda-forge breathe
+      run: brew install doxygen
+        && brew install mscgen
+        && brew install --cask dia
+        && pip3 install sphinx
         && pip3 install sphinx-rtd-theme
+        && pip3 install sphinx-sitemap
         && pip3 install sphinxcontrib-moderncmakedomain
+        && pip3 install breathe
 
     - name: '🟨 Install Latex'
       if: ${{github.event_name == 'push'}}
-      run: sudo conda install -c conda-forge graphviz
-           && sudo apt-get install texlive-latex-extra
+      run: brew install texlive
+           && brew install graphviz
 
     - name: '🟨 Setup CMake'
       uses: jwlawson/actions-setup-cmake@v1.11
@@ -58,7 +53,7 @@ jobs:
       if: ${{github.event_name == 'push'}}
       run: cmake --install ${{ env.CMAKE_BUILD_PREFIX }} --prefix ${{ github.workspace }}/bin --strip
         && touch ${{ github.workspace }}/bin/docs/html/.nojekyll
-        && mv ${{ github.workspace }}/build/docs/doxygen/latex/refman.pdf ${{ github.workspace }}/bin/docs/html/Manual.pdf
+        && mv ${{ github.workspace }}/bin/docs/latex/refman.pdf ${{ github.workspace }}/bin/docs/html/Manual.pdf
 
     - name: '🎉 Deploy'
       if: ${{github.event_name == 'push'}}
