@@ -34,7 +34,7 @@ jobs:
         && conda install -c conda-forge doxygen
         && conda install -c conda-forge sphinx
         && conda install -c conda-forge breathe
-        && conda install -c alefnula sphinx-rtd-theme
+        && pip3 install sphinx-rtd-theme
         && pip3 install sphinxcontrib-moderncmakedomain
 
     - name: '🟨 Install Latex'
