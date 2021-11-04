@@ -12,16 +12,16 @@ jobs:
     steps:
 
       - name: '📥 Load .env file'
-        if: hashFiles('.github/.env/.env') != ''
+        if: hashFiles('.github/workflows/.env/.env') != ''
         uses: xom9ikk/dotenv@v1.0.2
         with:
-          path: .github/.env
+          path: .github/workflows/.env/
 
       - name: '📥 Load .env.windows_msvc file'
-        if: hashFiles('.github/.env/.env.windows_msvc') != ''
+        if: hashFiles('.github/workflows/.env/.env.windows_msvc') != ''
         uses: xom9ikk/dotenv@v1.0.2
         with:
-          path: .github/.env
+          path: .github/workflows/.env/
           mode: windows_msvc
 
       - name: '🧰 Checkout'

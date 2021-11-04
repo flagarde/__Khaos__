@@ -12,16 +12,16 @@ jobs:
     steps:
 
       - name: '📥 Load .env file'
-        if: hashFiles('.github/.env/.env') != ''
+        if: hashFiles('.github/workflows/.env/.env') != ''
         uses: xom9ikk/dotenv@v1.0.2
         with:
-          path: .github/.env
+          path: .github/workflows/.env/
 
       - name: '📥 Load .env.macos_clang file'
-        if: hashFiles('.github/.env/.env.macos_clang') != ''
+        if: hashFiles('.github/workflows/.env/.env.macos_clang') != ''
         uses: xom9ikk/dotenv@v1.0.2
         with:
-          path: .github/.env
+          path: .github/workflows/.env/
           mode: macos_clang
 
       - name: '🧰 Checkout'
