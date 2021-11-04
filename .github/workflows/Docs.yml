@@ -53,7 +53,7 @@ jobs:
       if: ${{github.event_name == 'push'}}
       run: cmake --install ${{ env.CMAKE_BUILD_PREFIX }} --prefix ${{ github.workspace }}/bin --strip
         && touch ${{ github.workspace }}/bin/docs/html/.nojekyll
-        && mv ${{ github.workspace }}/build/docs/latex/refman.pdf ${{ github.workspace }}/bin/docs/html/Manual.pdf
+        && mv ${{ github.workspace }}/build/docs/doxygen/latex/refman.pdf ${{ github.workspace }}/bin/docs/html/Manual.pdf
 
     - name: '🎉 Deploy'
       if: ${{github.event_name == 'push'}}
