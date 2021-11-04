@@ -24,12 +24,12 @@ jobs:
     - name: '🟨 Install required packages'
       if: ${{github.event_name == 'pull_request' || github.event_name == 'push'}}
       run: sudo apt-get install mscgen
+        && $CONDA/bin/conda install -c doxygen
         && sudo apt-get install dia2code
         && sudo apt-get install python3-sphinx
         && sudo apt-get install python3-sphinx-rtd-theme
         && sudo apt-get install python3-breathe
         && pip3 install sphinxcontrib-moderncmakedomain
-        $CONDA/bin/conda install -c conda-forge doxygen
 
     - name: '🟨 Install Latex'
       if: ${{github.event_name == 'push'}}
