@@ -6,4 +6,14 @@ doctest_discover_tests(CStandards.test COMMAND CStandards.test ADD_LABELS "Test 
 add_executable(CXXStandards.test CXXStandards.test.cpp)
 set_target_properties(CXXStandards.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/tests")
 target_link_libraries(CXXStandards.test PRIVATE Khaos::Khaos doctest_with_main)
-doctest_discover_tests(CXXStandards.test COMMAND CStandards.test ADD_LABELS "Test CStandards")
+doctest_discover_tests(CXXStandards.test COMMAND CXXStandards.test ADD_LABELS "Test CXXStandards")
+
+add_executable(LanguageC.test LanguageC.test.c)
+set_target_properties(LanguageC.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/tests")
+target_link_libraries(LanguageC.test PRIVATE Khaos::Khaos doctest_with_main)
+add_test(NAME LanguageC.test COMMAND LanguageC.test)
+
+add_executable(LanguageCXX.test LanguageCXX.test.cpp)
+set_target_properties(LanguageCXX.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/tests")
+target_link_libraries(LanguageCXX.test PRIVATE Khaos::Khaos doctest_with_main)
+doctest_discover_tests(LanguageCXX.test COMMAND LanguageCXX.test ADD_LABELS "Test Language for CXX")

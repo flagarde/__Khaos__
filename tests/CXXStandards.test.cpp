@@ -3,7 +3,7 @@
 
 #include "khaos/CXXStandards.h"
 
-TEST_CASE("testing the CStandards values"){
+TEST_CASE("testing the CXXStandards values"){
   CHECK(KHAOS_STANDARD_CXX97 == 199711L);
   CHECK(KHAOS_STANDARD_CXX11 == 201103L);
   CHECK(KHAOS_STANDARD_CXX14 == 201402L);
