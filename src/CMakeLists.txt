@@ -20,13 +20,6 @@ if(MSVC)
   # 2) /EH (Exception handling model)
   # https://docs.microsoft.com/en-us/cpp/build/reference/eh-exception-handling-model?view=msvc-170
   #Specifying /EHa and trying to handle all exceptions by using catch(...) can be dangerous.
-  #In most cases, asynchronous exceptions are unrecoverable and should be considered fatal. Catching them and proceeding can cause process corruption and lead to bugs that are hard to find and fix.
-  #Even though Windows and Visual C++ support SEH, we strongly recommend that you use ISO-standard C++ exception handling (/EHsc or /EHs).
-  #It makes your code more portable and flexible. There may still be times you have to use SEH in legacy code or for particular kinds of programs.
-  #It's required in code compiled to support the common language runtime (/clr), for example. For more information, see Structured exception handling.
-  #We recommend that you never link object files compiled using /EHa to ones compiled using /EHs or /EHsc in the same executable module.
-  #If you have to handle an asynchronous exception by using /EHa anywhere in your module, use /EHa to compile all the code in the module.
-  #You can use structured exception handling syntax in the same module as code that's compiled by using /EHs. However, you can't mix the SEH syntax with C++ try, throw, and catch in the same function.
   check_cxx_compiler_flag("/EHscr" COMPILER_FLAG_RESULT)
   if(COMPILER_FLAG_RESULT)
     target_compile_options(KhaosFlags INTERFACE $<$<COMPILE_LANGUAGE:CXX>:/EHscr>)
