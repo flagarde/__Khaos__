@@ -1,9 +1,10 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest/doctest.h"
-
 #include "khaos/CStandards.h"
 
-TEST_CASE("testing the CStandards values") {
+#include "doctest/doctest.h"
+
+TEST_CASE("testing the CStandards values")
+{
   CHECK(KHAOS_STANDARD_C90 == 1L);
   CHECK(KHAOS_STANDARD_C95 == 199409L);
   CHECK(KHAOS_STANDARD_C99 == 199901L);
