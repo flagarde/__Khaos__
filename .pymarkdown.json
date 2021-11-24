@@ -8,6 +8,10 @@
     "line-length" :
     {
       "line_length" : 250
+    },
+    "no-multiple-space-atx" :
+    {
+      "enabled" : false
     }
   }
 }
