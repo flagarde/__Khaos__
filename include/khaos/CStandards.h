@@ -1,5 +1,5 @@
-#ifndef KHAOS_CSTANDARDS
-#define KHAOS_CSTANDARDS
+#ifndef KHAOS_CSTANDARDS_H
+#define KHAOS_CSTANDARDS_H
 
 /*! \file CStandards.h
     \brief Define the values of the official C standard.
