@@ -33,6 +33,7 @@
 [MMB]: https://github.com/flagarde/Khaos/actions/workflows/Windows-MSVC.yml/badge.svg
 
 ## Builds
+
 |        | Linux Clang | Linux GCC | MacOS Clang | MacOS GCC | Windows M2sys | Windows MSVC |
 |--------|-------------|-----------|-------------|-----------|---------------|--------------|
 | Github |[![Linux Clang][LCB]][LC]|[![Linux GCC][LGB]][LG]|[![MacOS Clang][MCB]][MC]|[![MacOS GCC][MGB]][MG]|[![Windows MSYS2][MSB]][MS]|[![Windows MSVC][MMB]][MM]|
