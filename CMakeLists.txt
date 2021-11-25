@@ -21,7 +21,7 @@ set_default_configuration(CONFIGS Debug)
 option(BUILD_DOCS "Build the docs" ON)
 option(BUILD_TESTS "Build the tests" ON)
 option(BUILD_EXAMPLES "Build the examples" ON)
-option(ENABLE_COVERAGE "Enable coverage build." ON)
+option(ENABLE_COVERAGE "Enable coverage build." OFF)
 
 if(ENABLE_COVERAGE)
   include(Coverage)
