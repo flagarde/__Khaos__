@@ -65,11 +65,3 @@ jobs:
           fail_ci_if_error: true
           name: Codecov
           verbose: true
-
-      - name: '🎉 Deploy'
-        if: ${{github.event_name == 'push'}}
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          BRANCH: coverage
-          FOLDER: ${{ env.CMAKE_BUILD_PREFIX }}/coverage/html
-          SINGLE_COMMIT: true
