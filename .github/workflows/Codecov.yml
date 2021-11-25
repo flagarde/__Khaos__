@@ -1,0 +1,70 @@
+name: 'Linux Clang'
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { icon: '🟦', cc: clang-11, cxx: clang++-11, name: 'Clang 11' }
+    name: '🚧 ${{ matrix.icon }} ${{ matrix.name }}'
+
+    steps:
+
+      - name: '🧰 Checkout'
+        uses: actions/checkout@v2.4.0
+
+      - name: '📥 Load .env file'
+        if: hashFiles('.github/workflows/.env/.env') != ''
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          path: .github/workflows/.env/
+
+      - name: '📥 Load .env.linux_clang file'
+        if: hashFiles('.github/workflows/.env/.env.codecov') != ''
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          path: .github/workflows/.env/
+          mode: linux_clang
+
+      - name: '${{ matrix.icon }} Setup CMake'
+        uses: jwlawson/actions-setup-cmake@v1.11
+        with:
+          cmake-version: '${{env.CMAKE_VERSION}}'
+          github-api-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: '${{ matrix.icon }} Install packages'
+        run: sudo apt-get install git ${{env.INSTALL_PACKAGES}}
+
+      - name: '🔧 Configure'
+        env:
+          CC: ${{matrix.cc}}
+          CXX: ${{matrix.cxx}}
+        run: cmake -S . -B ${{ env.CMAKE_BUILD_PREFIX }}/ -D CMAKE_BUILD_TYPE=${{ env.CMAKE_BUILD_TYPE }} -DBUILD_TESTS=${{ env.BUILD_TESTS }} -DBUILD_DOCS=${{ env.BUILD_DOCS }} -DBUILD_EXAMPLES=${{ env.BUILD_EXAMPLES }} -DENABLE_COVERAGE=${{ env.ENABLE_COVERAGE }}
+
+      - name: '⚙️ Build'
+        run: cmake --build ${{ env.CMAKE_BUILD_PREFIX }} --config ${{ env.CMAKE_BUILD_TYPE }} --parallel ${{ env.CMAKE_NUMBER_JOBS }}
+
+      - name: '🧪 Run tests'
+        working-directory: ${{ env.CMAKE_BUILD_PREFIX }}
+        run: ctest -C ${{ env.CMAKE_BUILD_TYPE }} --parallel ${{ env.CMAKE_NUMBER_JOBS }} -VV --output-on-failure
+
+      - name: '✔️ Run coverage'
+        working-directory: ${{ env.CMAKE_BUILD_PREFIX }}
+        run: cmake --build ${{ env.CMAKE_BUILD_PREFIX }} --target lcov-genhtml --config ${{ env.CMAKE_BUILD_TYPE }} --parallel ${{ env.CMAKE_NUMBER_JOBS }}
+
+      - name: '✉️ Upload coverage to Codecov'
+        uses: codecov/codecov-action@v2
+        with:
+          directory: ${{ env.CMAKE_BUILD_PREFIX }}
+          fail_ci_if_error: true
+          files: total.info
+          name: Codecov
+          verbose: true
