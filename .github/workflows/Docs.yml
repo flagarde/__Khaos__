@@ -67,7 +67,7 @@ jobs:
       if: ${{github.event_name == 'push'}}
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        branch: gh-pages
-        folder: ${{ github.workspace }}/bin/docs/html
-        clean-exclude: ./codecoverage
-        single-commit: true
+        BRANCH: gh-pages
+        FOLDER: ${{ github.workspace }}/bin/docs/html
+        CLEAN_EXCLUDE: ./codecoverage
+        SINGLE_COMMIT: true
