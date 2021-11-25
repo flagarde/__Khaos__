@@ -27,12 +27,12 @@ jobs:
         with:
           path: .github/workflows/.env/
 
-      - name: '📥 Load .env.linux_clang file'
+      - name: '📥 Load .env.codecov file'
         if: hashFiles('.github/workflows/.env/.env.codecov') != ''
         uses: xom9ikk/dotenv@v1.0.2
         with:
           path: .github/workflows/.env/
-          mode: linux_clang
+          mode: codecov
 
       - name: '${{ matrix.icon }} Setup CMake'
         uses: jwlawson/actions-setup-cmake@v1.11
