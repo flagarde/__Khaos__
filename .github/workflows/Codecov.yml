@@ -70,7 +70,6 @@ jobs:
         if: ${{github.event_name == 'push'}}
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          BRANCH: gh-pages
+          BRANCH: coverage
           FOLDER: ${{ env.CMAKE_BUILD_PREFIX }}/coverage/html
-          TARGET_FOLDER: ./codecoverage
           SINGLE_COMMIT: true
