@@ -12,7 +12,7 @@
   [![GitHub repo size](https://img.shields.io/github/repo-size/flagarde/Khaos)](https://github.com/flagarde/Khaos)
   [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/flagarde/Khaos/main.svg)](https://results.pre-commit.ci/latest/github/flagarde/Khaos/main)
   [![codecov](https://codecov.io/gh/flagarde/Khaos/branch/main/graph/badge.svg?token=9Z9NA4XXKF)](https://codecov.io/gh/flagarde/Khaos)
-  
+
 </h1>
 
 ## Builds
