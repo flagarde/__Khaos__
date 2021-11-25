@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.15...3.22)
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 include(GetCMakeMM)
-cmmm(VERSION "2.2" REPOSITORY "flagarde/CMakeMM" PROVIDER "gitlab")
+cmmm(VERSION "2.2" REPOSITORY "flagarde/CMakeMM")
 
-cmmm_modules_list(REPOSITORY "flagarde/CMakeCM" PROVIDER "gitlab")
+cmmm_modules_list(REPOSITORY "flagarde/CMakeCM")
 
 project(Khaos VERSION "0.1.0.0" DESCRIPTION "Cross-platform library" HOMEPAGE_URL "https://github.com/flagarde/Khaos" LANGUAGES C CXX)
 
