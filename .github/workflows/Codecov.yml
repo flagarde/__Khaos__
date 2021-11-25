@@ -63,6 +63,8 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           fail_ci_if_error: true
-          files: ${{ env.CMAKE_BUILD_TYPE }}/coverage.txt
+          directory: ${{ env.CMAKE_BUILD_PREFIX }}
+          working-directory: ${{ env.CMAKE_BUILD_PREFIX }}
+          files: coverage.txt
           name: Codecov
           verbose: true
