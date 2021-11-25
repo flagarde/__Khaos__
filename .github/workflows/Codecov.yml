@@ -57,7 +57,6 @@ jobs:
         run: ctest -C ${{ env.CMAKE_BUILD_TYPE }} --parallel ${{ env.CMAKE_NUMBER_JOBS }} -VV --output-on-failure
 
       - name: '✔️ Run coverage'
-        working-directory: ${{ env.CMAKE_BUILD_PREFIX }}
         run: cmake --build ${{ env.CMAKE_BUILD_PREFIX }} --target lcov-genhtml --config ${{ env.CMAKE_BUILD_TYPE }} --parallel ${{ env.CMAKE_NUMBER_JOBS }}
 
       - name: '✉️ Upload coverage to Codecov'
