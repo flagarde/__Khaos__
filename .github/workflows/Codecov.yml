@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { icon: '🟦', cc: clang-11, cxx: clang++-11, name: 'Clang 11' }
+          - { icon: '🟦', cc: gcc, cxx: gcc++, name: 'GCC' }
     name: '🚧 ${{ matrix.icon }} ${{ matrix.name }}'
 
     steps:
