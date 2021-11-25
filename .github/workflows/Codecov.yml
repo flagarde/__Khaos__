@@ -62,7 +62,6 @@ jobs:
       - name: '✉️ Upload coverage to Codecov'
         uses: codecov/codecov-action@v2
         with:
-          directory: ${{ env.CMAKE_BUILD_PREFIX }}
           fail_ci_if_error: true
           files: total.info
           name: Codecov
