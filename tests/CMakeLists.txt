@@ -24,3 +24,9 @@ set_target_properties(LanguageCXX.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CM
 target_link_libraries(LanguageCXX.test PRIVATE Khaos::Khaos doctest_with_main)
 doctest_discover_tests(LanguageCXX.test COMMAND LanguageCXX.test ADD_LABELS "Test Language for CXX")
 install(TARGETS LanguageCXX.test RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}/tests")
+
+add_executable(Compiler.test Compiler.test.cpp)
+set_target_properties(Compiler.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/tests")
+target_link_libraries(Compiler.test PRIVATE Khaos::Khaos doctest_with_main)
+doctest_discover_tests(Compiler.test COMMAND Compiler.test ADD_LABELS "Test Compiler")
+install(TARGETS Compiler.test RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}/tests")
