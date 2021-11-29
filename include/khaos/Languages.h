@@ -78,7 +78,7 @@
   *
   * \note Can be directly used in both preprocessor and compiler expressions.
   */
-  #define KHAOS_LANGUAGE_IS_GREATER(standard) (KHAOS_C_STANDARD > KHAOS_STANDARD_##standard)
+  #define KHAOS_LANGUAGE_IS_GREATER(standard)       (KHAOS_C_STANDARD > KHAOS_STANDARD_##standard)
   /** @hideinitializer
   * Check if the C, CXX standard is greater or equal than \b standard.
   * \param[in] standard The language to test.
@@ -96,7 +96,7 @@
   *
   * \note Can be directly used in both preprocessor and compiler expressions.
   */
-  #define KHAOS_LANGUAGE_IS_EQUAL(standard) (KHAOS_C_STANDARD == KHAOS_STANDARD_##standard)
+  #define KHAOS_LANGUAGE_IS_EQUAL(standard)         (KHAOS_C_STANDARD == KHAOS_STANDARD_##standard)
   /** @hideinitializer
   * Check if the C, CXX standard is lower or equal than \b standard.
   * \param[in] standard The language to test.
@@ -105,7 +105,7 @@
   *
   * \note Can be directly used in both preprocessor and compiler expressions.
   */
-  #define KHAOS_LANGUAGE_IS_LOWER_EQUAL(standard) (KHAOS_C_STANDARD <= KHAOS_STANDARD_##standard)
+  #define KHAOS_LANGUAGE_IS_LOWER_EQUAL(standard)   (KHAOS_C_STANDARD <= KHAOS_STANDARD_##standard)
   /** @hideinitializer
   * Check if the C, CXX standard is lower than \b standard.
   * \param[in] standard The language to test.
@@ -114,19 +114,19 @@
   *
   * \note Can be directly used in both preprocessor and compiler expressions.
   */
-  #define KHAOS_LANGUAGE_IS_LOWER(standard) (KHAOS_C_STANDARD < KHAOS_STANDARD_##standard)
+  #define KHAOS_LANGUAGE_IS_LOWER(standard)         (KHAOS_C_STANDARD < KHAOS_STANDARD_##standard)
 #elif KHAOS_LANGUAGE_IS(CPP)
-  #define KHAOS_LANGUAGE_IS_GREATER(standard) (KHAOS_CXX_STANDARD > KHAOS_STANDARD_##standard)
+  #define KHAOS_LANGUAGE_IS_GREATER(standard)       (KHAOS_CXX_STANDARD > KHAOS_STANDARD_##standard)
   #define KHAOS_LANGUAGE_IS_GREATER_EQUAL(standard) (KHAOS_CXX_STANDARD >= KHAOS_STANDARD_##standard)
-  #define KHAOS_LANGUAGE_IS_EQUAL(standard) (KHAOS_CXX_STANDARD == KHAOS_STANDARD_##standard)
-  #define KHAOS_LANGUAGE_IS_LOWER_EQUAL(standard) (KHAOS_CXX_STANDARD <= KHAOS_STANDARD_##standard)
-  #define KHAOS_LANGUAGE_IS_LOWER(standard) (KHAOS_CXX_STANDARD < KHAOS_STANDARD_##standard)
+  #define KHAOS_LANGUAGE_IS_EQUAL(standard)         (KHAOS_CXX_STANDARD == KHAOS_STANDARD_##standard)
+  #define KHAOS_LANGUAGE_IS_LOWER_EQUAL(standard)   (KHAOS_CXX_STANDARD <= KHAOS_STANDARD_##standard)
+  #define KHAOS_LANGUAGE_IS_LOWER(standard)         (KHAOS_CXX_STANDARD < KHAOS_STANDARD_##standard)
 #else
-  #define KHAOS_LANGUAGE_IS_GREATER(standard) (0L)
+  #define KHAOS_LANGUAGE_IS_GREATER(standard)       (0L)
   #define KHAOS_LANGUAGE_IS_GREATER_EQUAL(standard) (0L)
-  #define KHAOS_LANGUAGE_IS_EQUAL(standard) (0L)
-  #define KHAOS_LANGUAGE_IS_LOWER_EQUAL(standard) (0L)
-  #define KHAOS_LANGUAGE_IS_LOWER(standard) (0L)
+  #define KHAOS_LANGUAGE_IS_EQUAL(standard)         (0L)
+  #define KHAOS_LANGUAGE_IS_LOWER_EQUAL(standard)   (0L)
+  #define KHAOS_LANGUAGE_IS_LOWER(standard)         (0L)
 #endif
 
 #endif

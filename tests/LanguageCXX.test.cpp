@@ -45,5 +45,4 @@ TEST_CASE("testing the Language CXX")
 #else
   CHECK(true);
 #endif
-
 }
