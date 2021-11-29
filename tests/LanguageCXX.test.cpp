@@ -4,7 +4,7 @@
 
 TEST_CASE("testing the Language CXX")
 {
-#if KHAOS_LANGUAGE_IS(CPP)
+#if KHAOS_LANGUAGE_IS(CXX)
   CHECK(true);
 #else
   CHECK(false);
