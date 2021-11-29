@@ -17,7 +17,7 @@ add_test(NAME LanguageC.test COMMAND LanguageC.test)
 install(TARGETS LanguageC.test RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}/tests")
 
 add_executable(LanguageCXX.test LanguageCXX.test.cpp)
-set_target_properties(LanguageCXX.test PROPERTIES CXX_STANDARD 11)
+set_target_properties(LanguageCXX.test PROPERTIES CXX_STANDARD 14)
 set_target_properties(LanguageCXX.test PROPERTIES CXX_STANDARD_REQUIRED TRUE)
 set_target_properties(LanguageCXX.test PROPERTIES CXX_EXTENSIONS ON)
 set_target_properties(LanguageCXX.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/tests")
