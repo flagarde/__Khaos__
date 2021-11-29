@@ -150,7 +150,7 @@
     #define KHAOS_VS_VERSION KHAOS_SET_VERSION(17,0,0)
   #else
     #define KHAOS_VS_VERSION KHAOS_SET_VERSION(17,0,0)
-  #elif
+  #endif
 
 #else
 
