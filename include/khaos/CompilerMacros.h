@@ -71,15 +71,34 @@
   #endif
 
   // how many digits does the build number have?
-  #if _MSC_FULL_VER / 10000 == _MSC_VER
-    // four digits
-    #define COMP_MSVC_BUILD_PATCH (_MSC_FULL_VER % 10000)
-  #elif _MSC_FULL_VER / 100000 == _MSC_VER
-    // five digits
-    #define COMP_MSVC_BUILD_PATCH (_MSC_FULL_VER % 100000)
+  #if defined(_MSC_FULL_VER)
+    #if _MSC_FULL_VER / 10000 == _MSC_VER
+      // four digits
+      #define COMP_MSVC_BUILD_PATCH (_MSC_FULL_VER % 10000)
+    #elif _MSC_FULL_VER / 100000 == _MSC_VER
+      // five digits
+      #define COMP_MSVC_BUILD_PATCH (_MSC_FULL_VER % 100000)
+    #endif
+  #else
+    #define COMP_MSVC_BUILD_PATCH 0
   #endif
   #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((_MSC_VER/100)%1000,(_MSC_VER)%1000,COMP_MSVC_BUILD_PATCH)
   #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(COMP_MSVC_BUILD)
+
+  #undef COMP_MSVC_BUILD
+  #undef COMP_MSVC_BUILD_PATCH
+  // Set the Visual studio version
+  #elif _MSC_VER < 800
+    #define KHAOS_VC_VERSION KHAOS_SET_VERSION(0,0,0)
+  #elif _MSC_VER == 800
+    #define KHAOS_VC_VERSION KHAOS_SET_VERSION(1,0,0)
+  #elif _MSC_VER == 900
+    #define KHAOS_VC_VERSION KHAOS_SET_VERSION(2,0,0)
+  #elif _MSC_VER >= 1000 && _MSC_VER < 1900
+    #define KHAOS_VC_VERSION KHAOS_SET_VERSION(((_MSC_VER/100)%1000)-6,((_MSC_VER)%1000)/10,0)
+  #elif _MSC_VER >= 1900
+    #define KHAOS_VC_VERSION KHAOS_SET_VERSION(((_MSC_VER/100)%1000)-5,((_MSC_VER)%1000),0)
+  #endif
 #else
 
 #endif
