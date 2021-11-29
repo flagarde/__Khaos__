@@ -20,10 +20,10 @@
     #define KHAOS_CXX_STANDARD _MSVC_LANG
     #if __cplusplus != _MSVC_LANG
       #if _MSC_VER >= 1914
-        #pragma message ("[Khaos] : MSVC doesn't set the correct value for __cplusplus (cf. https:////devblogs.microsoft.com//cppblog//msvc-now-correctly-reports-__cplusplus//) !")
-        #pragma message ("[Khaos] : Use /Zc:__cplusplus option to activate it !")
+        #pragma message("[Khaos] : MSVC doesn't set the correct value for __cplusplus (cf. https:////devblogs.microsoft.com//cppblog//msvc-now-correctly-reports-__cplusplus//) !")
+        #pragma message("[Khaos] : Use /Zc:__cplusplus option to activate it !")
       #else
-        #pragma message ("[Khaos] : MSVC doesn't set the correct value for __cplusplus (cf. https://devblogs.microsoft.com/cppblog/msvc-now-correctly-reports-__cplusplus/) !")
+        #pragma message("[Khaos] : MSVC doesn't set the correct value for __cplusplus (cf. https://devblogs.microsoft.com/cppblog/msvc-now-correctly-reports-__cplusplus/) !")
       #endif
     #endif
   #else
@@ -34,10 +34,10 @@
 #endif
 
 #if defined(__STRICT_ANSI__)
-  #define KHAOS_LANGUAGE_ISO 1         //!< 1 if strict ISO, 0 otherwise
+  #define KHAOS_LANGUAGE_ISO        1  //!< 1 if strict ISO, 0 otherwise
   #define KHAOS_LANGUAGE_Extensions 0  //!< 0 if strict ISO, 1 otherwise
 #else
-  #define KHAOS_LANGUAGE_ISO 0         //!< 1 if strict ISO, 0 otherwise
+  #define KHAOS_LANGUAGE_ISO        0  //!< 1 if strict ISO, 0 otherwise
   #define KHAOS_LANGUAGE_Extensions 1  //!< 0 if strict ISO, 1 otherwise
 #endif
 

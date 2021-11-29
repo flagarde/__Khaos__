@@ -28,7 +28,7 @@
  * \note The implementation enforces the individual ranges for the major, minor, and patch numbers.
  * \warning Values over the ranges are truncated (modulo).
  */
-#define KHAOS_SET_VERSION(major,minor,patch) (((major)%100)*10000000) + (((minor)%100)*100000) + ((patch)%100000)
+#define KHAOS_SET_VERSION(major, minor, patch) (((major) % 100) * 10000000) + (((minor) % 100) * 100000) + ((patch) % 100000)
 
 /** @hideinitializer
  * Set standard tweak (build) numbers.
@@ -39,36 +39,34 @@
  * \note The implementation enforces the individual ranges for the major, minor, and patch numbers.
  * \warning Values over the ranges are truncated (modulo).
  */
-#define KHAOS_SET_VERSION_TWEAK(tweak) tweak%100000
-
+#define KHAOS_SET_VERSION_TWEAK(tweak) tweak % 100000
 
 /** Get standard major version numbers. @hideinitializer
  * \param[in] version The standard version number.
  *
  * \note Value can be directly used in both preprocessor and compiler expressions for comparison to other similarly defined values.
  */
-#define KHAOS_GET_VERSION_MAJOR(version) ((version)/10000000)%100
+#define KHAOS_GET_VERSION_MAJOR(version) ((version) / 10000000) % 100
 
 /** Get standard minor version numbers. @hideinitializer
  * \param[in] version The standard version number.
  *
  * \note Value can be directly used in both preprocessor and compiler expressions for comparison to other similarly defined values.
  */
-#define KHAOS_GET_VERSION_MINOR(version) ((version)/100000)%100
+#define KHAOS_GET_VERSION_MINOR(version) ((version) / 100000) % 100
 
 /** Get standard patch version numbers. @hideinitializer
  * \param[in] version The standard version number.
  *
  * \note Value can be directly used in both preprocessor and compiler expressions for comparison to other similarly defined values.
  */
-#define KHAOS_GET_VERSION_PATCH(version) (version)%100000
-
+#define KHAOS_GET_VERSION_PATCH(version) (version) % 100000
 
 /** Get standard tweak version numbers. @hideinitializer
  * \param[in] version The standard version number.
  *
  * \note Value can be directly used in both preprocessor and compiler expressions for comparison to other similarly defined values.
  */
-#define KHAOS_GET_VERSION_TWEAK(version) (version##_TWEAK)%100000
+#define KHAOS_GET_VERSION_TWEAK(version) (version##_TWEAK) % 100000
 
 #endif
