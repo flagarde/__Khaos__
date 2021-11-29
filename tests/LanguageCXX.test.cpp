@@ -34,13 +34,13 @@ TEST_CASE("testing the Language CXX")
   CHECK(false);
 #endif
 
-#if KHAOS_LANGUAGE_IS(ISO)
+#if !KHAOS_LANGUAGE_IS(ISO)
   CHECK(true);
 #else
   CHECK(false);
 #endif
 
-#if KHAOS_LANGUAGE_IS(Extensions)
+#if !KHAOS_LANGUAGE_IS(Extensions)
   CHECK(false);
 #else
   CHECK(true);
