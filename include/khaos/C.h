@@ -9,9 +9,9 @@
 
 #if defined(__STDC__)
   #if defined(__STDC_VERSION__)
-    #define KHAOS_C_STANDARD __STDC_VERSION__ //!< define KHAOS_C_STANDARD
+    #define KHAOS_C_STANDARD __STDC_VERSION__  //!< define KHAOS_C_STANDARD
   #else
-    #define KHAOS_C_STANDARD KHAOS_STANDARD_C90 //!< define KHAOS_C_STANDARD
+    #define KHAOS_C_STANDARD KHAOS_STANDARD_C90  //!< define KHAOS_C_STANDARD
   #endif
 #else
   /* For GCC this should never happen https://gcc.gnu.org/onlinedocs/cpp/Traditional-Mode.html#Traditional-Mode */
@@ -29,11 +29,11 @@
 #endif
 
 #if defined(__STRICT_ANSI__) || !defined(_MSC_EXTENSIONS)
-  #define KHAOS_LANGUAGE_ISO 1        //!< 1 if strict ISO, 0 otherwise
-  #define KHAOS_LANGUAGE_Extensions 0 //!< 0 if strict ISO, 1 otherwise
+  #define KHAOS_LANGUAGE_ISO        1  //!< 1 if strict ISO, 0 otherwise
+  #define KHAOS_LANGUAGE_Extensions 0  //!< 0 if strict ISO, 1 otherwise
 #else
-  #define KHAOS_LANGUAGE_ISO 0        //!< 1 if strict ISO, 0 otherwise
-  #define KHAOS_LANGUAGE_Extensions 1 //!< 0 if strict ISO, 1 otherwise
+  #define KHAOS_LANGUAGE_ISO        0  //!< 1 if strict ISO, 0 otherwise
+  #define KHAOS_LANGUAGE_Extensions 1  //!< 0 if strict ISO, 1 otherwise
 #endif
 
 #endif
