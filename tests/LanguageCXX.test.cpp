@@ -10,7 +10,7 @@ TEST_CASE("testing the Language CXX")
   CHECK(false);
 #endif
 
-#if KHAOS_LANGUAGE_IS_EQUAL(CXX11)
+#if KHAOS_LANGUAGE_IS_EQUAL(CXX14)
   CHECK(true);
 #else
   CHECK(false);
@@ -22,7 +22,7 @@ TEST_CASE("testing the Language CXX")
   CHECK(false);
 #endif
 
-#if KHAOS_LANGUAGE_IS_LOWER_EQUAL(CXX11)
+#if KHAOS_LANGUAGE_IS_LOWER_EQUAL(CXX14)
   CHECK(true);
 #else
   CHECK(false);
