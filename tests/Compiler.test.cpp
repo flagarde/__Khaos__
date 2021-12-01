@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest/doctest.h"
-#include "khaos/CompilerMacros.h"
+#include "khaos/Compiler.h"
 
 TEST_CASE("testing the Compiler macros")
 {
