@@ -59,6 +59,8 @@
  * | ObjCPP     |               |
  *
  * \note Can be directly used in both preprocessor and compiler expressions.
+ *
+ * \note If CUDA the version is defined in KHAOS_CUDA_VERSION
  */
 #define KHAOS_LANGUAGE_IS(language) (KHAOS_LANGUAGE_##language)
 #if KHAOS_LANGUAGE_IS(C)

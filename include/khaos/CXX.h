@@ -28,10 +28,10 @@
       #endif
     #endif
   #else
-    #define KHAOS_CXX_STANDARD __cplusplus
+    #define KHAOS_CXX_STANDARD __cplusplus  //!< Define the CXX standard
   #endif
 #else
-  #define KHAOS_CXX_STANDARD __cplusplus
+  #define KHAOS_CXX_STANDARD __cplusplus    //!< Define the CXX standard
 #endif
 
 #if defined(__STRICT_ANSI__)

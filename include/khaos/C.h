@@ -9,9 +9,9 @@
 
 #if defined(__STDC__)
   #if defined(__STDC_VERSION__)
-    #define KHAOS_C_STANDARD __STDC_VERSION__  //!< define KHAOS_C_STANDARD
+    #define KHAOS_C_STANDARD __STDC_VERSION__  //!< define the C standard
   #else
-    #define KHAOS_C_STANDARD KHAOS_STANDARD_C90  //!< define KHAOS_C_STANDARD
+    #define KHAOS_C_STANDARD KHAOS_STANDARD_C90  //!< define the C standard
   #endif
 #else
   /* For GCC this should never happen https://gcc.gnu.org/onlinedocs/cpp/Traditional-Mode.html#Traditional-Mode */
@@ -22,7 +22,7 @@
     * When both C compilation and the /Za option are specified, the C compiler conforms strictly to the C89/C90 standard.
     * The compiler treats Microsoft extended keywords as simple identifiers, disables the other Microsoft extensions, and automatically defines the __STDC__ predefined macro for C programs.
     */
-    #define KHAOS_C_STANDARD KHAOS_STANDARD_C90
+    #define KHAOS_C_STANDARD KHAOS_STANDARD_C90  //!< define the C standard
   #else
     #error "C is detected but __STDC__ is not defined !"
   #endif
