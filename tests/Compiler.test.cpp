@@ -5,9 +5,8 @@
 
 TEST_CASE("testing the Compiler macros")
 {
-#if COMPILER_IS(MSVC)
-  std::cout<<"MSVC : "<<_MSC_FULL_VER<<" Macro "<<KHAOS_COMPILER_VERSION<<" "<<KHAOS_COMPILER_VERSION_TWEAK<<" KHAOS_VC_VERSION : "<<KHAOS_TOOLSET_VERSION<<" Version "<<KHAOS_VS_VERSION<<std::endl;
-#else
   std::cout<<KHAOS_COMPILER_VERSION<<" "<<KHAOS_COMPILER_VERSION_TWEAK<<" "<<std::endl;
+#if COMPILER_IS(Clang)
+  std::cout<<KHAOS_COMPILER_GCCEmulated<<"  "<<KHAOS_GCC_EMULATED_VERSION<<"  "<<KHAOS_COMPILER_LLVMEmulated<<std::endl;
 #endif
 }
