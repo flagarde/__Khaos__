@@ -8,6 +8,7 @@
 
 <h1 align="center">
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d2dd2f28af9441d980234ae4a0739cbc)](https://app.codacy.com/gh/flagarde/Khaos?utm_source=github.com&utm_medium=referral&utm_content=flagarde/Khaos&utm_campaign=Badge_Grade_Settings)
   [![GitHub](https://img.shields.io/github/license/flagarde/Khaos)](https://github.com/flagarde/Khaos/blob/main/LICENSE)
   [![GitHub repo size](https://img.shields.io/github/repo-size/flagarde/Khaos)](https://github.com/flagarde/Khaos)
   [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/flagarde/Khaos/main.svg)](https://results.pre-commit.ci/latest/github/flagarde/Khaos/main)
