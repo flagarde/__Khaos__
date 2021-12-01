@@ -9,4 +9,5 @@ TEST_CASE("testing the Compiler macros")
 #if COMPILER_IS(Clang)
   std::cout<<KHAOS_COMPILER_GCCEmulated<<"  "<<KHAOS_GCC_EMULATED_VERSION<<"  "<<KHAOS_COMPILER_LLVMEmulated<<std::endl;
 #endif
+
 }
