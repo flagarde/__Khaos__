@@ -24,7 +24,7 @@
 |--------|---------------------------|-------------------------|---------------------------|-------------------------|-----------------------------|----------------------------|
 | Github | [![Linux Clang][LCB]][LC] | [![Linux GCC][LGB]][LG] | [![MacOS Clang][MCB]][MC] | [![MacOS GCC][MGB]][MG] | [![Windows MSYS2][MSB]][MS] | [![Windows MSVC][MMB]][MM] |
 
-## Documentation
+## Documentation [![Docs](https://github.com/flagarde/YAODAQ/actions/workflows/Docs.yml/badge.svg)](https://github.com/flagarde/YAODAQ/actions/workflows/Docs.yml)
 
 <h1 align="center">
   <a href="https://flagarde.github.io/Khaos/">
