@@ -977,13 +977,13 @@
  * \note check with NVCC and KHAOS_NVCC_VERSION
  *
  */
-#define COMPILER_IS(compiler)( KHAOS_COMPILER_##compiler == 1 )
+#define COMPILER_IS(compiler) (KHAOS_COMPILER_##compiler == 1)
 
 #if defined(__NVCC__)
   #define KHAOS_COMPILER_NVCC 1
   // /warn https://github.com/boostorg/predef/blob/develop/include/boost/predef/compiler/nvcc.h
   #if defined(__CUDACC_VER_MAJOR__) && defined(__CUDACC_VER_MINOR__) && defined(__CUDACC_VER_BUILD__)
-    #define KHAOS_NVCC_VERSION KHAOS_SET_VERSION(__CUDACC_VER_MAJOR__,__CUDACC_VER_MINOR__,__CUDACC_VER_BUILD__)
+    #define KHAOS_NVCC_VERSION KHAOS_SET_VERSION(__CUDACC_VER_MAJOR__, __CUDACC_VER_MINOR__, __CUDACC_VER_BUILD__)
   #endif
 #endif
 
@@ -994,73 +994,73 @@
 #elif defined(__CMB__)
   #define KHAOS_COMPILER_AltiumMicroblaze 1
   #if defined(__BUILD__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__BUILD__/1000000)%10,((__BUILD__)/1000)%1000,__BUILD__%1000)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__BUILD__ / 1000000) % 10, ((__BUILD__) / 1000) % 1000, __BUILD__ % 1000)
   #else
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__VERSION__/1000)%10,__VERSION__%1000,__REVISION__)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__VERSION__ / 1000) % 10, __VERSION__ % 1000, __REVISION__)
   #endif
 #elif defined(__CHC__)
   #define KHAOS_COMPILER_Altium 1
   #if defined(__BUILD__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__BUILD__/1000000)%10,((__BUILD__)/1000)%1000,__BUILD__%1000)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__BUILD__ / 1000000) % 10, ((__BUILD__) / 1000) % 1000, __BUILD__ % 1000)
   #else
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__VERSION__/1000)%10,__VERSION__%1000,__REVISION__)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__VERSION__ / 1000) % 10, __VERSION__ % 1000, __REVISION__)
   #endif
 #elif defined(__ACK__)
   #define KHAOS_COMPILER_Amsterdam 1
 #elif defined(__CC_ARM)
-  #define KHAOS_COMPILER_ARM 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__ARMCC_VERSION/100000)%10,((__ARMCC_VERSION)/10000)%10,(__ARMCC_VERSION/1000)%10)
-  #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(__ARMCC_VERSION%1000)
+  #define KHAOS_COMPILER_ARM           1
+  #define KHAOS_COMPILER_VERSION       KHAOS_SET_VERSION((__ARMCC_VERSION / 100000) % 10, ((__ARMCC_VERSION) / 10000) % 10, (__ARMCC_VERSION / 1000) % 10)
+  #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(__ARMCC_VERSION % 1000)
 #elif defined(AZTEC_C) || defined(__AZTEC_C__)
-  #define KHAOS_COMPILER_Aztec 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__VERSION)/100)%10,(__VERSION)%100,0)
+  #define KHAOS_COMPILER_Aztec   1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__VERSION) / 100) % 10, (__VERSION) % 100, 0)
 #elif defined(__BORLANDC__) || defined(__CODEGEARC__)
   #define KHAOS_COMPILER_Borland 1
   #if defined(__CODEGEARC__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__CODEGEARC__&0xFF00)>>8,(__CODEGEARC__&0xF0)>>4,(__CODEGEARC__&0xF))
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__CODEGEARC__ & 0xFF00) >> 8, (__CODEGEARC__ & 0xF0) >> 4, (__CODEGEARC__ & 0xF))
   #elif defined(__BORLANDC__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__BORLANDC__&0xFF00)>>8,(__BORLANDC__&0xF0)>>4,(__BORLANDC__&0xF))
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__BORLANDC__ & 0xFF00) >> 8, (__BORLANDC__ & 0xF0) >> 4, (__BORLANDC__ & 0xF))
   #endif
 #elif defined(__CC65__)
-  #define KHAOS_COMPILER_CC65 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__CC65__&0xF00)>>8,(__CC65__&0xF0)>>4,(__CC65__&0xF))
+  #define KHAOS_COMPILER_CC65    1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__CC65__ & 0xF00) >> 8, (__CC65__ & 0xF0) >> 4, (__CC65__ & 0xF))
 #elif defined(__COMO__)
-  #define KHAOS_COMPILER_Comeau 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__COMO_VERSION__&0xF00)>>8,(__COMO_VERSION__&0xF0)>>4,(__COMO_VERSION__&0xF))
+  #define KHAOS_COMPILER_Comeau  1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__COMO_VERSION__ & 0xF00) >> 8, (__COMO_VERSION__ & 0xF0) >> 4, (__COMO_VERSION__ & 0xF))
 #elif defined(__DECC) || defined(__DECCXX) || defined(__VAXC) || defined(VAXC)
   #define KHAOS_COMPILER_Compaq 1
   #if defined(__DECCXX_VER)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__DECCXX_VER)/10000000)%100,((__DECCXX_VER)/100000)%100,((__DECCXX_VER)/100)%100)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__DECCXX_VER) / 10000000) % 100, ((__DECCXX_VER) / 100000) % 100, ((__DECCXX_VER) / 100) % 100)
   #elif defined(__DECC_VER)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__DECC_VER)/10000000)%100,((__DECC_VER)/100000)%100,((__DECC_VER)/100)%100)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__DECC_VER) / 10000000) % 100, ((__DECC_VER) / 100000) % 100, ((__DECC_VER) / 100) % 100)
   #endif
 #elif defined(__convexc__)
   #define KHAOS_COMPILER_Convex 1
 #elif defined(__COMPCERT__)
   #define KHAOS_COMPILER_Compcert 1
 #elif defined(_CRAYC)
-  #define KHAOS_COMPILER_CrayC 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(_RELEASE,_RELEASE_MINOR,0)
+  #define KHAOS_COMPILER_CrayC   1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(_RELEASE, _RELEASE_MINOR, 0)
 #elif defined(__DCC__)
-  #define KHAOS_COMPILER_Diab 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__VERSION_NUMBER__)/1000)%10,((__VERSION_NUMBER__)/100)%10,(__VERSION_NUMBER__)%100)
+  #define KHAOS_COMPILER_Diab    1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__VERSION_NUMBER__) / 1000) % 10, ((__VERSION_NUMBER__) / 100) % 10, (__VERSION_NUMBER__) % 100)
 #elif defined(_DICE)
   #define KHAOS_COMPILER_DICE 1
 #elif defined(__DMC__)
   #define KHAOS_COMPILER_DigitalMars 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__DMC__&0xF00)>>8,(__DMC__&0xF0)>>4,(__DMC__&0xF))
+  #define KHAOS_COMPILER_VERSION     KHAOS_SET_VERSION((__DMC__ & 0xF00) >> 8, (__DMC__ & 0xF0) >> 4, (__DMC__ & 0xF))
 #elif defined(__SYSC__)
-  #define KHAOS_COMPILER_Dignus 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__SYSC_VER__)/10000)%10,((__SYSC_VER__)/100)%100,(__SYSC_VER__)%100)
+  #define KHAOS_COMPILER_Dignus  1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__SYSC_VER__) / 10000) % 10, ((__SYSC_VER__) / 100) % 100, (__SYSC_VER__) % 100)
 #elif defined(__DJGPP__) || defined(__GO32__)
-  #define KHAOS_COMPILER_DJGPP 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__DJGPP__,__DJGPP_MINOR__,0)
+  #define KHAOS_COMPILER_DJGPP   1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__DJGPP__, __DJGPP_MINOR__, 0)
 #elif defined(__EDG__)
-  #define KHAOS_COMPILER_EDG 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__EDG_VERSION__)/100000)%10,((__EDG_VERSION__)/1000)%100,0)
+  #define KHAOS_COMPILER_EDG     1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__EDG_VERSION__) / 100000) % 10, ((__EDG_VERSION__) / 1000) % 100, 0)
 #elif defined(__PATHCC__)
   #define KHAOS_COMPILER_EKOPath 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__PATHCC__,__PATHCC_MINOR__,__PATHCC_PATCHLEVEL__)
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__PATHCC__, __PATHCC_MINOR__, __PATHCC_PATCHLEVEL__)
 #elif defined(__FCC_VERSION)
   #define KHAOS_COMPILER_Fujitsu 1
 #elif defined(__GCCXML__)
@@ -1068,52 +1068,52 @@
 #elif defined(__ghs) || defined(__ghs__)
   #define KHAOS_COMPILER_GreenHills 1
   #if defined(__GHS_VERSION_NUMBER__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__GHS_VERSION_NUMBER__)/100)%10,((__GHS_VERSION_NUMBER__)/10)%10,(__GHS_VERSION_NUMBER__)%10)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__GHS_VERSION_NUMBER__) / 100) % 10, ((__GHS_VERSION_NUMBER__) / 10) % 10, (__GHS_VERSION_NUMBER__) % 10)
   #elif defined(__ghs)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__ghs)/100)%10,((__ghs)/10)%10,(__ghs)%10)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__ghs) / 100) % 10, ((__ghs) / 10) % 10, (__ghs) % 10)
   #endif
 #elif defined(__HP_cc)
   #define KHAOS_COMPILER_HPCC 1
 #elif defined(__HP_aCC)
   #define KHAOS_COMPILER_HPaCC 1
   #if __HP_aCC > 1
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__HP_aCC)/10000)%100,((__HP_aCC)/100)%100,(__HP_aCC)%100)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__HP_aCC) / 10000) % 100, ((__HP_aCC) / 100) % 100, (__HP_aCC) % 100)
   #endif
 #elif defined(__IAR_SYSTEMS_ICC__)
-  #define KHAOS_COMPILER_IAR 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__VER__)/100)%100,(__VER__)%100,0)
+  #define KHAOS_COMPILER_IAR     1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__VER__) / 100) % 100, (__VER__) % 100, 0)
 #elif defined(__ibmxl__) && defined(__clang__)
   //Should be include before clang as it defined some macro of Clang
-  #define KHAOS_COMPILER_IBM 1
-  #define KHAOS_COMPILER_IBMClang 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__ibmxl_version__,__ibmxl_release__,__ibmxl_modification__)
+  #define KHAOS_COMPILER_IBM           1
+  #define KHAOS_COMPILER_IBMClang      1
+  #define KHAOS_COMPILER_VERSION       KHAOS_SET_VERSION(__ibmxl_version__, __ibmxl_release__, __ibmxl_modification__)
   #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(__ibmxl_ptf_fix_level__)
 #elif defined(__xlC__)
-  #define KHAOS_COMPILER_IBM 1
+  #define KHAOS_COMPILER_IBM       1
   #define KHAOS_COMPILER_IBMLegacy 1
   #if defined(__IBMC__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__IBMC__&0xFF0000)>>16,(__IBMC__&0xFF00)>>8,(__IBMC__&0xFF))
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__IBMC__ & 0xFF0000) >> 16, (__IBMC__ & 0xFF00) >> 8, (__IBMC__ & 0xFF))
   #elif defined(__IBMCPP__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__IBMCPP__&0xFF0000)>>16,(__IBMCPP__&0xFF00)>>8,(__IBMCPP__&0xFF))
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__IBMCPP__ & 0xFF0000) >> 16, (__IBMCPP__ & 0xFF00) >> 8, (__IBMCPP__ & 0xFF))
   #endif
   #if defined(__xlc__)
-    #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((__ibmxl_ptf_fix_level__&0xFF)%100)
+    #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((__ibmxl_ptf_fix_level__ & 0xFF) % 100)
   #elif defined(__xlC_ver__)
-    #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((__ibmxl_ptf_fix_level__&0xFF)%100)
+    #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((__ibmxl_ptf_fix_level__ & 0xFF) % 100)
   #endif
 #elif defined(__IBMC__) || defined(__IBMCPP__)
   #define KHAOS_COMPILER_IBM 1
-  #if __COMPILER_VER__&0xF0000000)>>28 == 0
+  #if __COMPILER_VER__ & 0xF0000000)>> 28 == 0
     #define KHAOS_COMPILER_IBMC370 1
-  #elif __COMPILER_VER__&0xF0000000)>>28 == 1
+  #elif __COMPILER_VER__ & 0xF0000000)>> 28 == 1
     #define KHAOS_COMPILER_IBMMVS 1
-  #elif __COMPILER_VER__&0xF0000000)>>28 == 2
+  #elif __COMPILER_VER__ & 0xF0000000)>> 28 == 2
     #define KHAOS_COMPILER_IBMOS390 1
-  #elif __COMPILER_VER__&0xF0000000)>>28 == 4
+  #elif __COMPILER_VER__ & 0xF0000000)>> 28 == 4
     #define KHAOS_COMPILER_IBMZOS 1
   #endif
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__COMPILER_VER__&0xF000000)>>24,(__COMPILER_VER__&0xFF0000)>>16,(__COMPILER_VER__&0xFF00)>>8)
-  #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((__COMPILER_VER__&0xFF))
+  #define KHAOS_COMPILER_VERSION       KHAOS_SET_VERSION((__COMPILER_VER__ & 0xF000000) >> 24, (__COMPILER_VER__ & 0xFF0000) >> 16, (__COMPILER_VER__ & 0xFF00) >> 8)
+  #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((__COMPILER_VER__ & 0xFF))
 #elif defined(__IMAGECRAFT__)
   #define KHAOS_COMPILER_ImageCraft 1
 #elif defined(__INTEL_COMPILER) || defined(__ICL) || defined(__ICC) || defined(__ECC)
@@ -1122,24 +1122,24 @@
    * \note Because of an Intel mistake in the release version numbering when `__INTEL_COMPILER` is `9999` it is detected as version 12.1.0.
    */
   #if defined(__INTEL_COMPILER) && (__INTEL_COMPILER == 9999)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(12,1,0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(12, 1, 0)
   #elif defined(__INTEL_COMPILER) && defined(__INTEL_COMPILER_UPDATE)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__INTEL_COMPILER)/100)%100,(__INTEL_COMPILER)%100,__INTEL_COMPILER_UPDATE)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__INTEL_COMPILER) / 100) % 100, (__INTEL_COMPILER) % 100, __INTEL_COMPILER_UPDATE)
   #elif defined(__INTEL_COMPILER)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__INTEL_COMPILER)/100)%100,(__INTEL_COMPILER)%100,0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__INTEL_COMPILER) / 100) % 100, (__INTEL_COMPILER) % 100, 0)
   #endif
 #elif defined(__KCC)
-  #define KHAOS_COMPILER_Kai 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__KCC_VERSION&0xF000)>>12,(__KCC_VERSION&0xF00)>>8,(__KCC_VERSION&0xFF))
+  #define KHAOS_COMPILER_Kai     1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__KCC_VERSION & 0xF000) >> 12, (__KCC_VERSION & 0xF00) >> 8, (__KCC_VERSION & 0xFF))
 #elif defined(__CA__) || defined(__KEIL__)
   #define KHAOS_COMPILER_KeilCarm 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__CA__)/100)%10,(__CA__)%100,0)
+  #define KHAOS_COMPILER_VERSION  KHAOS_SET_VERSION(((__CA__) / 100) % 10, (__CA__) % 100, 0)
 #elif defined(__C166__)
   #define KHAOS_COMPILER_KeilC166 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__C166__)/100)%10,(__C166__)%100,0)
+  #define KHAOS_COMPILER_VERSION  KHAOS_SET_VERSION(((__C166__) / 100) % 10, (__C166__) % 100, 0)
 #elif defined(__C51__) || defined(__CX51__)
   #define KHAOS_COMPILER_KeilC51 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__C51__)/100)%10,(__C51__)%100,0)
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__C51__) / 100) % 10, (__C51__) % 100, 0)
 #elif defined(__LCC__)
   #define KHAOS_COMPILER_LCC 1
 #elif defined(__HIGHC__)
@@ -1147,19 +1147,19 @@
 #elif defined(__MWERKS__) || defined(__CWCC__)
   #define KHAOS_COMPILER_Metrowerks 1
   #if defined(__CWCC__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__CWCC__&0xF000)>>12,(__CWCC__&0xF00)>>8,(__CWCC__&0xFF))
-  #elif (__MWERKS__ >= 0x4200)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__MWERKS__&0xF000)>>12,(__MWERKS__&0xF00)>>8,(__MWERKS__&0xFF))
-  #elif (__MWERKS__ >= 0x3204) // note the "skip": 04->9.3
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(9,(__MWERKS__)%100-1,0)
-  #elif (__MWERKS__ >= 0x3200)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(9,(__MWERKS__)%100,0)
-  #elif (__MWERKS__ >= 0x3000)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(8,(__MWERKS__)%100,0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__CWCC__ & 0xF000) >> 12, (__CWCC__ & 0xF00) >> 8, (__CWCC__ & 0xFF))
+  #elif(__MWERKS__ >= 0x4200)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__MWERKS__ & 0xF000) >> 12, (__MWERKS__ & 0xF00) >> 8, (__MWERKS__ & 0xFF))
+  #elif(__MWERKS__ >= 0x3204)  // note the "skip": 04->9.3
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(9, (__MWERKS__) % 100 - 1, 0)
+  #elif(__MWERKS__ >= 0x3200)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(9, (__MWERKS__) % 100, 0)
+  #elif(__MWERKS__ >= 0x3000)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(8, (__MWERKS__) % 100, 0)
   #endif
 #elif defined(_MSC_VER)
   #define KHAOS_COMPILER_MSVC 1
-  #if defined (_MSC_BUILD)
+  #if defined(_MSC_BUILD)
     #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(_MSC_BUILD)
   #endif
 
@@ -1175,7 +1175,7 @@
   #else
     #define COMP_MSVC_BUILD_PATCH 0
   #endif
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((_MSC_VER/100)%1000,(_MSC_VER)%1000,COMP_MSVC_BUILD_PATCH)
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((_MSC_VER / 100) % 1000, (_MSC_VER) % 1000, COMP_MSVC_BUILD_PATCH)
 #elif defined(_MRI)
   #define KHAOS_COMPILER_Microtec 1
 #elif defined(__NDPC__) || defined(__NDPX__)
@@ -1183,80 +1183,80 @@
 #elif defined(__sgi) || defined(sgi)
   #define KHAOS_COMPILER_MIPSpro 1
   #if defined(_SGI_COMPILER_VERSION)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((_SGI_COMPILER_VERSION)/100)%10,((_SGI_COMPILER_VERSION)/10)%10,(_SGI_COMPILER_VERSION)%10)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((_SGI_COMPILER_VERSION) / 100) % 10, ((_SGI_COMPILER_VERSION) / 10) % 10, (_SGI_COMPILER_VERSION) % 10)
   #elif defined(_COMPILER_VERSION)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((_COMPILER_VERSION)/100)%10,((_COMPILER_VERSION)/10)%10,(_COMPILER_VERSION)%10)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((_COMPILER_VERSION) / 100) % 10, ((_COMPILER_VERSION) / 10) % 10, (_COMPILER_VERSION) % 10)
   #endif
 #elif defined(MIRACLE)
   #define KHAOS_COMPILER_Miracle 1
 #elif defined(__MRC__) || defined(MPW_C) || defined(MPW_CPLUS)
   #define KHAOS_COMPILER_MPW 1
   #if defined(__MRC__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__MRC__&0xFF00)>>8,(__MRC__&0xFF),0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__MRC__ & 0xFF00) >> 8, (__MRC__ & 0xFF), 0)
   #endif
 #elif defined(__CC_NORCROFT)
   #define KHAOS_COMPILER_Norcroft 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__ARMCC_VERSION*100)/100),(__ARMCC_VERSION*100)%100,0)
+  #define KHAOS_COMPILER_VERSION  KHAOS_SET_VERSION(((__ARMCC_VERSION * 100) / 100), (__ARMCC_VERSION * 100) % 100, 0)
 #elif defined(__NWCC__)
   #define KHAOS_COMPILER_NWCC 1
 #elif defined(__OPEN64__) || defined(__OPENCC__)
-  #define KHAOS_COMPILER_Open64 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__OPENCC__,__OPENCC_MINOR__,(_OPENCC_PATCHLEVEL__*10)/10)
-  #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((_OPENCC_PATCHLEVEL__*10)%10)
+  #define KHAOS_COMPILER_Open64        1
+  #define KHAOS_COMPILER_VERSION       KHAOS_SET_VERSION(__OPENCC__, __OPENCC_MINOR__, (_OPENCC_PATCHLEVEL__ * 10) / 10)
+  #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((_OPENCC_PATCHLEVEL__ * 10) % 10)
 #elif defined(ORA_PROC)
   #define KHAOS_COMPILER_Oracle 1
 #elif defined(__SUNPRO_CC) || defined(__SUNPRO_C)
   #define KHAOS_COMPILER_Solaris 1
   #if defined(__SUNPRO_CC)
-    #if (__SUNPRO_CC < 0x5100)
-      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SUNPRO_CC&0xF00)>>8,(__SUNPRO_CC&0xF0)>>4,(__SUNPRO_CC&0xF))
+    #if(__SUNPRO_CC < 0x5100)
+      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SUNPRO_CC & 0xF00) >> 8, (__SUNPRO_CC & 0xF0) >> 4, (__SUNPRO_CC & 0xF))
     #else
-      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SUNPRO_CC&0xFF000)>>12,(__SUNPRO_CC&0xFF0)>>4,(__SUNPRO_CC&0xF))
+      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SUNPRO_CC & 0xFF000) >> 12, (__SUNPRO_CC & 0xFF0) >> 4, (__SUNPRO_CC & 0xF))
     #endif
   #elif defined(__SUNPRO_C)
-    #if (__SUNPRO_C < 0x5100)
-      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SUNPRO_C&0xF00)>>8,(__SUNPRO_C&0xF0)>>4,(__SUNPRO_C&0xF))
+    #if(__SUNPRO_C < 0x5100)
+      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SUNPRO_C & 0xF00) >> 8, (__SUNPRO_C & 0xF0) >> 4, (__SUNPRO_C & 0xF))
     #else
-      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SUNPRO_C&0xFF000)>>12,(__SUNPRO_C&0xFF0)>>4,(__SUNPRO_C&0xF))
+      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SUNPRO_C & 0xFF000) >> 12, (__SUNPRO_C & 0xFF0) >> 4, (__SUNPRO_C & 0xF))
     #endif
   #endif
 #elif defined(__PACIFIC__)
   #define KHAOS_COMPILER_Pacific 1
 #elif defined(_PACC_VER)
-  #define KHAOS_COMPILER_Palm 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((_PACC_VER&0xF0000000)>>28,(_PACC_VER&0xFF00000)>>20,(_PACC_VER&0xFF000)>>12)
-  #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((_PACC_VER&0xFFF))
+  #define KHAOS_COMPILER_Palm          1
+  #define KHAOS_COMPILER_VERSION       KHAOS_SET_VERSION((_PACC_VER & 0xF0000000) >> 28, (_PACC_VER & 0xFF00000) >> 20, (_PACC_VER & 0xFF000) >> 12)
+  #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((_PACC_VER & 0xFFF))
 #elif defined(__POCC__)
-  #define KHAOS_COMPILER_Pelles 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__POCC__)/100)%10,(__POCC__)%100,0)
+  #define KHAOS_COMPILER_Pelles  1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__POCC__) / 100) % 10, (__POCC__) % 100, 0)
 #elif defined(__PGI)
   #define KHAOS_COMPILER_Portland 1
   #if defined(__PGIC__) && defined(__PGIC_MINOR__) && defined(__PGIC_PATCHLEVEL__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__PGIC__,__PGIC_MINOR__,__PGIC_PATCHLEVEL__)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__PGIC__, __PGIC_MINOR__, __PGIC_PATCHLEVEL__)
   #endif
 #elif defined(__RENESAS__) || defined(__HITACHI__)
   #define KHAOS_COMPILER_Renesas 1
   #if defined(__RENESAS_VERSION__)
     #if __RENESAS_VERSION__ >= 0x1000000
-      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__RENESAS_VERSION__&0xFF000000)>>24,(__RENESAS_VERSION__&0xFF0000)>>16,(__RENESAS_VERSION__&0xFF00)>>8)
+      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__RENESAS_VERSION__ & 0xFF000000) >> 24, (__RENESAS_VERSION__ & 0xFF0000) >> 16, (__RENESAS_VERSION__ & 0xFF00) >> 8)
     #else
-      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__RENESAS_VERSION__&0xFF00)>>8,(__RENESAS_VERSION__&0xFF),0)
+      #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__RENESAS_VERSION__ & 0xFF00) >> 8, (__RENESAS_VERSION__ & 0xFF), 0)
     #endif
   #elif defined(__HITACHI_VERSION__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__HITACHI_VERSION__&0xFF00)>>8,(__HITACHI_VERSION__&0xFF),0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__HITACHI_VERSION__ & 0xFF00) >> 8, (__HITACHI_VERSION__ & 0xFF), 0)
   #endif
 #elif defined(SASC) || defined(__SASC) || defined(__SASC__)
   #define KHAOS_COMPILER_SASC 1
   #if defined(__SASC__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__SASC__)/100)%10,(__SASC__)%100,0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__SASC__) / 100) % 10, (__SASC__) % 100, 0)
   #elif defined(__VERSION__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__VERSION__,__REVISION__,0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__VERSION__, __REVISION__, 0)
   #endif
 #elif defined(_SCO_DS)
   #define KHAOS_COMPILER_SCO 1
 #elif defined(SDCC)
-  #define KHAOS_COMPILER_SDCC 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((SDCC)/100)%10,((SDCC)/10)%10,(SDCC)%10)
+  #define KHAOS_COMPILER_SDCC    1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((SDCC) / 100) % 10, ((SDCC) / 10) % 10, (SDCC) % 10)
 #elif defined(__SNC__)
   #define KHAOS_COMPILER_SNC 1
 #elif defined(__VOSC__)
@@ -1268,66 +1268,66 @@
   #endif
 #elif defined(__SC__)
   #define KHAOS_COMPILER_Symantec 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SC__&0xFF00)>>8,(__SC__&0xFF),0)
+  #define KHAOS_COMPILER_VERSION  KHAOS_SET_VERSION((__SC__ & 0xFF00) >> 8, (__SC__ & 0xFF), 0)
 #elif defined(__TenDRA__)
   #define KHAOS_COMPILER_Tendra 1
 #elif defined(__TI_COMPILER_VERSION__) || defined(_TMS320C6X)
   #define KHAOS_COMPILER_TI 1
   #if defined(__TI_COMPILER_VERSION__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__TI_COMPILER_VERSION__/1000000)%1000,(__TI_COMPILER_VERSION__/1000)%1000,__TI_COMPILER_VERSION__%1000)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__TI_COMPILER_VERSION__ / 1000000) % 1000, (__TI_COMPILER_VERSION__ / 1000) % 1000, __TI_COMPILER_VERSION__ % 1000)
   #endif
 #elif defined(THINKC3) || defined(THINKC4)
   #define KHAOS_COMPILER_Think 1
   #if defined(THINKC3)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(3,0,0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(3, 0, 0)
   #elif defined(THINKC4)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(4,0,0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(4, 0, 0)
   #endif
 #elif defined(__TINYC__)
   #define KHAOS_COMPILER_Tiny 1
 #elif defined(__TURBOC__)
   #define KHAOS_COMPILER_Turbo 1
   #if __TURBOC__ < 0x295 || __TURBOC__ > 0x400
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__TURBOC__&0xFF00)>>8,(__TURBOC__&0xFF),0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__TURBOC__ & 0xFF00) >> 8, (__TURBOC__ & 0xFF), 0)
   #endif
 #elif defined(_UCC)
   #define KHAOS_COMPILER_Ultimate 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(_MAJOR_REV,_MINOR_REV,0)
+  #define KHAOS_COMPILER_VERSION  KHAOS_SET_VERSION(_MAJOR_REV, _MINOR_REV, 0)
 #elif defined(__USLC__)
-  #define KHAOS_COMPILER_USLC 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SCO_VERSION__/10000000),(__SCO_VERSION__/100000)%100)
+  #define KHAOS_COMPILER_USLC    1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__SCO_VERSION__ / 10000000), (__SCO_VERSION__ / 100000) % 100)
 #elif defined(__VBCC__)
   #define KHAOS_COMPILER_VBCC 1
 #elif defined(__WATCOMC__)
-  #define KHAOS_COMPILER_Watcom 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__WATCOMC__)/100)%100,(__WATCOMC__)%100,0)
+  #define KHAOS_COMPILER_Watcom  1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__WATCOMC__) / 100) % 100, (__WATCOMC__) % 100, 0)
 #elif defined(__ZTC__)
   #define KHAOS_COMPILER_Zortech 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__ZTC__&0xF00)>>8,(__ZTC__&0xF0)>>4,(__ZTC__&0xF))
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__ZTC__ & 0xF00) >> 8, (__ZTC__ & 0xF0) >> 4, (__ZTC__ & 0xF))
 #elif defined(__clang__)
   //Should be include before gcc as it defined some macro of GCC and MSVC
   //Note that marketing version numbers should not be used to check for language features, as different vendors use different numbering schemes. Instead, use the Feature Checking Macros.
   #if defined(__apple_build_version__)
     #define KHAOS_COMPILER_AppleClang 1
   #endif
-  #define KHAOS_COMPILER_Clang 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__clang_major__,__clang_minor__,__clang_patchlevel__)
+  #define KHAOS_COMPILER_Clang   1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__clang_major__, __clang_minor__, __clang_patchlevel__)
 #elif defined(__llvm__)
   //Should be after clang because clang mimic llvm
   #define KHAOS_COMPILER_LLVM 1
 #elif defined(__GNUC__) || defined(__GNUG__)
   #define KHAOS_COMPILER_GCC 1
   #if defined(__GNUC_PATCHLEVEL__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__GNUC__,__GNUC_MINOR__,__GNUC_PATCHLEVEL__)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__)
   #else
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__GNUC__,__GNUC_MINOR__,0)
+    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__GNUC__, __GNUC_MINOR__, 0)
   #endif
 #else
   #define KHAOS_COMPILER_Unknown 1
 #endif
 
 #if !defined(KHAOS_COMPILER_VERSION)
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(0,0,0)
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(0, 0, 0)
 #endif
 
 #if !defined(KHAOS_COMPILER_VERSION_TWEAK)
@@ -1356,16 +1356,16 @@
 #if defined(__clang__) && !COMPILER_IS(Clang)
   #define KHAOS_COMPILER_ClangEmulated 1
   #if defined(__clang_major__)
-    #define KHAOS_CLANG_EMULATED_VERSION KHAOS_SET_VERSION(__clang_major__,__clang_minor__,__clang_patchlevel__)
+    #define KHAOS_CLANG_EMULATED_VERSION KHAOS_SET_VERSION(__clang_major__, __clang_minor__, __clang_patchlevel__)
   #endif
 #endif
 
 #if defined(__GNUC__) || defined(__GNUG__) && !COMPILER_IS(GCC)
   #define KHAOS_COMPILER_GCCEmulated 1
   #if defined(__GNUC_PATCHLEVEL__)
-    #define KHAOS_GCC_EMULATED_VERSION KHAOS_SET_VERSION(__GNUC__,__GNUC_MINOR__,__GNUC_PATCHLEVEL__)
+    #define KHAOS_GCC_EMULATED_VERSION KHAOS_SET_VERSION(__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__)
   #else
-    #define KHAOS_GCC_EMULATED_VERSION KHAOS_SET_VERSION(__GNUC__,__GNUC_MINOR__,0)
+    #define KHAOS_GCC_EMULATED_VERSION KHAOS_SET_VERSION(__GNUC__, __GNUC_MINOR__, 0)
   #endif
 #endif
 
