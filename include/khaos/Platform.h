@@ -66,7 +66,7 @@
   #endif
 
   // 9200 is Windows SDK 8.0 from ntverp.h which introduced family support
-  #if(VER_PRODUCTBUILD >= 9200) || (defined(__MINGW64__) && __MINGW64_VERSION_MAJOR >= 3))
+  #if (VER_PRODUCTBUILD >= 9200) || (defined(__MINGW64__) && __MINGW64_VERSION_MAJOR >= 3)
     #include <winapifamily.h>    // Windows SDK
     #define KHAOS_PLATFORM_UWP 1
   #endif
