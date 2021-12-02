@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest/doctest.h"
-#include "khaos/Languages.h"
+#include "khaos/Language.h"
 
 TEST_CASE("Testing the Language CXX")
 {

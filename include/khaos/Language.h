@@ -3,7 +3,7 @@
 
 #include "khaos/VersionMacros.h"
 
-/*! \file Languages.h
+/*! \file Language.h
     \brief Detect the languages and define some useful macros.
 
 */
