@@ -120,16 +120,12 @@ defined(__ARM_ARCH_6K__) || defined(__ARM_ARCH_6Z__) || defined(__ARM_ARCH_6KZ__
     #define KHAOS_ARCH_ARM4 1
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(4,0,0)
   #elif defined(__ARM_ARCH)
-    #define KHAOS_ARCH_ARM##__ARM_ARCH 1
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(__ARM_ARCH,0,0)
   #elif defined(__TARGET_ARCH_ARM)
-    #define KHAOS_ARCH_ARM##__TARGET_ARCH_ARM 1
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(__TARGET_ARCH_ARM,0,0)
   #elif defined(__TARGET_ARCH_THUMB)
-    #define KHAOS_ARCH_ARM##__TARGET_ARCH_THUMB 1
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(__TARGET_ARCH_THUMB,0,0)
   #elif defined(_M_ARM)
-    #define KHAOS_ARCH_ARM##_M_ARM 1
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(_M_ARM,0,0)
   #endif
 #elif defined(__arm64) || defined(_M_ARM64) || defined(__aarch64__) || defined(__AARCH64EL__)
@@ -160,7 +156,6 @@ defined(__ARM_ARCH_6K__) || defined(__ARM_ARCH_6Z__) || defined(__ARM_ARCH_6KZ__
   #define KHAOS_ARCH_E2K 1
   #if defined(__iset__)
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(__iset__,0,0)
-    #define KHAOS_ARCH_E2K##__iset__ 1
   #endif
 #elif defined(__ia64__) || defined(_IA64) || defined(__IA64__) || defined(__ia64) || defined(_M_IA64) || defined(__itanium__)
   #define KHAOS_ARCH_IA64 1
@@ -286,7 +281,6 @@ defined(__PPCGECKO__) || defined(__PPCBROADWAY__) || defined(_XENON) || defined(
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(3,0,0)
   #elif defined(__I86__)
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(__I86__,0,0)
-    #define KHAOS_ARCH_X86_32##__I86__ 1
   #elif defined(_M_IX86)
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(_M_IX86/100,0,0)
   #endif
@@ -294,6 +288,10 @@ defined(__PPCGECKO__) || defined(__PPCBROADWAY__) || defined(_XENON) || defined(
   #define KHAOS_ARCH_x86_64 1
 #elif defined(__epiphany__)
   #define KHAOS_ARCH_Epiphany 1
+#endif
+
+#if !defined(KHAOS_ARCH_VERSION)
+  #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(0,0,0)
 #endif
 
 #endif

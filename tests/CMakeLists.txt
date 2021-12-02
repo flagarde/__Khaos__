@@ -36,3 +36,9 @@ set_target_properties(Architecture.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${C
 target_link_libraries(Architecture.test PRIVATE Khaos::Khaos doctest_with_main)
 doctest_discover_tests(Architecture.test COMMAND Architecture.test ADD_LABELS "Test Compiler")
 install(TARGETS Architecture.test RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}/tests")
+
+add_executable(OS.test OS.test.cpp)
+set_target_properties(OS.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/tests")
+target_link_libraries(OS.test PRIVATE Khaos::Khaos doctest_with_main)
+doctest_discover_tests(OS.test COMMAND OS.test ADD_LABELS "Test Compiler")
+install(TARGETS OS.test RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}/tests")
