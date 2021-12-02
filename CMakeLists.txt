@@ -13,10 +13,10 @@ include(PreventInSourceBuilds)
 prevent_in_source_builds()
 
 include(DefaultInstallPrefix)
-default_install_prefix("${CMAKE_SOURCE_DIR}/bin")
+default_install_prefix("${CMAKE_SOURCE_DIR}/install")
 
 include(DefaultConfigurations)
-set_default_configuration(CONFIGS Debug)
+set_default_configuration(CONFIGS AllWarnings)
 
 option(BUILD_DOCS "Build the docs" ON)
 option(BUILD_TESTS "Build the tests" ON)
