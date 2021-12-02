@@ -977,7 +977,7 @@
  * \note check with NVCC and KHAOS_NVCC_VERSION
  *
  */
-#define COMPILER_IS(compiler) (KHAOS_COMPILER_##compiler == 1)
+#define COMPILER_IS(compiler) ( defined(KHAOS_COMPILER_##compiler) )
 
 #if defined(__NVCC__)
   #define KHAOS_COMPILER_NVCC 1
