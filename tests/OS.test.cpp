@@ -4,7 +4,6 @@
 
 TEST_CASE("testing the OS")
 {
-
 #if OS_IS(Linux)
   std::cout<<"I'm Linux"<<std::endl;
 #endif

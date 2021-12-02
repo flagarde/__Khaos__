@@ -4,7 +4,6 @@
 
 TEST_CASE("testing the Platform")
 {
-
 #if PLATFORM_IS(MINGW)
 std::cout<<"I'm MINGW"<<std::endl;
 #endif
@@ -16,5 +15,4 @@ std::cout<<"I'm UWP or WindowsDesktop or WindowsPhone or WindowsServer or Window
 #if PLATFORM_IS(MINGWEmulated)
 std::cout<<"I'm MINGWEmulated"<<std::endl;
 #endif
-
 }
