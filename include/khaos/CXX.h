@@ -1,7 +1,7 @@
 #ifndef KHAOS_CXX_H
 #define KHAOS_CXX_H
 
-/*! \file CPP.h
+/*! \file CXX.h
     \brief Detect the C++ standard and define some useful macros.
     \warning CXX11 is always false for MSVC only c++14 and upper are considered
 */

@@ -3,7 +3,7 @@
 
 #include "khaos/VersionMacros.h"
 
-/** \file CompilerMacros.h
+/** \file Compiler.h
  * Detect the compiler, convert the vendor version number to standardized one if available at compilation time and store it in `KHAOS_COMPILER_VERSION`.
  */
 
