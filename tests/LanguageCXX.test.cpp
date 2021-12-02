@@ -4,43 +4,43 @@
 
 TEST_CASE("Testing the Language CXX")
 {
-#if KHAOS_LANGUAGE_IS(CXX)
+#if LANGUAGE_IS(CXX)
   CHECK(true);
 #else
   CHECK(false);
 #endif
 
-#if KHAOS_LANGUAGE_IS_EQUAL(CXX14)
+#if LANGUAGE_IS_EQUAL(CXX14)
   CHECK(true);
 #else
   CHECK(false);
 #endif
 
-#if KHAOS_LANGUAGE_IS_GREATER_EQUAL(CXX97)
+#if LANGUAGE_IS_GREATER_EQUAL(CXX97)
   CHECK(true);
 #else
   CHECK(false);
 #endif
 
-#if KHAOS_LANGUAGE_IS_LOWER_EQUAL(CXX14)
+#if LANGUAGE_IS_LOWER_EQUAL(CXX14)
   CHECK(true);
 #else
   CHECK(false);
 #endif
 
-#if KHAOS_LANGUAGE_IS_LOWER(CXX17)
+#if LANGUAGE_IS_LOWER(CXX17)
   CHECK(true);
 #else
   CHECK(false);
 #endif
 
-#if !KHAOS_LANGUAGE_IS(ISO)
+#if !LANGUAGE_IS(ISO)
   CHECK(true);
 #else
   CHECK(false);
 #endif
 
-#if !KHAOS_LANGUAGE_IS(Extensions)
+#if !LANGUAGE_IS(Extensions)
   CHECK(false);
 #else
   CHECK(true);
