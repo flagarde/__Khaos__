@@ -2,7 +2,7 @@
 #include "doctest/doctest.h"
 #include "khaos/OS.h"
 
-TEST_CASE("testing the OS")
+TEST_CASE("Testing the OS")
 {
 #if OS_IS(Linux)
   std::cout<<"I'm Linux"<<std::endl;

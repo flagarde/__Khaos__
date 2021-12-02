@@ -2,7 +2,7 @@
 #include "doctest/doctest.h"
 #include "khaos/Platform.h"
 
-TEST_CASE("testing the Platform")
+TEST_CASE("Testing the Platform")
 {
 #if PLATFORM_IS(MINGW)
 std::cout<<"I'm MINGW"<<std::endl;

@@ -3,7 +3,7 @@
 
 #include "doctest/doctest.h"
 
-TEST_CASE("testing the CStandards values")
+TEST_CASE("Testing the CStandards values")
 {
   CHECK(KHAOS_STANDARD_C90 == 1L);
   CHECK(KHAOS_STANDARD_C95 == 199409L);

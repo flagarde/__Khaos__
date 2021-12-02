@@ -2,7 +2,7 @@
 #include "doctest/doctest.h"
 #include "khaos/Compiler.h"
 
-TEST_CASE("testing the Compiler macros")
+TEST_CASE("Testing the Compiler")
 {
   std::cout << KHAOS_COMPILER_VERSION << " " << KHAOS_COMPILER_VERSION_TWEAK << " " << std::endl;
 #if COMPILER_IS(Clang)

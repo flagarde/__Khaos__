@@ -3,7 +3,7 @@
 
 #include "doctest/doctest.h"
 
-TEST_CASE("testing the Architecture values")
+TEST_CASE("Testing the Architecture")
 {
 #if ARCHITECTURE_IS(x86_64)
   std::cout<<"x86_64"<<std::endl;

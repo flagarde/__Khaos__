@@ -3,7 +3,7 @@
 
 #include "doctest/doctest.h"
 
-TEST_CASE("testing the CXXStandards values")
+TEST_CASE("Testing the CXXStandards values")
 {
   CHECK(KHAOS_STANDARD_CXX97 == 199711L);
   CHECK(KHAOS_STANDARD_CXX11 == 201103L);

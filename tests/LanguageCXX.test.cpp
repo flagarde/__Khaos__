@@ -2,7 +2,7 @@
 #include "doctest/doctest.h"
 #include "khaos/Languages.h"
 
-TEST_CASE("testing the Language CXX")
+TEST_CASE("Testing the Language CXX")
 {
 #if KHAOS_LANGUAGE_IS(CXX)
   CHECK(true);
