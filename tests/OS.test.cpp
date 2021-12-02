@@ -2,7 +2,7 @@
 #include "doctest/doctest.h"
 #include "khaos/OS.h"
 
-TEST_CASE("testing the Language CXX")
+TEST_CASE("testing the OS")
 {
 
 #if OS_IS(Linux)
