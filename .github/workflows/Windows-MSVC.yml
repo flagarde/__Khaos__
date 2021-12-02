@@ -47,7 +47,8 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1.10.0
 
       - name: '${{ matrix.icon }} Install package'
-        run: choco install git ${{env.INSTALL_PACKAGES}}
+        if: ${{ env.INSTALL_PACKAGES != '' }}
+        run: choco install ${{env.INSTALL_PACKAGES}}
 
       - name: '🔧 Configure'
         run: cmake -S ${{ github.workspace }} -B ${{ env.CMAKE_BUILD_PREFIX }} -A ${{matrix.env}} -T host=${{matrix.toolset}} -DBUILD_TESTS=${{ env.BUILD_TESTS }} -DBUILD_DOCS=${{ env.BUILD_DOCS }} -DBUILD_EXAMPLES=${{ env.BUILD_EXAMPLES }}

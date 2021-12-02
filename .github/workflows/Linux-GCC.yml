@@ -42,7 +42,8 @@ jobs:
           github-api-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: '${{ matrix.icon }} Install packages'
-        run: sudo apt-get install git ${{env.INSTALL_PACKAGES}}
+        if: ${{ env.INSTALL_PACKAGES != '' }}
+        run: sudo apt-get install ${{env.INSTALL_PACKAGES}}
 
       - name: '🔧 Configure'
         env:

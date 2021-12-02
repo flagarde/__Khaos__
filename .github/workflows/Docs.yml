@@ -30,7 +30,6 @@ jobs:
         mode: docs
 
     - name: '🟨 Install required packages'
-      if: ${{github.event_name == 'pull_request' || github.event_name == 'push'}}
       run: brew install doxygen
         && brew install mscgen
         && brew install --cask dia

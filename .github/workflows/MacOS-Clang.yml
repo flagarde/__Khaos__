@@ -36,7 +36,8 @@ jobs:
           github-api-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: '🟨 Install packages'
-        run: brew install git ${{env.INSTALL_PACKAGES}}
+        if: ${{ env.INSTALL_PACKAGES != '' }}
+        run: brew install ${{env.INSTALL_PACKAGES}}
 
       - name: '🔧 Configure'
         run: cmake -S ${{ github.workspace }} -B ${{ env.CMAKE_BUILD_PREFIX }} -D CMAKE_BUILD_TYPE=${{ env.CMAKE_BUILD_TYPE }}  -DBUILD_TESTS=${{ env.BUILD_TESTS }} -DBUILD_DOCS=${{ env.BUILD_DOCS }} -DBUILD_EXAMPLES=${{ env.BUILD_EXAMPLES }}
