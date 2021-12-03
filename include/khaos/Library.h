@@ -17,14 +17,14 @@
 */
 
 /**
- * \hideinitializer Detect the library.
+ * \hideinitializer Detect the C library.
  *
  * \param[in] library The library name.
  *
  * \note Use this macro only if you need preprocessor operating system checking.
  * For example :
  * \code{.cpp}
- * #if LIBRARY_IS(...)
+ * #if C_LIBRARY_IS(...)
  * //...
  * #else
  * //...
@@ -35,11 +35,31 @@
  *
  * | Macro                   |
  * | :---------------------: |
-
  *
  **/
-
 #define C_LIBRARY_IS(library) (KHAOS_LIBRARYC_##library ==1)
+
+/**
+ * \hideinitializer Detect the CXX library.
+ *
+ * \param[in] library The library name.
+ *
+ * \note Use this macro only if you need preprocessor operating system checking.
+ * For example :
+ * \code{.cpp}
+ * #if CXX_LIBRARY_IS(...)
+ * //...
+ * #else
+ * //...
+ * #endif
+ * \endcode
+ *
+ * Values for library
+ *
+ * | Macro                   |
+ * | :---------------------: |
+ *
+ **/
 #define CXX_LIBRARY_IS(library) (KHAOS_LIBRARYCXX_##library ==1)
 
 #if defined(__CloudABI__)
