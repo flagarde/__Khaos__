@@ -35,9 +35,9 @@
 #endif
 
 #if defined(__STRICT_ANSI__) || !defined(_MSC_EXTENSIONS)
-  #define KHAOS_LANGUAGE_ISO        1  //!< 1 if strict ISO, 0 otherwise
+  #define KHAOS_LANGUAGE_ISO        1  //!< 1 if strict ISO
 #else
-  #define KHAOS_LANGUAGE_Extensions 1  //!< 0 if strict ISO, 1 otherwise
+  #define KHAOS_LANGUAGE_Extensions 1  //!< 1 if not strict ISO
 #endif
 
 #if defined(__embedded_cplusplus)
