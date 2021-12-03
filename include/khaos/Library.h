@@ -60,7 +60,7 @@
  * | :---------------------: |
  *
  **/
-#define CXX_LIBRARY_IS(library) ( defined(KHAOS_LIBRARYCXX_##library) )
+#define CXX_LIBRARY_IS(library) ( KHAOS_LIBRARYCXX_##library==1 )
 
 #if defined(__CloudABI__)
   #if defined(__cloudlibc__)
