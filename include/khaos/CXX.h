@@ -1,7 +1,7 @@
 #ifndef KHAOS_CXX_H
 #define KHAOS_CXX_H
 
-/*! \file CXX.h
+/*! \file CPP.h
     \brief Detect the C++ standard and define some useful macros.
     \warning CXX11 is always false for MSVC only c++14 and upper are considered
 */
@@ -28,22 +28,24 @@
       #endif
     #endif
   #else
-    #define KHAOS_CXX_STANDARD __cplusplus  //!< Define the CXX standard
+    #define KHAOS_CXX_STANDARD __cplusplus
   #endif
 #else
-  #define KHAOS_CXX_STANDARD __cplusplus    //!< Define the CXX standard
+  #define KHAOS_CXX_STANDARD __cplusplus
 #endif
 
-#if defined(__STRICT_ANSI__) || !defined(_MSC_EXTENSIONS)
-  #define KHAOS_LANGUAGE_ISO        1  //!< 1 if strict ISO
-  #define KHAOS_LANGUAGE_Extensions 0  //!< 1 if  not strict ISO
+#if defined(__STRICT_ANSI__)
+  #define KHAOS_LANGUAGE_ISO        1  //!< 1 if strict ISO, 0 otherwise
+  #define KHAOS_LANGUAGE_Extensions 0  //!< 0 if strict ISO, 1 otherwise
 #else
-  #define KHAOS_LANGUAGE_Extensions 1  //!< 1 if  not strict ISO
-  #define KHAOS_LANGUAGE_ISO        0  //!< 1 if strict ISO
+  #define KHAOS_LANGUAGE_ISO        0  //!< 1 if strict ISO, 0 otherwise
+  #define KHAOS_LANGUAGE_Extensions 1  //!< 0 if strict ISO, 1 otherwise
 #endif
 
 #if defined(__embedded_cplusplus)
   #define KHAOS_LANGUAGE_Embedded 1  //!< 1 if CPP Embedded
+#else
+  #define KHAOS_LANGUAGE_Embedded 0  //!< 0 if CPP Embedded
 #endif
 
 #endif
