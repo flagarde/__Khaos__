@@ -30,8 +30,10 @@
 
 #if defined(__STRICT_ANSI__) || !defined(_MSC_EXTENSIONS)
   #define KHAOS_LANGUAGE_ISO        1  //!< 1 if strict ISO
+  #define KHAOS_LANGUAGE_Extensions 0  //!< 1 if  not strict ISO
 #else
   #define KHAOS_LANGUAGE_Extensions 1  //!< 1 if  not strict ISO
+  #define KHAOS_LANGUAGE_ISO        0  //!< 1 if strict ISO
 #endif
 
 #endif

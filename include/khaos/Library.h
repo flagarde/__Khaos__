@@ -37,7 +37,7 @@
  * | :---------------------: |
  *
  **/
-#define C_LIBRARY_IS(library) ( defined(KHAOS_LIBRARYC_##library) )
+#define C_LIBRARY_IS(library) (KHAOS_LIBRARYC_##library==1)
 
 /**
  * \hideinitializer Detect the CXX library.

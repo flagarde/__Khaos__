@@ -90,7 +90,8 @@
  * | x86_64     |
  * | Epiphany   |
  */
-#define ARCHITECTURE_IS(compiler) ( defined(KHAOS_ARCH_##compiler))
+
+#define ARCHITECTURE_IS(compiler) (KHAOS_ARCH_##compiler>=1)
 
 #if defined(__alpha__) || defined(__alpha) || defined(_M_ALPHA)
   #define KHAOS_ARCH_Alpha 1
@@ -196,7 +197,6 @@ defined(__ARM_ARCH_6K__) || defined(__ARM_ARCH_6Z__) || defined(__ARM_ARCH_6KZ__
     #define KHAOS_ARCH_MIPS4 1
   #elif defined(__mips)
     #define KHAOS_ARCH_VERSION KHAOS_SET_VERSION(__mips,0,0)
-    #define KHAOS_ARCH_MIPS##__mips 1
   #endif
 #elif defined(__hppa__) || defined(__hppa) || defined(__HPPA__)
   #define KHAOS_ARCH_PARISC 1

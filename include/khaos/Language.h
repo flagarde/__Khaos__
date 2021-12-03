@@ -62,7 +62,7 @@
  *
  * \note If CUDA the version is defined in KHAOS_CUDA_VERSION
  */
-#define LANGUAGE_IS(language) (defined(KHAOS_LANGUAGE_##language) && KHAOS_LANGUAGE_##language>=1)
+#define LANGUAGE_IS(language) (KHAOS_LANGUAGE_##language==1)
 
 #if LANGUAGE_IS(C)
   /** @hideinitializer
