@@ -34,18 +34,14 @@
   #define KHAOS_CXX_STANDARD __cplusplus    //!< Define the CXX standard
 #endif
 
-#if defined(__STRICT_ANSI__)
+#if defined(__STRICT_ANSI__) || !defined(_MSC_EXTENSIONS)
   #define KHAOS_LANGUAGE_ISO        1  //!< 1 if strict ISO, 0 otherwise
-  #define KHAOS_LANGUAGE_Extensions 0  //!< 0 if strict ISO, 1 otherwise
 #else
-  #define KHAOS_LANGUAGE_ISO        0  //!< 1 if strict ISO, 0 otherwise
   #define KHAOS_LANGUAGE_Extensions 1  //!< 0 if strict ISO, 1 otherwise
 #endif
 
 #if defined(__embedded_cplusplus)
   #define KHAOS_LANGUAGE_Embedded 1  //!< 1 if CPP Embedded
-#else
-  #define KHAOS_LANGUAGE_Embedded 0  //!< 0 if CPP Embedded
 #endif
 
 #endif
