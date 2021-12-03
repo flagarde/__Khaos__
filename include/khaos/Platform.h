@@ -29,7 +29,7 @@
 
 #include "khaos/OS.h"
 
-#define PLATFORM_IS(platform) (KHAOS_PLATFORM_##platform==1)
+#define PLATFORM_IS(platform) (KHAOS_PLATFORM_##platform == 1)
 
 #if defined(__ANDROID__)
   #define KHAOS_PLATFORM_Android 1
@@ -53,9 +53,9 @@
   #endif
   #include <_mingw.h>
   #if defined(__MINGW64_VERSION_MAJOR) && defined(__MINGW64_VERSION_MINOR)
-    #define KHAOS_PLATFORM_VERSION KHAOS_SET_VERSION(__MINGW64_VERSION_MAJOR,__MINGW64_VERSION_MINOR,0)
+    #define KHAOS_PLATFORM_VERSION KHAOS_SET_VERSION(__MINGW64_VERSION_MAJOR, __MINGW64_VERSION_MINOR, 0)
   #elif defined(__MINGW32_VERSION_MAJOR) && defined(__MINGW32_VERSION_MINOR)
-    #define KHAOS_PLATFORM_VERSION KHAOS_SET_VERSION(__MINGW32_VERSION_MAJOR,__MINGW32_VERSION_MINOR,0)
+    #define KHAOS_PLATFORM_VERSION KHAOS_SET_VERSION(__MINGW32_VERSION_MAJOR, __MINGW32_VERSION_MINOR, 0)
   #endif
 #endif
 
@@ -66,12 +66,12 @@
   #endif
 
   // 9200 is Windows SDK 8.0 from ntverp.h which introduced family support
-  #if (VER_PRODUCTBUILD >= 9200) || (defined(__MINGW64__) && __MINGW64_VERSION_MAJOR >= 3)
-    #include <winapifamily.h>    // Windows SDK
+  #if(VER_PRODUCTBUILD >= 9200) || (defined(__MINGW64__) && __MINGW64_VERSION_MAJOR >= 3)
+    #include <winapifamily.h>  // Windows SDK
     #define KHAOS_PLATFORM_UWP 1
   #endif
 
-  #if ((defined(WINAPI_FAMILY_DESKTOP_APP) && WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP) || !KHAOS_PLATFORM_UWP)
+  #if((defined(WINAPI_FAMILY_DESKTOP_APP) && WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP) || !KHAOS_PLATFORM_UWP)
     #define KHAOS_PLATFORM_WindowsDesktop 1
   #endif
 
@@ -83,7 +83,7 @@
     #define KHAOS_PLATFORM_WindowsServer 1
   #endif
 
-  #if ((defined(WINAPI_FAMILY_PC_APP) && WINAPI_FAMILY == WINAPI_FAMILY_PC_APP) || (defined(WINAPI_FAMILY_APP)    && WINAPI_FAMILY == WINAPI_FAMILY_APP))
+  #if((defined(WINAPI_FAMILY_PC_APP) && WINAPI_FAMILY == WINAPI_FAMILY_PC_APP) || (defined(WINAPI_FAMILY_APP) && WINAPI_FAMILY == WINAPI_FAMILY_APP))
     #define KHAOS_PLATFORM_WindowsStore 1
   #endif
 
@@ -102,9 +102,9 @@
   #endif
   #include <_mingw.h>
   #if defined(__MINGW64_VERSION_MAJOR) && defined(__MINGW64_VERSION_MINOR)
-    #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(__MINGW64_VERSION_MAJOR,__MINGW64_VERSION_MINOR,0)
+    #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(__MINGW64_VERSION_MAJOR, __MINGW64_VERSION_MINOR, 0)
   #elif defined(__MINGW32_VERSION_MAJOR) && defined(__MINGW32_VERSION_MINOR)
-    #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(__MINGW32_VERSION_MAJOR,__MINGW32_VERSION_MINOR,0)
+    #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(__MINGW32_VERSION_MAJOR, __MINGW32_VERSION_MINOR, 0)
   #endif
 #endif
 
