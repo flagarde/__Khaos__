@@ -75,13 +75,13 @@
     #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION(__GNU_LIBRARY__,__GNU_LIBRARY_MINOR__,0)
   #endif
 #elif defined(__UCLIBC__)
-  #defined KHAOS_LIBRARYC_uClibc 1
+  #define KHAOS_LIBRARYC_uClibc 1
   #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION(__UCLIBC_MAJOR__,__UCLIBC_MINOR__,__UCLIBC_SUBLEVEL__)
 #elif defined(__CRTL_VER)
-  #defined KHAOS_LIBRARY_VMC 1
+  #define KHAOS_LIBRARY_VMC 1
   #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION((__CRTL_VER/10000000)%100,(__CRTL_VER/100000)%100,(__CRTL_VER/100)%100)
 #elif defined(__LIBREL__)
-  #defined KHAOS_LIBRARYC_ZOS 1
+  #define KHAOS_LIBRARYC_ZOS 1
   #if defined(__LIBREL__)
     #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION((__LIBREL__/1000000)%10,(__LIBREL__/10000)%100,__LIBREL__%10000)
   #elif defined(__TARGET_LIB__)
@@ -90,27 +90,27 @@
 #endif
 
 #if defined(_LIBCPP_VERSION)
-  #defined KHAOS_LIBRARYCXX_CXX 1
+  #define KHAOS_LIBRARYCXX_CXX 1
   #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((_LIBCPP_VERSION/1000)%100,(_LIBCPP_VERSION)%1000,0)
 #elif (defined(_YVALS) && !defined(__IBMCPP__)) || defined(_CPPLIB_VER)
-  #defined KHAOS_LIBRARYCXX_Dinkumware 1
+  #define KHAOS_LIBRARYCXX_Dinkumware 1
   #if defined(_CPPLIB_VER)
     #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((_CPPLIB_VER/100)%100,_CPPLIB_VER%100,0)
   #endif
 #elif defined(__LIBCOMO__)
-  #defined KHAOS_LIBRARYCXX_Comeau 1
+  #define KHAOS_LIBRARYCXX_Comeau 1
   #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION(__LIBCOMO_VERSION__,0,0)
 #elif defined(MSIPL_COMPILE_H) || defined(__MSIPL_COMPILE_H)
-  #defined KHAOS_LIBRARYCXX_Modena 1
+  #define KHAOS_LIBRARYCXX_Modena 1
 #elif defined(__MSL_CPP__) || defined(__MSL__)
-  #defined KHAOS_LIBRARYCXX_Metrowerks 1
+  #define KHAOS_LIBRARYCXX_Metrowerks 1
   #if defined(__MSL_CPP__)
     #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((__MSL_CPP__>>12)%10,(__MSL_CPP__>>8)%10,__MSL_CPP__%100)
   #else
     #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((__MSL__>>12)%10,(__MSL__>>8)%10,__MSL__%100)
   #endif
 #elif defined(__STD_RWCOMPILER_H__) || defined(_RWSTD_VER)
-  #defined KHAOS_LIBRARYCXX_Roguewave 1
+  #define KHAOS_LIBRARYCXX_Roguewave 1
   #if defined(_RWSTD_VER)
     #if _RWSTD_VER < 0x010000
       #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((_RWSTD_VER>>12)%100,(_RWSTD_VER>>4)%100,_RWSTD_VER%10)
@@ -119,7 +119,7 @@
     #endif
   #endif
 #elif defined(__STL_CONFIG_H)
-  #defined KHAOS_LIBRARYCXX_SGI 1
+  #define KHAOS_LIBRARYCXX_SGI 1
   #if defined(__SGI_STL)
     #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((__SGI_STL>>8)%10,(__SGI_STL>>4)%10,__SGI_STL%10)
   #endif
@@ -131,7 +131,7 @@
     #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((__GLIBCPP__/10000)%10000,(__GLIBCPP__/100)%100,__GLIBCPP__%100)
   #endif
 #elif defined(__SGI_STL_PORT) || defined(_STLPORT_VERSION)
-  #defined KHAOS_LIBRARYCXX_STLport 1
+  #define KHAOS_LIBRARYCXX_STLport 1
   #if defined(_STLPORT_MAJOR)
     #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION(_STLPORT_MAJOR,_STLPORT_MINOR,_STLPORT_PATCHLEVEL)
   #elif defined(_STLPORT_VERSION)
@@ -140,7 +140,7 @@
     #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((__SGI_STL_PORT>>8)%10,(__SGI_STL_PORT>>4)%10,__SGI_STL_PORT%10)
   #endif
 #elif defined(__IBMCPP__)
-  #defined KHAOS_LIBRARYCXX_IBM 1
+  #define KHAOS_LIBRARYCXX_IBM 1
 #endif
 
 #endif
