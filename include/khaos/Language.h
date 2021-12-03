@@ -51,8 +51,8 @@
  *
  * \note Can be directly used in both preprocessor and compiler expressions.
  */
-#define KHAOS_LANGUAGE_IS(language) (KHAOS_LANGUAGE_##language)
-#if KHAOS_LANGUAGE_IS(C)
+#define LANGUAGE_IS(language) (KHAOS_LANGUAGE_##language)
+#if LANGUAGE_IS(C)
   /** @hideinitializer
   * Check if the C, CXX standard is greater than \b standard.
   * \param[in] standard The language to test.
