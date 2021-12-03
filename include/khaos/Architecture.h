@@ -90,7 +90,7 @@
  * | x86_64     |
  * | Epiphany   |
  */
-#define ARCHITECTURE_IS(compiler) ( KHAOS_ARCH_##compiler == 1)
+#define ARCHITECTURE_IS(compiler) ( defined(KHAOS_ARCH_##compiler))
 
 #if defined(__alpha__) || defined(__alpha) || defined(_M_ALPHA)
   #define KHAOS_ARCH_Alpha 1

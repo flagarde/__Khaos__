@@ -62,7 +62,8 @@
  *
  * \note If CUDA the version is defined in KHAOS_CUDA_VERSION
  */
-#define LANGUAGE_IS(language) (KHAOS_LANGUAGE_##language)
+#define LANGUAGE_IS(language) ( defined(KHAOS_LANGUAGE_##language) )
+
 #if LANGUAGE_IS(C)
   /** @hideinitializer
   * Check if the C, CXX standard is greater than \b standard.

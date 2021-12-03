@@ -29,7 +29,7 @@
 
 #include "khaos/OS.h"
 
-#define PLATFORM_IS(platform) (KHAOS_PLATFORM_##platform == 1)
+#define PLATFORM_IS(platform) ( defined(KHAOS_PLATFORM_##platform) )
 
 #if defined(__ANDROID__)
   #define KHAOS_PLATFORM_Android 1

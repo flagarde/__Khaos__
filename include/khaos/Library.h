@@ -37,7 +37,7 @@
  * | :---------------------: |
  *
  **/
-#define C_LIBRARY_IS(library) (KHAOS_LIBRARYC_##library ==1)
+#define C_LIBRARY_IS(library) ( defined(KHAOS_LIBRARYC_##library) )
 
 /**
  * \hideinitializer Detect the CXX library.
@@ -60,7 +60,7 @@
  * | :---------------------: |
  *
  **/
-#define CXX_LIBRARY_IS(library) (KHAOS_LIBRARYCXX_##library ==1)
+#define CXX_LIBRARY_IS(library) ( defined(KHAOS_LIBRARYCXX_##library) )
 
 #if defined(__CloudABI__)
   #if defined(__cloudlibc__)

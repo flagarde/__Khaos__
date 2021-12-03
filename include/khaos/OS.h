@@ -66,7 +66,7 @@
  *
  **/
 
-#define OS_IS(os) (KHAOS_OS_##os == 1)
+#define OS_IS(os) ( defined(KHAOS_OS_##os) )
 
 #if defined(_AIX) || defined(__TOS_AIX__)
   #define KHAOS_OS_AIX 1
