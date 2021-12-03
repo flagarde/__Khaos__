@@ -1353,14 +1353,14 @@
  *
  **/
 
-#if defined(__clang__) && !COMPILER_IS(Clang)
+#if defined(__clang__)
   #define KHAOS_COMPILER_ClangEmulated 1
   #if defined(__clang_major__)
     #define KHAOS_CLANG_EMULATED_VERSION KHAOS_SET_VERSION(__clang_major__, __clang_minor__, __clang_patchlevel__)
   #endif
 #endif
 
-#if defined(__GNUC__) || defined(__GNUG__) && !COMPILER_IS(GCC)
+#if defined(__GNUC__) || defined(__GNUG__)
   #define KHAOS_COMPILER_GCCEmulated 1
   #if defined(__GNUC_PATCHLEVEL__)
     #define KHAOS_GCC_EMULATED_VERSION KHAOS_SET_VERSION(__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__)
@@ -1369,7 +1369,7 @@
   #endif
 #endif
 
-#if defined(__llvm__) && !COMPILER_IS(LLVM)
+#if defined(__llvm__)
   #define KHAOS_COMPILER_LLVMEmulated 1
 #endif
 
