@@ -1,8 +1,9 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include <iostream>
+#include "khaos/Compiler.h"
 
 #include "doctest/doctest.h"
-#include "khaos/Compiler.h"
+
+#include <iostream>
 
 TEST_CASE("Testing the Compiler")
 {

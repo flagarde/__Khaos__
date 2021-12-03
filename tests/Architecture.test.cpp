@@ -6,6 +6,6 @@
 TEST_CASE("Testing the Architecture")
 {
 #if ARCHITECTURE_IS(x86_64)
-  std::cout<<"x86_64"<<std::endl;
+  std::cout << "x86_64" << std::endl;
 #endif
 }
