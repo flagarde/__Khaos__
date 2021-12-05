@@ -33,6 +33,31 @@
   #include "khaos/C.h"
 #endif
 
+#if !defined(KHAOS_LANGUAGE_Cuda)
+  #define KHAOS_LANGUAGE_Cuda 0
+#endif
+#if !defined(KHAOS_LANGUAGE_ClangCuda)
+  #define KHAOS_LANGUAGE_ClangCuda 0
+#endif
+#if !defined(KHAOS_LANGUAGE_ObjCPP)
+  #define KHAOS_LANGUAGE_ObjCPP 0
+#endif
+#if !defined(KHAOS_LANGUAGE_ObjC)
+  #define KHAOS_LANGUAGE_ObjC 0
+#endif
+#if !defined(KHAOS_LANGUAGE_Assembler)
+  #define KHAOS_LANGUAGE_Assembler 0
+#endif
+#if !defined(KHAOS_LANGUAGE_Fortran)
+  #define KHAOS_LANGUAGE_Fortran 0
+#endif
+#if !defined(KHAOS_LANGUAGE_CXX)
+  #define KHAOS_LANGUAGE_CXX 0
+#endif
+#if !defined(KHAOS_LANGUAGE_C)
+  #define KHAOS_LANGUAGE_C 0
+#endif
+
 /** @hideinitializer
  * Check the language.
  * \param[in] language The language to test.
