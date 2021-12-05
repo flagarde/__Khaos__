@@ -13,7 +13,7 @@
   */
   #define KHAOS_LANGUAGE_Cuda 1
   #if defined(__clang__) && defined(__CUDA__)
-    #define KHAOS_LANGUAGE_Clang_Cuda 1
+    #define KHAOS_LANGUAGE_ClangCuda 1
   #endif
 #elif defined(__OBJC__)
   #if defined(__cplusplus)
@@ -67,7 +67,7 @@
  * | :--------: | :-----------: |
  * | Assembler  |               |
  * | C          |               |
- * | Clang_Cuda | Cuda          |
+ * | ClangCuda  | Cuda          |
  * | Cuda       |               |
  * | CXX        |               |
  * | Fortran    |               |
