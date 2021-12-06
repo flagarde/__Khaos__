@@ -292,193 +292,193 @@
 #endif
 
 #if !defined(KHAOS_ARCH_Alpha)
-#define KHAOS_ARCH_Alpha 0
+  #define KHAOS_ARCH_Alpha 0
 #endif
 #if !defined(KHAOS_ARCH_AlphaEV4)
-#define KHAOS_ARCH_AlphaEV4 0
+  #define KHAOS_ARCH_AlphaEV4 0
 #endif
 #if !defined(KHAOS_ARCH_AlphaEV5)
-#define KHAOS_ARCH_AlphaEV5 0
+  #define KHAOS_ARCH_AlphaEV5 0
 #endif
 #if !defined(KHAOS_ARCH_AlphaEV6)
-#define KHAOS_ARCH_AlphaEV6 0
+  #define KHAOS_ARCH_AlphaEV6 0
 #endif
 #if !defined(KHAOS_ARCH_ARM)
-#define KHAOS_ARCH_ARM 0
+  #define KHAOS_ARCH_ARM 0
 #endif
 #if !defined(KHAOS_ARCH_ARM7)
-#define KHAOS_ARCH_ARM7 0
+  #define KHAOS_ARCH_ARM7 0
 #endif
 #if !defined(KHAOS_ARCH_ARM6)
-#define KHAOS_ARCH_ARM6 0
+  #define KHAOS_ARCH_ARM6 0
 #endif
 #if !defined(KHAOS_ARCH_ARM5)
-#define KHAOS_ARCH_ARM5 0
+  #define KHAOS_ARCH_ARM5 0
 #endif
 #if !defined(KHAOS_ARCH_ARM4)
-#define KHAOS_ARCH_ARM4 0
+  #define KHAOS_ARCH_ARM4 0
 #endif
 #if !defined(KHAOS_ARCH_ARM8)
-#define KHAOS_ARCH_ARM8 0
+  #define KHAOS_ARCH_ARM8 0
 #endif
 #if !defined(KHAOS_ARCH_aarch64)
-#define KHAOS_ARCH_aarch64 0
+  #define KHAOS_ARCH_aarch64 0
 #endif
 #if !defined(KHAOS_ARCH_Blackfin)
-#define KHAOS_ARCH_Blackfin 0
+  #define KHAOS_ARCH_Blackfin 0
 #endif
 #if !defined(KHAOS_ARCH_Convex)
-#define KHAOS_ARCH_Convex 0
+  #define KHAOS_ARCH_Convex 0
 #endif
 #if !defined(KHAOS_ARCH_Convex1)
-#define KHAOS_ARCH_Convex1 0
+  #define KHAOS_ARCH_Convex1 0
 #endif
 #if !defined(KHAOS_ARCH_Convex2)
-#define KHAOS_ARCH_Convex2 0
+  #define KHAOS_ARCH_Convex2 0
 #endif
 #if !defined(KHAOS_ARCH_Convex3_2)
-#define KHAOS_ARCH_Convex3_2 0
+  #define KHAOS_ARCH_Convex3_2 0
 #endif
 #if !defined(KHAOS_ARCH_Convex3_4)
-#define KHAOS_ARCH_Convex3_4 0
+  #define KHAOS_ARCH_Convex3_4 0
 #endif
 #if !defined(KHAOS_ARCH_Convex3_8)
-#define KHAOS_ARCH_Convex3_8 0
+  #define KHAOS_ARCH_Convex3_8 0
 #endif
 #if !defined(KHAOS_ARCH_E2K)
-#define KHAOS_ARCH_E2K 0
+  #define KHAOS_ARCH_E2K 0
 #endif
 #if !defined(KHAOS_ARCH_IA64)
-#define KHAOS_ARCH_IA64 0
+  #define KHAOS_ARCH_IA64 0
 #endif
 #if !defined(KHAOS_ARCH_m68k)
-#define KHAOS_ARCH_m68k 0
+  #define KHAOS_ARCH_m68k 0
 #endif
 #if !defined(KHAOS_ARCH_m68k6)
-#define KHAOS_ARCH_m68k6 0
+  #define KHAOS_ARCH_m68k6 0
 #endif
 #if !defined(KHAOS_ARCH_m68k4)
-#define KHAOS_ARCH_m68k4 0
+  #define KHAOS_ARCH_m68k4 0
 #endif
 #if !defined(KHAOS_ARCH_m68k3)
-#define KHAOS_ARCH_m68k3 0
+  #define KHAOS_ARCH_m68k3 0
 #endif
 #if !defined(KHAOS_ARCH_m68k2)
-#define KHAOS_ARCH_m68k2 0
+  #define KHAOS_ARCH_m68k2 0
 #endif
 #if !defined(KHAOS_ARCH_m68k1)
-#define KHAOS_ARCH_m68k1 0
+  #define KHAOS_ARCH_m68k1 0
 #endif
 #if !defined(KHAOS_ARCH_m68k0)
-#define KHAOS_ARCH_m68k0 0
+  #define KHAOS_ARCH_m68k0 0
 #endif
 #if !defined(KHAOS_ARCH_MIPS)
-#define KHAOS_ARCH_MIPS 0
+  #define KHAOS_ARCH_MIPS 0
 #endif
 #if !defined(KHAOS_ARCH_MIPS1)
-#define KHAOS_ARCH_MIPS1 0
+  #define KHAOS_ARCH_MIPS1 0
 #endif
 #if !defined(KHAOS_ARCH_MIPS2)
-#define KHAOS_ARCH_MIPS2 0
+  #define KHAOS_ARCH_MIPS2 0
 #endif
 #if !defined(KHAOS_ARCH_MIPS3)
-#define KHAOS_ARCH_MIPS3 0
+  #define KHAOS_ARCH_MIPS3 0
 #endif
 #if !defined(KHAOS_ARCH_MIPS4)
-#define KHAOS_ARCH_MIPS4 0
+  #define KHAOS_ARCH_MIPS4 0
 #endif
 #if !defined(KHAOS_ARCH_PARISC)
-#define KHAOS_ARCH_PARISC 0
+  #define KHAOS_ARCH_PARISC 0
 #endif
 #if !defined(KHAOS_ARCH_PARISC1)
-#define KHAOS_ARCH_PARISC1 0
+  #define KHAOS_ARCH_PARISC1 0
 #endif
 #if !defined(KHAOS_ARCH_PARISC1_1)
-#define KHAOS_ARCH_PARISC1_1 0
+  #define KHAOS_ARCH_PARISC1_1 0
 #endif
 #if !defined(KHAOS_ARCH_PARISC2)
-#define KHAOS_ARCH_PARISC2 0
+  #define KHAOS_ARCH_PARISC2 0
 #endif
 #if !defined(KHAOS_ARCH_PowerPC)
-#define KHAOS_ARCH_PowerPC 0
+  #define KHAOS_ARCH_PowerPC 0
 #endif
 #if !defined(KHAOS_ARCH_PowerPC6_1)
-#define KHAOS_ARCH_PowerPC6_1 0
+  #define KHAOS_ARCH_PowerPC6_1 0
 #endif
 #if !defined(KHAOS_ARCH_PowerPC6_3)
-#define KHAOS_ARCH_PowerPC6_3 0
+  #define KHAOS_ARCH_PowerPC6_3 0
 #endif
 #if !defined(KHAOS_ARCH_PowerPC6_4)
-#define KHAOS_ARCH_PowerPC6_4 0
+  #define KHAOS_ARCH_PowerPC6_4 0
 #endif
 #if !defined(KHAOS_ARCH_ptx)
-#define KHAOS_ARCH_ptx 0
+  #define KHAOS_ARCH_ptx 0
 #endif
 #if !defined(KHAOS_ARCH_Pyramid)
-#define KHAOS_ARCH_Pyramid 0
+  #define KHAOS_ARCH_Pyramid 0
 #endif
 #if !defined(KHAOS_ARCH_RISCV)
-#define KHAOS_ARCH_RISCV 0
+  #define KHAOS_ARCH_RISCV 0
 #endif
 #if !defined(KHAOS_ARCH_RS6000)
-#define KHAOS_ARCH_RS6000 0
+  #define KHAOS_ARCH_RS6000 0
 #endif
 #if !defined(KHAOS_ARCH_SPARC)
-#define KHAOS_ARCH_SPARC 0
+  #define KHAOS_ARCH_SPARC 0
 #endif
 #if !defined(KHAOS_ARCH_SPARC9)
-#define KHAOS_ARCH_SPARC9 0
+  #define KHAOS_ARCH_SPARC9 0
 #endif
 #if !defined(KHAOS_ARCH_SPARC8)
-#define KHAOS_ARCH_SPARC8 0
+  #define KHAOS_ARCH_SPARC8 0
 #endif
 #if !defined(KHAOS_ARCH_sh)
-#define KHAOS_ARCH_sh 0
+  #define KHAOS_ARCH_sh 0
 #endif
 #if !defined(KHAOS_ARCH_sh5)
-#define KHAOS_ARCH_sh5 0
+  #define KHAOS_ARCH_sh5 0
 #endif
 #if !defined(KHAOS_ARCH_sh4)
-#define KHAOS_ARCH_sh4 0
+  #define KHAOS_ARCH_sh4 0
 #endif
 #if !defined(KHAOS_ARCH_sh3)
-#define KHAOS_ARCH_sh3 0
+  #define KHAOS_ARCH_sh3 0
 #endif
 #if !defined(KHAOS_ARCH_sh2)
-#define KHAOS_ARCH_sh2 0
+  #define KHAOS_ARCH_sh2 0
 #endif
 #if !defined(KHAOS_ARCH_sh1)
-#define KHAOS_ARCH_sh1 0
+  #define KHAOS_ARCH_sh1 0
 #endif
 #if !defined(KHAOS_ARCH_SYS370)
-#define KHAOS_ARCH_SYS370 0
+  #define KHAOS_ARCH_SYS370 0
 #endif
 #if !defined(KHAOS_ARCH_SYS390)
-#define KHAOS_ARCH_SYS390 0
+  #define KHAOS_ARCH_SYS390 0
 #endif
 #if !defined(KHAOS_ARCH_z)
-#define KHAOS_ARCH_z 0
+  #define KHAOS_ARCH_z 0
 #endif
 #if !defined(KHAOS_ARCH_X86_32)
-#define KHAOS_ARCH_X86_32 0
+  #define KHAOS_ARCH_X86_32 0
 #endif
 #if !defined(KHAOS_ARCH_i686)
-#define KHAOS_ARCH_i686 0
+  #define KHAOS_ARCH_i686 0
 #endif
 #if !defined(KHAOS_ARCH_i586)
-#define KHAOS_ARCH_i586 0
+  #define KHAOS_ARCH_i586 0
 #endif
 #if !defined(KHAOS_ARCH_i486)
-#define KHAOS_ARCH_i486 0
+  #define KHAOS_ARCH_i486 0
 #endif
 #if !defined(KHAOS_ARCH_i386)
-#define KHAOS_ARCH_i386 0
+  #define KHAOS_ARCH_i386 0
 #endif
 #if !defined(KHAOS_ARCH_x86_64)
-#define KHAOS_ARCH_x86_64 0
+  #define KHAOS_ARCH_x86_64 0
 #endif
 #if !defined(KHAOS_ARCH_Epiphany)
-#define KHAOS_ARCH_Epiphany 0
+  #define KHAOS_ARCH_Epiphany 0
 #endif
 
 #if !defined(KHAOS_ARCH_VERSION)
@@ -486,7 +486,7 @@
 #endif
 
 #if !defined(KHAOS_ARCH_VERSION_TWEAK)
-#define KHAOS_ARCH_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
+  #define KHAOS_ARCH_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
 #endif
 
 #endif
