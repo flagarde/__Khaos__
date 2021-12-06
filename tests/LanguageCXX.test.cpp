@@ -4,6 +4,13 @@
 
 TEST_CASE("Testing the Language CXX")
 {
+
+#if LANGUAGE_IS(C)
+  CHECK(false);
+#else
+  CHECK(true);
+#endif
+
 #if LANGUAGE_IS(CXX)
   CHECK(true);
 #else
