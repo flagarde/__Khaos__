@@ -89,7 +89,7 @@
   #define KHAOS_LIBRARYC_uClibc  1
   #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION(__UCLIBC_MAJOR__, __UCLIBC_MINOR__, __UCLIBC_SUBLEVEL__)
 #elif defined(__CRTL_VER)
-  #define KHAOS_LIBRARY_VMC      1
+  #define KHAOS_LIBRARYC_VMC      1
   #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION((__CRTL_VER / 10000000) % 100, (__CRTL_VER / 100000) % 100, (__CRTL_VER / 100) % 100)
 #elif defined(__LIBREL__)
   #define KHAOS_LIBRARYC_ZOS 1
@@ -172,8 +172,8 @@
 #if !defined(KHAOS_LIBRARYC_uClibc)
 #define KHAOS_LIBRARYC_uClibc 0
 #endif
-#if !defined(KHAOS_LIBRARY_VMC)
-#define KHAOS_LIBRARY_VMC 0
+#if !defined(KHAOS_LIBRARYC_VMC)
+#define KHAOS_LIBRARYC_VMC 0
 #endif
 #if !defined(KHAOS_LIBRARYC_ZOS)
 #define KHAOS_LIBRARYC_ZOS 0
