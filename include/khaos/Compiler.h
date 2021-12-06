@@ -206,6 +206,17 @@
  *
  * \note check with CompCert
  *
+ * Coverity
+ * --------
+ *
+ * [Coverity](http://www.coverity.com/)
+ *
+ * | Macro        |     Type      |
+ * | :----:       | :-----------: |
+ * | __COVERITY__ | **detection** |
+ *
+ * \note check with Coverity
+ *
  * Cray C
  * ------
  *
@@ -306,6 +317,20 @@
  * | __PATHCC_PATCHLEVEL__ |  **Version**  | P                 |
  *
  * \note check with EKOPath
+ *
+ * Emscripten
+ * ----------
+ *
+ * [Emscripten](https://emscripten.org/docs/compiling/Building-Projects.html)
+ *
+ * |  Macro                |     Type      |     Format        |
+ * | :----------:          | :-----------: | :-------------:   |
+ * | __EMSCRIPTEN__        | **detection** |                   |
+ * | __EMSCRIPTEN_major__  |  **Version**  | V                 |
+ * | __EMSCRIPTEN_minor__  |  **Version**  | R                 |
+ * | __EMSCRIPTEN_tiny__   |  **Version**  | P                 |
+ *
+ * \note check with Emscripten
  *
  * Fujitsu C++
  * -----------
@@ -985,6 +1010,10 @@
   #if defined(__CUDACC_VER_MAJOR__) && defined(__CUDACC_VER_MINOR__) && defined(__CUDACC_VER_BUILD__)
     #define KHAOS_NVCC_VERSION KHAOS_SET_VERSION(__CUDACC_VER_MAJOR__, __CUDACC_VER_MINOR__, __CUDACC_VER_BUILD__)
   #endif
+#else
+  #define KHAOS_COMPILER_NVCC 0
+  #define KHAOS_NVCC_VERSION KHAOS_SET_VERSION(0, 0, 0)
+  #define KHAOS_NVCC_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0, 0, 0)
 #endif
 
 // Put all compiler first then MSVC clang llvm gcc as some mimic others.
@@ -1038,6 +1067,8 @@
   #define KHAOS_COMPILER_Convex 1
 #elif defined(__COMPCERT__)
   #define KHAOS_COMPILER_Compcert 1
+#elif defined(__COVERITY__)
+  #define KHAOS_COMPILER_Coverity 1
 #elif defined(_CRAYC)
   #define KHAOS_COMPILER_CrayC   1
   #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(_RELEASE, _RELEASE_MINOR, 0)
@@ -1061,6 +1092,9 @@
 #elif defined(__PATHCC__)
   #define KHAOS_COMPILER_EKOPath 1
   #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__PATHCC__, __PATHCC_MINOR__, __PATHCC_PATCHLEVEL__)
+#elif defined(__EMSCRIPTEN__)
+  #define KHAOS_COMPILER_Emscripten 1
+  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__EMSCRIPTEN_major__, __EMSCRIPTEN_minor__, __EMSCRIPTEN_tiny__)
 #elif defined(__FCC_VERSION)
   #define KHAOS_COMPILER_Fujitsu 1
 #elif defined(__GCCXML__)
@@ -1352,13 +1386,16 @@
  * \note check with GCCEmulated KHAOS_GCC_EMULATED_VERSION
  *
  **/
-
 #if defined(__clang__)
   #define KHAOS_COMPILER_ClangEmulated 1
   #if defined(__clang_major__)
     #define KHAOS_CLANG_EMULATED_VERSION KHAOS_SET_VERSION(__clang_major__, __clang_minor__, __clang_patchlevel__)
   #endif
+#else
+  #define KHAOS_COMPILER_ClangEmulated 0
+  #define KHAOS_CLANG_EMULATED_VERSION KHAOS_SET_VERSION(0, 0, 0)
 #endif
+#define KHAOS_CLANG_EMULATED_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0, 0, 0)
 
 #if defined(__GNUC__) || defined(__GNUG__)
   #define KHAOS_COMPILER_GCCEmulated 1
@@ -1367,10 +1404,259 @@
   #else
     #define KHAOS_GCC_EMULATED_VERSION KHAOS_SET_VERSION(__GNUC__, __GNUC_MINOR__, 0)
   #endif
+#else
+  #define KHAOS_COMPILER_GCCEmulated 0
+  #define KHAOS_GCC_EMULATED_VERSION KHAOS_SET_VERSION(0, 0, 0)
 #endif
+#define KHAOS_GCC_EMULATED_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
+
 
 #if defined(__llvm__)
   #define KHAOS_COMPILER_LLVMEmulated 1
+#else
+  #define KHAOS_COMPILER_LLVMEmulated 0
+#endif
+#define KHAOS_LLVM_EMULATED_VERSION KHAOS_SET_VERSION(0, 0, 0)
+#define KHAOS_LLVM_EMULATED_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
+
+
+//Set to 0 to avoid warning
+#if !defined(KHAOS_COMPILER_ACC)
+  #define KHAOS_COMPILER_ACC 0
+#endif
+#if !defined(KHAOS_COMPILER_AltiumMicroblaze)
+  #define KHAOS_COMPILER_AltiumMicroblaze 0
+#endif
+#if !defined(KHAOS_COMPILER_Altium)
+  #define KHAOS_COMPILER_Altium 0
+#endif
+#if !defined(KHAOS_COMPILER_Amsterdam)
+  #define KHAOS_COMPILER_Amsterdam 0
+#endif
+#if !defined(KHAOS_COMPILER_ARM)
+  #define KHAOS_COMPILER_ARM 0
+#endif
+#if !defined(KHAOS_COMPILER_Aztec)
+  #define KHAOS_COMPILER_Aztec 0
+#endif
+#if !defined(KHAOS_COMPILER_Borland)
+  #define KHAOS_COMPILER_Borland 0
+#endif
+#if !defined(KHAOS_COMPILER_CC65)
+  #define KHAOS_COMPILER_CC65 0
+#endif
+#if !defined(KHAOS_COMPILER_Comeau)
+  #define KHAOS_COMPILER_Comeau 0
+#endif
+#if !defined(KHAOS_COMPILER_Compaq)
+  #define KHAOS_COMPILER_Compaq 0
+#endif
+#if !defined(KHAOS_COMPILER_Convex)
+  #define KHAOS_COMPILER_Convex 0
+#endif
+#if !defined(KHAOS_COMPILER_Compcert)
+  #define KHAOS_COMPILER_Compcert 0
+#endif
+#if !defined(KHAOS_COMPILER_Coverity)
+  #define KHAOS_COMPILER_Coverity 0
+#endif
+#if !defined(KHAOS_COMPILER_CrayC)
+  #define KHAOS_COMPILER_CrayC 0
+#endif
+#if !defined(KHAOS_COMPILER_Diab)
+  #define KHAOS_COMPILER_Diab 0
+#endif
+#if !defined(KHAOS_COMPILER_DICE)
+  #define KHAOS_COMPILER_DICE 0
+#endif
+#if !defined(KHAOS_COMPILER_DigitalMars)
+  #define KHAOS_COMPILER_DigitalMars 0
+#endif
+#if !defined(KHAOS_COMPILER_Dignus)
+  #define KHAOS_COMPILER_Dignus 0
+#endif
+#if !defined(KHAOS_COMPILER_DJGPP)
+  #define KHAOS_COMPILER_DJGPP 0
+#endif
+#if !defined(KHAOS_COMPILER_EDG)
+  #define KHAOS_COMPILER_EDG 0
+#endif
+#if !defined(KHAOS_COMPILER_EKOPath)
+  #define KHAOS_COMPILER_EKOPath 0
+#endif
+#if !defined(KHAOS_COMPILER_Emscripten)
+#define KHAOS_COMPILER_Emscripten 0
+#endif
+#if !defined(KHAOS_COMPILER_Fujitsu)
+  #define KHAOS_COMPILER_Fujitsu 0
+#endif
+#if !defined(KHAOS_COMPILER_GCCXML)
+  #define KHAOS_COMPILER_GCCXML 0
+#endif
+#if !defined(KHAOS_COMPILER_GreenHills)
+  #define KHAOS_COMPILER_GreenHills 0
+#endif
+#if !defined(KHAOS_COMPILER_HPCC)
+  #define KHAOS_COMPILER_HPCC 0
+#endif
+#if !defined(KHAOS_COMPILER_HPaCC)
+  #define KHAOS_COMPILER_HPaCC 0
+#endif
+#if !defined(KHAOS_COMPILER_IAR)
+  #define KHAOS_COMPILER_IAR 0
+#endif
+#if !defined(KHAOS_COMPILER_IBM)
+  #define KHAOS_COMPILER_IBM 0
+#endif
+#if !defined(KHAOS_COMPILER_IBMClang)
+  #define KHAOS_COMPILER_IBMClang 0
+#endif
+#if !defined(KHAOS_COMPILER_IBMLegacy)
+  #define KHAOS_COMPILER_IBMLegacy 0
+#endif
+#if !defined(KHAOS_COMPILER_ImageCraft)
+  #define KHAOS_COMPILER_ImageCraft 0
+#endif
+#if !defined(KHAOS_COMPILER_Intel)
+  #define KHAOS_COMPILER_Intel 0
+#endif
+#if !defined(KHAOS_COMPILER_Kai)
+  #define KHAOS_COMPILER_Kai 0
+#endif
+#if !defined(KHAOS_COMPILER_KeilCarm)
+  #define KHAOS_COMPILER_KeilCarm 0
+#endif
+#if !defined(KHAOS_COMPILER_KeilC166)
+  #define KHAOS_COMPILER_KeilC166 0
+#endif
+#if !defined(KHAOS_COMPILER_KeilC51)
+  #define KHAOS_COMPILER_KeilC51 0
+#endif
+#if !defined(KHAOS_COMPILER_LCC)
+  #define KHAOS_COMPILER_LCC 0
+#endif
+#if !defined(KHAOS_COMPILER_Metaware)
+  #define KHAOS_COMPILER_Metaware 0
+#endif
+#if !defined(KHAOS_COMPILER_Metrowerks)
+  #define KHAOS_COMPILER_Metrowerks 0
+#endif
+#if !defined(KHAOS_COMPILER_MSVC)
+  #define KHAOS_COMPILER_MSVC 0
+#endif
+#if !defined(KHAOS_COMPILER_Microtec)
+  #define KHAOS_COMPILER_Microtec 0
+#endif
+#if !defined(KHAOS_COMPILER_Microway)
+  #define KHAOS_COMPILER_Microway 0
+#endif
+#if !defined(KHAOS_COMPILER_MIPSpro)
+  #define KHAOS_COMPILER_MIPSpro 0
+#endif
+#if !defined(KHAOS_COMPILER_Miracle)
+  #define KHAOS_COMPILER_Miracle 0
+#endif
+#if !defined(KHAOS_COMPILER_MPW)
+  #define KHAOS_COMPILER_MPW 0
+#endif
+#if !defined(KHAOS_COMPILER_Norcroft)
+  #define KHAOS_COMPILER_Norcroft 0
+#endif
+#if !defined(KHAOS_COMPILER_NWCC)
+  #define KHAOS_COMPILER_NWCC 0
+#endif
+#if !defined(KHAOS_COMPILER_Open64)
+  #define KHAOS_COMPILER_Open64 0
+#endif
+#if !defined(KHAOS_COMPILER_Oracle)
+  #define KHAOS_COMPILER_Oracle 0
+#endif
+#if !defined(KHAOS_COMPILER_Solaris)
+  #define KHAOS_COMPILER_Solaris 0
+#endif
+#if !defined(KHAOS_COMPILER_Pacific)
+  #define KHAOS_COMPILER_Pacific 0
+#endif
+#if !defined(KHAOS_COMPILER_Palm)
+  #define KHAOS_COMPILER_Palm 0
+#endif
+#if !defined(KHAOS_COMPILER_Pelles)
+  #define KHAOS_COMPILER_Pelles 0
+#endif
+#if !defined(KHAOS_COMPILER_Portland)
+  #define KHAOS_COMPILER_Portland 0
+#endif
+#if !defined(KHAOS_COMPILER_Renesas)
+  #define KHAOS_COMPILER_Renesas 0
+#endif
+#if !defined(KHAOS_COMPILER_SASC)
+  #define KHAOS_COMPILER_SASC 0
+#endif
+#if !defined(KHAOS_COMPILER_SCO)
+  #define KHAOS_COMPILER_SCO 0
+#endif
+#if !defined(KHAOS_COMPILER_SDCC)
+  #define KHAOS_COMPILER_SDCC 0
+#endif
+#if !defined(KHAOS_COMPILER_SNC)
+  #define KHAOS_COMPILER_SNC 0
+#endif
+#if !defined(KHAOS_COMPILER_Stratus)
+  #define KHAOS_COMPILER_Stratus 0
+#endif
+#if !defined(KHAOS_COMPILER_StratusKR)
+  #define KHAOS_COMPILER_StratusKR 0
+#endif
+#if !defined(KHAOS_COMPILER_StratusANSI)
+  #define KHAOS_COMPILER_StratusANSI 0
+#endif
+#if !defined(KHAOS_COMPILER_Symantec)
+  #define KHAOS_COMPILER_Symantec 0
+#endif
+#if !defined(KHAOS_COMPILER_Tendra)
+  #define KHAOS_COMPILER_Tendra 0
+#endif
+#if !defined(KHAOS_COMPILER_TI)
+  #define KHAOS_COMPILER_TI 0
+#endif
+#if !defined(KHAOS_COMPILER_Think)
+  #define KHAOS_COMPILER_Think 0
+#endif
+#if !defined(KHAOS_COMPILER_Tiny)
+  #define KHAOS_COMPILER_Tiny 0
+#endif
+#if !defined(KHAOS_COMPILER_Turbo)
+  #define KHAOS_COMPILER_Turbo 0
+#endif
+#if !defined(KHAOS_COMPILER_Ultimate)
+  #define KHAOS_COMPILER_Ultimate 0
+#endif
+#if !defined(KHAOS_COMPILER_USLC)
+  #define KHAOS_COMPILER_USLC 0
+#endif
+#if !defined(KHAOS_COMPILER_VBCC)
+  #define KHAOS_COMPILER_VBCC 0
+#endif
+#if !defined(KHAOS_COMPILER_Watcom)
+  #define KHAOS_COMPILER_Watcom 0
+#endif
+#if !defined(KHAOS_COMPILER_Zortech)
+  #define KHAOS_COMPILER_Zortech 0
+#endif
+#if !defined(KHAOS_COMPILER_AppleClang)
+  #define KHAOS_COMPILER_AppleClang 0
+#endif
+#if !defined(KHAOS_COMPILER_Clang)
+  #define KHAOS_COMPILER_Clang 0
+#endif
+#if !defined(KHAOS_COMPILER_LLVM)
+  #define KHAOS_COMPILER_LLVM 0
+#endif
+#if !defined(KHAOS_COMPILER_GCC)
+  #define KHAOS_COMPILER_GCC 0
+#endif
+#if !defined(KHAOS_COMPILER_Unknown)
+  #define KHAOS_COMPILER_Unknown 0
 #endif
 
 #endif
