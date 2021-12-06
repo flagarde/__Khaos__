@@ -2,6 +2,11 @@
 #define KHAOS_LIBRARY_H
 
 #include "khaos/VersionMacros.h"
+#include "khaos/OS.h"
+
+#if OS_IS(UNIX)
+  #include <sys/types.h>
+#endif
 
 #if defined(__cplusplus)
   #include <cassert>
@@ -62,18 +67,24 @@
  **/
 #define CXX_LIBRARY_IS(library) (KHAOS_LIBRARYCXX_##library == 1)
 
-#if defined(__CloudABI__)
+#if defined(__BIONIC__)
+  #define KHAOS_LIBRARYC_Bionic 1
+#elif defined(__CloudABI__)
   #if defined(__cloudlibc__)
     #define KHAOS_LIBRARYC_CloudABI 1
     #define KHAOS_LIBRARYC_VERSION  KHAOS_SET_VERSION(__cloudlibc_major__, __cloudlibc_minor__, 0)
   #endif
 #elif defined(__GLIBC__) || defined(__GNU_LIBRARY__)
   #define KHAOS_LIBRARYC_GNU 1
+  #include <limits.h>
   #if defined(__GLIBC__)
     #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION(__GLIBC__, __GLIBC_MINOR__, 0)
   #else
     #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION(__GNU_LIBRARY__, __GNU_LIBRARY_MINOR__, 0)
   #endif
+#elif defined(__KLIBC__)
+  #define KHAOS_LIBRARYC_klibc 1
+  #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION(__KLIBC__, __KLIBC_MINOR__, __KLIBC_PATCHLEVEL__)
 #elif defined(__UCLIBC__)
   #define KHAOS_LIBRARYC_uClibc  1
   #define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION(__UCLIBC_MAJOR__, __UCLIBC_MINOR__, __UCLIBC_SUBLEVEL__)
@@ -141,6 +152,77 @@
   #endif
 #elif defined(__IBMCPP__)
   #define KHAOS_LIBRARYCXX_IBM 1
+#elif defined(_MFC_VER)
+  #define KHAOS_LIBRARYCXX_MFC 1
+  #define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION((_MFC_VER>>8) % 100, _MFC_VER % 100, 0)
+#endif
+
+#if !defined(KHAOS_LIBRARYC_Bionic)
+#define KHAOS_LIBRARYC_Bionic 0
+#endif
+#if !defined(KHAOS_LIBRARYC_CloudABI)
+#define KHAOS_LIBRARYC_CloudABI 0
+#endif
+#if !defined(KHAOS_LIBRARYC_GNU)
+#define KHAOS_LIBRARYC_GNU 0
+#endif
+#if !defined(KHAOS_LIBRARYC_klibc)
+#define KHAOS_LIBRARYC_klibc 0
+#endif
+#if !defined(KHAOS_LIBRARYC_uClibc)
+#define KHAOS_LIBRARYC_uClibc 0
+#endif
+#if !defined(KHAOS_LIBRARY_VMC)
+#define KHAOS_LIBRARY_VMC 0
+#endif
+#if !defined(KHAOS_LIBRARYC_ZOS)
+#define KHAOS_LIBRARYC_ZOS 0
+#endif
+#if !defined(KHAOS_LIBRARYC_VERSION)
+#define KHAOS_LIBRARYC_VERSION KHAOS_SET_VERSION(0, 0, 0)
+#endif
+#if !defined(KHAOS_LIBRARYC_VERSION_TWEAK)
+#define KHAOS_LIBRARYC_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
+#endif
+
+#if !defined(KHAOS_LIBRARYCXX_CXX)
+#define KHAOS_LIBRARYCXX_CXX 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_Dinkumware)
+#define KHAOS_LIBRARYCXX_Dinkumware 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_Comeau)
+#define KHAOS_LIBRARYCXX_Comeau 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_Modena)
+#define KHAOS_LIBRARYCXX_Modena 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_Metrowerks)
+#define KHAOS_LIBRARYCXX_Metrowerks 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_Roguewave)
+#define KHAOS_LIBRARYCXX_Roguewave 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_SGI)
+#define KHAOS_LIBRARYCXX_SGI 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_GNU)
+#define KHAOS_LIBRARYCXX_GNU 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_STLport)
+#define KHAOS_LIBRARYCXX_STLport 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_IBM)
+#define KHAOS_LIBRARYCXX_IBM 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_MFC)
+#define KHAOS_LIBRARYCXX_MFC 0
+#endif
+#if !defined(KHAOS_LIBRARYCXX_VERSION)
+#define KHAOS_LIBRARYCXX_VERSION KHAOS_SET_VERSION(0, 0, 0)
+#endif
+#if !defined(KHAOS_LIBRARYCXX_VERSION_TWEAK)
+#define KHAOS_LIBRARYCXX_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
 #endif
 
 #endif

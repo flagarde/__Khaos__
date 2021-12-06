@@ -296,7 +296,7 @@
 #endif
 
 /* Special case UNIX */
-#if defined(unix) || defined(__unix) || defined(_XOPEN_SOURCE) || defined(_POSIX_SOURCE)
+#if defined(unix) || defined(__unix) || defined(_XOPEN_SOURCE) || defined(_POSIX_SOURCE) || defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
   #define KHAOS_OS_UNIX 1
 #endif
 
