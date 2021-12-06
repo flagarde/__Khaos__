@@ -1011,8 +1011,8 @@
     #define KHAOS_NVCC_VERSION KHAOS_SET_VERSION(__CUDACC_VER_MAJOR__, __CUDACC_VER_MINOR__, __CUDACC_VER_BUILD__)
   #endif
 #else
-  #define KHAOS_COMPILER_NVCC 0
-  #define KHAOS_NVCC_VERSION KHAOS_SET_VERSION(0, 0, 0)
+  #define KHAOS_COMPILER_NVCC      0
+  #define KHAOS_NVCC_VERSION       KHAOS_SET_VERSION(0, 0, 0)
   #define KHAOS_NVCC_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0, 0, 0)
 #endif
 
@@ -1094,7 +1094,7 @@
   #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__PATHCC__, __PATHCC_MINOR__, __PATHCC_PATCHLEVEL__)
 #elif defined(__EMSCRIPTEN__)
   #define KHAOS_COMPILER_Emscripten 1
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__EMSCRIPTEN_major__, __EMSCRIPTEN_minor__, __EMSCRIPTEN_tiny__)
+  #define KHAOS_COMPILER_VERSION    KHAOS_SET_VERSION(__EMSCRIPTEN_major__, __EMSCRIPTEN_minor__, __EMSCRIPTEN_tiny__)
 #elif defined(__FCC_VERSION)
   #define KHAOS_COMPILER_Fujitsu 1
 #elif defined(__GCCXML__)
@@ -1410,15 +1410,13 @@
 #endif
 #define KHAOS_GCC_EMULATED_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
 
-
 #if defined(__llvm__)
   #define KHAOS_COMPILER_LLVMEmulated 1
 #else
   #define KHAOS_COMPILER_LLVMEmulated 0
 #endif
-#define KHAOS_LLVM_EMULATED_VERSION KHAOS_SET_VERSION(0, 0, 0)
+#define KHAOS_LLVM_EMULATED_VERSION       KHAOS_SET_VERSION(0, 0, 0)
 #define KHAOS_LLVM_EMULATED_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
-
 
 //Set to 0 to avoid warning
 #if !defined(KHAOS_COMPILER_ACC)
@@ -1485,7 +1483,7 @@
   #define KHAOS_COMPILER_EKOPath 0
 #endif
 #if !defined(KHAOS_COMPILER_Emscripten)
-#define KHAOS_COMPILER_Emscripten 0
+  #define KHAOS_COMPILER_Emscripten 0
 #endif
 #if !defined(KHAOS_COMPILER_Fujitsu)
   #define KHAOS_COMPILER_Fujitsu 0

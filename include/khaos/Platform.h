@@ -112,7 +112,7 @@
 
 /* Special case for MINGW */
 #if defined(__MINGW32__) || defined(__MINGW64__)
-#define KHAOS_PLATFORM_MINGWEmulated 1
+  #define KHAOS_PLATFORM_MINGWEmulated 1
   #if defined(__MINGW64__)
     #define KHAOS_PLATFORM_MINGW64Emulated 1
   #else
@@ -127,62 +127,62 @@
 #endif
 
 #if !defined(KHAOS_PLATFORM_Android)
- #define KHAOS_PLATFORM_Android 0
+  #define KHAOS_PLATFORM_Android 0
 #endif
 #if !defined(KHAOS_PLATFORM_CloudABI)
-#define KHAOS_PLATFORM_CloudABI 0
+  #define KHAOS_PLATFORM_CloudABI 0
 #endif
 #if !defined(KHAOS_PLATFORM_iOSTarget)
-#define KHAOS_PLATFORM_iOSTarget 0
+  #define KHAOS_PLATFORM_iOSTarget 0
 #endif
 #if !defined(KHAOS_PLATFORM_iOSIphone)
-#define KHAOS_PLATFORM_iOSIphone 0
+  #define KHAOS_PLATFORM_iOSIphone 0
 #endif
 #if !defined(KHAOS_PLATFORM_iOSSimulator)
-#define KHAOS_PLATFORM_iOSSimulator 0
+  #define KHAOS_PLATFORM_iOSSimulator 0
 #endif
 #if !defined(KHAOS_PLATFORM_MINGW)
-#define KHAOS_PLATFORM_MINGW 0
+  #define KHAOS_PLATFORM_MINGW 0
 #endif
 #if !defined(KHAOS_PLATFORM_MINGW32)
-#define KHAOS_PLATFORM_MINGW32 0
+  #define KHAOS_PLATFORM_MINGW32 0
 #endif
 #if !defined(KHAOS_PLATFORM_MINGW64)
-#define KHAOS_PLATFORM_MINGW64 0
+  #define KHAOS_PLATFORM_MINGW64 0
 #endif
 #if !defined(KHAOS_PLATFORM_UWP)
-#define KHAOS_PLATFORM_UWP 0
+  #define KHAOS_PLATFORM_UWP 0
 #endif
 #if !defined(KHAOS_PLATFORM_WindowsDesktop)
-#define KHAOS_PLATFORM_WindowsDesktop 0
+  #define KHAOS_PLATFORM_WindowsDesktop 0
 #endif
 #if !defined(KHAOS_PLATFORM_WindowsPhone)
-#define KHAOS_PLATFORM_WindowsPhone 0
+  #define KHAOS_PLATFORM_WindowsPhone 0
 #endif
 #if !defined(KHAOS_PLATFORM_WindowsServer)
-#define KHAOS_PLATFORM_WindowsServer 0
+  #define KHAOS_PLATFORM_WindowsServer 0
 #endif
 #if !defined(KHAOS_PLATFORM_WindowsStore)
-#define KHAOS_PLATFORM_WindowsStore 0
+  #define KHAOS_PLATFORM_WindowsStore 0
 #endif
 #if !defined(KHAOS_PLATFORM_WindowsSystem)
-#define KHAOS_PLATFORM_WindowsSystem 0
+  #define KHAOS_PLATFORM_WindowsSystem 0
 #endif
 #if !defined(KHAOS_PLATFORM_MINGWEmulated)
-#define KHAOS_PLATFORM_MINGWEmulated 0
+  #define KHAOS_PLATFORM_MINGWEmulated 0
 #endif
 #if !defined(KHAOS_PLATFORM_MINGW32Emulated)
-#define KHAOS_PLATFORM_MINGW32Emulated 0
+  #define KHAOS_PLATFORM_MINGW32Emulated 0
 #endif
 #if !defined(KHAOS_PLATFORM_MINGW64Emulated)
-#define KHAOS_PLATFORM_MINGW64Emulated 0
+  #define KHAOS_PLATFORM_MINGW64Emulated 0
 #endif
 
 #if !defined(KHAOS_MINGW_VERSION)
-#define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(0, 0, 0)
+  #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(0, 0, 0)
 #endif
 #if !defined(KHAOS_MINGW_VERSION_TWEAK)
-#define KHAOS_MINGW_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
+  #define KHAOS_MINGW_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
 #endif
 
 #if !defined(KHAOS_PLATFORM_VERSION)
