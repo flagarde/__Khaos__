@@ -263,7 +263,7 @@
  * | `__DMC__` | **detection** |        |
  * | `__DMC__` |  **version**  | 0XVRP  |
  *
- * \note DigitalMars
+ * \note check with DigitalMars
  *
  *
  * Dignus Systems/C++
@@ -381,7 +381,7 @@
  * | `__GHS_REVISION_DATE__`  |  **version**  | epoch time  |
  * | `__ghs`                  |  **version**  | 10_VRP      |
  *
- * \note with GreenHills
+ * \note check with GreenHills
  *
  * HP ANSI C
  * ---------
@@ -463,7 +463,7 @@
  * | `__IBMCPP__`  |  **version**  |N = Product (0 = C/370, 1 = MVS, 2 = OS/390, 4 = z/OS) V = Version RR = Revision M = Modification   |
  * | `__COMPILER_VER__`     |  **version**  | 0xNVRRMMFF 	N = Product (see above) V = Version RR = Revision MM = Modification FF = Fix Pack |
  *
- * \note check with IBM or IBMZOS
+ * \note check with IBM or for platform : IBMC370 or IBMMVS or IBMOS390 or IBMZOS
  *
  * ImageCraft C
  * -----------
@@ -1513,6 +1513,18 @@
 #endif
 #if !defined(KHAOS_COMPILER_IBMLegacy)
   #define KHAOS_COMPILER_IBMLegacy 0
+#endif
+#if !defined(KHAOS_COMPILER_IBMC370)
+  #define KHAOS_COMPILER_IBMC370 0
+#endif
+#if !defined(KHAOS_COMPILER_IBMMVS)
+  #define KHAOS_COMPILER_IBMMVS 0
+#endif
+#if !defined(KHAOS_COMPILER_IBMOS390)
+  #define KHAOS_COMPILER_IBMOS390 0
+#endif
+#if !defined(KHAOS_COMPILER_IBMZOS)
+  #define KHAOS_COMPILER_IBMZOS 0
 #endif
 #if !defined(KHAOS_COMPILER_ImageCraft)
   #define KHAOS_COMPILER_ImageCraft 0
