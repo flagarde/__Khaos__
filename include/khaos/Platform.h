@@ -46,10 +46,10 @@
   #endif
 #elif defined(__MINGW32__) || defined(__MINGW64__)
   #define KHAOS_PLATFORM_MINGW 1
-  #if defined(__MINGW32__)
-    #define KHAOS_PLATFORM_MINGW32 1
-  #else
+  #if defined(__MINGW64__)
     #define KHAOS_PLATFORM_MINGW64 1
+  #else
+    #define KHAOS_PLATFORM_MINGW32 1
   #endif
   #include <_mingw.h>
   #if defined(__MINGW64_VERSION_MAJOR) && defined(__MINGW64_VERSION_MINOR)
