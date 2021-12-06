@@ -24,7 +24,25 @@
  *
  * Values for platform
  *
- *
+ * | Macro           |     Type      |
+ * | :-------------: | :-----------: |
+ * | Android         | **detection** |
+ * | CloudABI        | **detection** |
+ * | iOSTarget       | **detection** |
+ * | iOSIphone       | **detection** |
+ * | iOSSimulator    | **detection** |
+ * | MINGW           | **detection** |
+ * | MINGW64         | **detection** |
+ * | MINGW32         | **detection** |
+ * | UWP             | **detection** |
+ * | WindowsDesktop  | **detection** |
+ * | WindowsPhone    | **detection** |
+ * | WindowsServer   | **detection** |
+ * | WindowsStore    | **detection** |
+ * | WindowsSystem   | **detection** |
+ * | MINGWEmulated   | **detection** |
+ * | MINGW64Emulated | **detection** |
+ * | MINGW32Emulated | **detection** |
  */
 
 #include "khaos/OS.h"
@@ -144,13 +162,6 @@
 #define KHAOS_PLATFORM_MINGW64Emulated 0
 #endif
 
-#if !defined(KHAOS_PLATFORM_VERSION)
-  #define KHAOS_PLATFORM_VERSION KHAOS_SET_VERSION(0, 0, 0)
-#endif
-#if !defined(KHAOS_PLATFORM_VERSION_TWEAK)
-  #define KHAOS_PLATFORM_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
-#endif
-
 #if !defined(KHAOS_MINGW_VERSION)
 #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(0, 0, 0)
 #endif
@@ -158,13 +169,20 @@
 #define KHAOS_MINGW_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
 #endif
 
+#if !defined(KHAOS_PLATFORM_VERSION)
+  #define KHAOS_PLATFORM_VERSION KHAOS_SET_VERSION(0, 0, 0)
+#endif
+#if !defined(KHAOS_PLATFORM_VERSION_TWEAK)
+  #define KHAOS_PLATFORM_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
+#endif
+
 /* Special case for MINGW */
-#if !PLATFORM_IS(MINGW) && (defined(__MINGW32__) || defined(__MINGW64__))
+#if defined(__MINGW32__) || defined(__MINGW64__)
 #define KHAOS_PLATFORM_MINGWEmulated 1
-  #if defined(__MINGW32__)
-    #define KHAOS_PLATFORM_MINGW32Emulated 1
-  #else
+  #if defined(__MINGW64__)
     #define KHAOS_PLATFORM_MINGW64Emulated 1
+  #else
+    #define KHAOS_PLATFORM_MINGW32Emulated 1
   #endif
   #include <_mingw.h>
   #if defined(__MINGW64_VERSION_MAJOR) && defined(__MINGW64_VERSION_MINOR)
