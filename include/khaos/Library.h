@@ -36,11 +36,17 @@
  * #endif
  * \endcode
  *
- * Values for library
+ * Values for the C library
  *
- * | Macro                   |
- * | :---------------------: |
- *
+ * | Macro    |
+ * | :------: |
+ * | Bionic   |
+ * | CloudABI |
+ * | GNU      |
+ * | klibc    |
+ * | uClibc   |
+ * | VMC      |
+ * | ZOS      |
  **/
 #define C_LIBRARY_IS(library) (KHAOS_LIBRARYC_##library == 1)
 
@@ -59,11 +65,21 @@
  * #endif
  * \endcode
  *
- * Values for library
+ * Values for C++ library
  *
- * | Macro                   |
- * | :---------------------: |
- *
+ * | Macro      |
+ * | :--------: |
+ * | CXX        |
+ * | Dinkumware |
+ * | Comeau     |
+ * | Modena     |
+ * | Metrowerks |
+ * | Roguewave  |
+ * | SGI        |
+ * | GNU        |
+ * | STLport    |
+ * | IBM        |
+ * | MFC        |
  **/
 #define CXX_LIBRARY_IS(library) (KHAOS_LIBRARYCXX_##library == 1)
 
