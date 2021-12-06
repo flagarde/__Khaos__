@@ -448,7 +448,7 @@
 #define KHAOS_ARCH_sh2 0
 #endif
 #if !defined(KHAOS_ARCH_sh1)
-#define KHAOS_ARCH_sh 0
+#define KHAOS_ARCH_sh1 0
 #endif
 #if !defined(KHAOS_ARCH_SYS370)
 #define KHAOS_ARCH_SYS370 0

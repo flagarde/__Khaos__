@@ -162,7 +162,7 @@ TEST_CASE("Testing the Architecture")
   std::cout<<"Architecture : sh2, Version : "<<KHAOS_ARCH_VERSION<<std::endl;
 #endif
 #if ARCHITECTURE_IS(sh1)
-  std::cout<<"Architecture : sh, Version : "<<KHAOS_ARCH_VERSION<<std::endl;
+  std::cout<<"Architecture : sh1, Version : "<<KHAOS_ARCH_VERSION<<std::endl;
 #endif
 #if ARCHITECTURE_IS(SYS370)
   std::cout<<"Architecture : SYS370, Version : "<<KHAOS_ARCH_VERSION<<std::endl;
