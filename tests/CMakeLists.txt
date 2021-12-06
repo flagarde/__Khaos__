@@ -54,3 +54,9 @@ set_target_properties(Library.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_
 target_link_libraries(Library.test PRIVATE Khaos::Khaos doctest_with_main)
 doctest_discover_tests(Library.test COMMAND Library.test ADD_LABELS "Test Library")
 install(TARGETS Library.test RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}/tests")
+
+add_executable(Unix.test Unix.test.cpp)
+set_target_properties(Unix.test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/tests")
+target_link_libraries(Unix.test PRIVATE Khaos::Khaos doctest_with_main)
+doctest_discover_tests(Unix.test COMMAND Unix.test ADD_LABELS "Test Unix")
+install(TARGETS Unix.test RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}/tests")
