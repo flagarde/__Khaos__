@@ -110,6 +110,22 @@
   #endif
 #endif
 
+/* Special case for MINGW */
+#if defined(__MINGW32__) || defined(__MINGW64__)
+#define KHAOS_PLATFORM_MINGWEmulated 1
+  #if defined(__MINGW64__)
+    #define KHAOS_PLATFORM_MINGW64Emulated 1
+  #else
+    #define KHAOS_PLATFORM_MINGW32Emulated 1
+  #endif
+  #include <_mingw.h>
+  #if defined(__MINGW64_VERSION_MAJOR) && defined(__MINGW64_VERSION_MINOR)
+    #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(__MINGW64_VERSION_MAJOR, __MINGW64_VERSION_MINOR, 0)
+  #elif defined(__MINGW32_VERSION_MAJOR) && defined(__MINGW32_VERSION_MINOR)
+    #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(__MINGW32_VERSION_MAJOR, __MINGW32_VERSION_MINOR, 0)
+  #endif
+#endif
+
 #if !defined(KHAOS_PLATFORM_Android)
  #define KHAOS_PLATFORM_Android 0
 #endif
@@ -174,22 +190,6 @@
 #endif
 #if !defined(KHAOS_PLATFORM_VERSION_TWEAK)
   #define KHAOS_PLATFORM_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
-#endif
-
-/* Special case for MINGW */
-#if defined(__MINGW32__) || defined(__MINGW64__)
-#define KHAOS_PLATFORM_MINGWEmulated 1
-  #if defined(__MINGW64__)
-    #define KHAOS_PLATFORM_MINGW64Emulated 1
-  #else
-    #define KHAOS_PLATFORM_MINGW32Emulated 1
-  #endif
-  #include <_mingw.h>
-  #if defined(__MINGW64_VERSION_MAJOR) && defined(__MINGW64_VERSION_MINOR)
-    #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(__MINGW64_VERSION_MAJOR, __MINGW64_VERSION_MINOR, 0)
-  #elif defined(__MINGW32_VERSION_MAJOR) && defined(__MINGW32_VERSION_MINOR)
-    #define KHAOS_MINGW_VERSION KHAOS_SET_VERSION(__MINGW32_VERSION_MAJOR, __MINGW32_VERSION_MINOR, 0)
-  #endif
 #endif
 
 #endif
