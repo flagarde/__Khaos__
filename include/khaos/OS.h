@@ -306,262 +306,262 @@
 #endif
 
 #if !defined(KHAOS_OS_AIX)
-#define KHAOS_OS_AIX 0
+  #define KHAOS_OS_AIX 0
 #endif
 #if !defined(KHAOS_OS_AIX4p3)
-#define KHAOS_OS_AIX4p3 0
+  #define KHAOS_OS_AIX4p3 0
 #endif
 #if !defined(KHAOS_OS_AIX4p1)
-#define KHAOS_OS_AIX4p1 0
+  #define KHAOS_OS_AIX4p1 0
 #endif
 #if !defined(KHAOS_OS_AIX3p2)
-#define KHAOS_OS_AIX3p2 0
+  #define KHAOS_OS_AIX3p2 0
 #endif
 #if !defined(KHAOS_OS_AIX3)
-#define KHAOS_OS_AIX3 0
+  #define KHAOS_OS_AIX3 0
 #endif
 #if !defined(KHAOS_OS_AmigaOS)
-#define KHAOS_OS_AmigaOS 0
+  #define KHAOS_OS_AmigaOS 0
 #endif
 #if !defined(KHAOS_OS_BEOS)
-#define KHAOS_OS_BEOS 0
+  #define KHAOS_OS_BEOS 0
 #endif
 #if !defined(KHAOS_OS_BSDi)
-#define KHAOS_OS_BSDi 0
+  #define KHAOS_OS_BSDi 0
 #endif
 #if !defined(KHAOS_OS_DragonFly)
-#define KHAOS_OS_DragonFly 0
+  #define KHAOS_OS_DragonFly 0
 #endif
 #if !defined(KHAOS_OS_FreeBSD)
-#define KHAOS_OS_FreeBSD 0
+  #define KHAOS_OS_FreeBSD 0
 #endif
 #if !defined(KHAOS_OS_FreeBSD4p10)
-#define KHAOS_OS_FreeBSD4p10 0
+  #define KHAOS_OS_FreeBSD4p10 0
 #endif
 #if !defined(KHAOS_OS_FreeBSD4p11)
-#define KHAOS_OS_FreeBSD4p11 0
+  #define KHAOS_OS_FreeBSD4p11 0
 #endif
 #if !defined(KHAOS_OS_NetBSD)
-#define KHAOS_OS_NetBSD 0
+  #define KHAOS_OS_NetBSD 0
 #endif
 #if !defined(KHAOS_OS_NetBSD0p8)
-#define KHAOS_OS_NetBSD0p8 0
+  #define KHAOS_OS_NetBSD0p8 0
 #endif
 #if !defined(KHAOS_OS_NetBSD0p9)
-#define KHAOS_OS_NetBSD0p9 0
+  #define KHAOS_OS_NetBSD0p9 0
 #endif
 #if !defined(KHAOS_OS_NetBSD1)
-#define KHAOS_OS_NetBSD1 0
+  #define KHAOS_OS_NetBSD1 0
 #endif
 #if !defined(KHAOS_OS_OpenBSD)
-#define KHAOS_OS_OpenBSD 0
+  #define KHAOS_OS_OpenBSD 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_0)
-#define  KHAOS_OS_OpenBSD2_0 0
+#if !defined(KHAOS_OS_OpenBSD2_0)
+  #define KHAOS_OS_OpenBSD2_0 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_1)
-#define  KHAOS_OS_OpenBSD2_1 0
+#if !defined(KHAOS_OS_OpenBSD2_1)
+  #define KHAOS_OS_OpenBSD2_1 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_2)
-#define  KHAOS_OS_OpenBSD2_2 0
+#if !defined(KHAOS_OS_OpenBSD2_2)
+  #define KHAOS_OS_OpenBSD2_2 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_3)
-#define  KHAOS_OS_OpenBSD2_3 0
+#if !defined(KHAOS_OS_OpenBSD2_3)
+  #define KHAOS_OS_OpenBSD2_3 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_4)
-#define  KHAOS_OS_OpenBSD2_4 0
+#if !defined(KHAOS_OS_OpenBSD2_4)
+  #define KHAOS_OS_OpenBSD2_4 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_5)
-#define  KHAOS_OS_OpenBSD2_5 0
+#if !defined(KHAOS_OS_OpenBSD2_5)
+  #define KHAOS_OS_OpenBSD2_5 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_6)
-#define  KHAOS_OS_OpenBSD2_6 0
+#if !defined(KHAOS_OS_OpenBSD2_6)
+  #define KHAOS_OS_OpenBSD2_6 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_7)
-#define  KHAOS_OS_OpenBSD2_7 0
+#if !defined(KHAOS_OS_OpenBSD2_7)
+  #define KHAOS_OS_OpenBSD2_7 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_8)
-#define  KHAOS_OS_OpenBSD2_8 0
+#if !defined(KHAOS_OS_OpenBSD2_8)
+  #define KHAOS_OS_OpenBSD2_8 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD2_9)
-#define  KHAOS_OS_OpenBSD2_9 0
+#if !defined(KHAOS_OS_OpenBSD2_9)
+  #define KHAOS_OS_OpenBSD2_9 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_0)
-#define  KHAOS_OS_OpenBSD3_0 0
+#if !defined(KHAOS_OS_OpenBSD3_0)
+  #define KHAOS_OS_OpenBSD3_0 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_1)
-#define  KHAOS_OS_OpenBSD3_1 0
+#if !defined(KHAOS_OS_OpenBSD3_1)
+  #define KHAOS_OS_OpenBSD3_1 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_2)
-#define  KHAOS_OS_OpenBSD3_2 0
+#if !defined(KHAOS_OS_OpenBSD3_2)
+  #define KHAOS_OS_OpenBSD3_2 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_3)
-#define  KHAOS_OS_OpenBSD3_3 0
+#if !defined(KHAOS_OS_OpenBSD3_3)
+  #define KHAOS_OS_OpenBSD3_3 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_4)
-#define  KHAOS_OS_OpenBSD3_4 0
+#if !defined(KHAOS_OS_OpenBSD3_4)
+  #define KHAOS_OS_OpenBSD3_4 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_5)
-#define  KHAOS_OS_OpenBSD3_5 0
+#if !defined(KHAOS_OS_OpenBSD3_5)
+  #define KHAOS_OS_OpenBSD3_5 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_6)
-#define  KHAOS_OS_OpenBSD3_6 0
+#if !defined(KHAOS_OS_OpenBSD3_6)
+  #define KHAOS_OS_OpenBSD3_6 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_7)
-#define  KHAOS_OS_OpenBSD3_7 0
+#if !defined(KHAOS_OS_OpenBSD3_7)
+  #define KHAOS_OS_OpenBSD3_7 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_8)
-#define  KHAOS_OS_OpenBSD3_8 0
+#if !defined(KHAOS_OS_OpenBSD3_8)
+  #define KHAOS_OS_OpenBSD3_8 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD3_9)
-#define  KHAOS_OS_OpenBSD3_9 0
+#if !defined(KHAOS_OS_OpenBSD3_9)
+  #define KHAOS_OS_OpenBSD3_9 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_0)
-#define  KHAOS_OS_OpenBSD4_0 0
+#if !defined(KHAOS_OS_OpenBSD4_0)
+  #define KHAOS_OS_OpenBSD4_0 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_1)
-#define  KHAOS_OS_OpenBSD4_1 0
+#if !defined(KHAOS_OS_OpenBSD4_1)
+  #define KHAOS_OS_OpenBSD4_1 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_2)
-#define  KHAOS_OS_OpenBSD4_2 0
+#if !defined(KHAOS_OS_OpenBSD4_2)
+  #define KHAOS_OS_OpenBSD4_2 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_3)
-#define  KHAOS_OS_OpenBSD4_3 0
+#if !defined(KHAOS_OS_OpenBSD4_3)
+  #define KHAOS_OS_OpenBSD4_3 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_4)
-#define  KHAOS_OS_OpenBSD4_4 0
+#if !defined(KHAOS_OS_OpenBSD4_4)
+  #define KHAOS_OS_OpenBSD4_4 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_5)
-#define  KHAOS_OS_OpenBSD4_5 0
+#if !defined(KHAOS_OS_OpenBSD4_5)
+  #define KHAOS_OS_OpenBSD4_5 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_6)
-#define  KHAOS_OS_OpenBSD4_6 0
+#if !defined(KHAOS_OS_OpenBSD4_6)
+  #define KHAOS_OS_OpenBSD4_6 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_7)
-#define  KHAOS_OS_OpenBSD4_7 0
+#if !defined(KHAOS_OS_OpenBSD4_7)
+  #define KHAOS_OS_OpenBSD4_7 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_8)
-#define  KHAOS_OS_OpenBSD4_8 0
+#if !defined(KHAOS_OS_OpenBSD4_8)
+  #define KHAOS_OS_OpenBSD4_8 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD4_9)
-#define  KHAOS_OS_OpenBSD4_9 0
+#if !defined(KHAOS_OS_OpenBSD4_9)
+  #define KHAOS_OS_OpenBSD4_9 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_0)
-#define  KHAOS_OS_OpenBSD5_0 0
+#if !defined(KHAOS_OS_OpenBSD5_0)
+  #define KHAOS_OS_OpenBSD5_0 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_1)
-#define  KHAOS_OS_OpenBSD5_1 0
+#if !defined(KHAOS_OS_OpenBSD5_1)
+  #define KHAOS_OS_OpenBSD5_1 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_2)
-#define  KHAOS_OS_OpenBSD5_2 0
+#if !defined(KHAOS_OS_OpenBSD5_2)
+  #define KHAOS_OS_OpenBSD5_2 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_3)
-#define  KHAOS_OS_OpenBSD5_3 0
+#if !defined(KHAOS_OS_OpenBSD5_3)
+  #define KHAOS_OS_OpenBSD5_3 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_4)
-#define  KHAOS_OS_OpenBSD5_4 0
+#if !defined(KHAOS_OS_OpenBSD5_4)
+  #define KHAOS_OS_OpenBSD5_4 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_5)
-#define  KHAOS_OS_OpenBSD5_5 0
+#if !defined(KHAOS_OS_OpenBSD5_5)
+  #define KHAOS_OS_OpenBSD5_5 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_6)
-#define  KHAOS_OS_OpenBSD5_6 0
+#if !defined(KHAOS_OS_OpenBSD5_6)
+  #define KHAOS_OS_OpenBSD5_6 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_7)
-#define  KHAOS_OS_OpenBSD5_7 0
+#if !defined(KHAOS_OS_OpenBSD5_7)
+  #define KHAOS_OS_OpenBSD5_7 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_8)
-#define  KHAOS_OS_OpenBSD5_8 0
+#if !defined(KHAOS_OS_OpenBSD5_8)
+  #define KHAOS_OS_OpenBSD5_8 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD5_9)
-#define  KHAOS_OS_OpenBSD5_9 0
+#if !defined(KHAOS_OS_OpenBSD5_9)
+  #define KHAOS_OS_OpenBSD5_9 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_0)
-#define  KHAOS_OS_OpenBSD6_0 0
+#if !defined(KHAOS_OS_OpenBSD6_0)
+  #define KHAOS_OS_OpenBSD6_0 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_1)
-#define  KHAOS_OS_OpenBSD6_1 0
+#if !defined(KHAOS_OS_OpenBSD6_1)
+  #define KHAOS_OS_OpenBSD6_1 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_2)
-#define  KHAOS_OS_OpenBSD6_2 0
+#if !defined(KHAOS_OS_OpenBSD6_2)
+  #define KHAOS_OS_OpenBSD6_2 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_3)
-#define  KHAOS_OS_OpenBSD6_3 0
+#if !defined(KHAOS_OS_OpenBSD6_3)
+  #define KHAOS_OS_OpenBSD6_3 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_4)
-#define  KHAOS_OS_OpenBSD6_4 0
+#if !defined(KHAOS_OS_OpenBSD6_4)
+  #define KHAOS_OS_OpenBSD6_4 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_5)
-#define  KHAOS_OS_OpenBSD6_5 0
+#if !defined(KHAOS_OS_OpenBSD6_5)
+  #define KHAOS_OS_OpenBSD6_5 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_6)
-#define  KHAOS_OS_OpenBSD6_6 0
+#if !defined(KHAOS_OS_OpenBSD6_6)
+  #define KHAOS_OS_OpenBSD6_6 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_7)
-#define  KHAOS_OS_OpenBSD6_7 0
+#if !defined(KHAOS_OS_OpenBSD6_7)
+  #define KHAOS_OS_OpenBSD6_7 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_8)
-#define  KHAOS_OS_OpenBSD6_8 0
+#if !defined(KHAOS_OS_OpenBSD6_8)
+  #define KHAOS_OS_OpenBSD6_8 0
 #endif
-#if !defined( KHAOS_OS_OpenBSD6_9)
-#define  KHAOS_OS_OpenBSD6_9 0
+#if !defined(KHAOS_OS_OpenBSD6_9)
+  #define KHAOS_OS_OpenBSD6_9 0
 #endif
-#if !defined( KHAOS_OS_CYGWIN)
-#define KHAOS_OS_CYGWIN 0
+#if !defined(KHAOS_OS_CYGWIN)
+  #define KHAOS_OS_CYGWIN 0
 #endif
-#if !defined( KHAOS_OS_HAIKU)
-#define KHAOS_OS_HAIKU 0
+#if !defined(KHAOS_OS_HAIKU)
+  #define KHAOS_OS_HAIKU 0
 #endif
-#if !defined( KHAOS_OS_HPUX)
-#define KHAOS_OS_HPUX 0
+#if !defined(KHAOS_OS_HPUX)
+  #define KHAOS_OS_HPUX 0
 #endif
-#if !defined( KHAOS_OS_iOS)
-#define KHAOS_OS_iOS 0
+#if !defined(KHAOS_OS_iOS)
+  #define KHAOS_OS_iOS 0
 #endif
-#if !defined( KHAOS_OS_IRIX)
-#define KHAOS_OS_IRIX 0
+#if !defined(KHAOS_OS_IRIX)
+  #define KHAOS_OS_IRIX 0
 #endif
-#if !defined( KHAOS_OS_Linux)
-#define KHAOS_OS_Linux 0
+#if !defined(KHAOS_OS_Linux)
+  #define KHAOS_OS_Linux 0
 #endif
-#if !defined( KHAOS_OS_MacOS)
-#define KHAOS_OS_MacOS 0
+#if !defined(KHAOS_OS_MacOS)
+  #define KHAOS_OS_MacOS 0
 #endif
-#if !defined( KHAOS_OS_OS400)
-#define KHAOS_OS_OS400 0
+#if !defined(KHAOS_OS_OS400)
+  #define KHAOS_OS_OS400 0
 #endif
-#if !defined( KHAOS_OS_QNX)
-#define KHAOS_OS_QNX 0
+#if !defined(KHAOS_OS_QNX)
+  #define KHAOS_OS_QNX 0
 #endif
-#if !defined( KHAOS_OS_QNX4)
-#define KHAOS_OS_QNX4 0
+#if !defined(KHAOS_OS_QNX4)
+  #define KHAOS_OS_QNX4 0
 #endif
-#if !defined( KHAOS_OS_Solaris)
-#define KHAOS_OS_Solaris 0
+#if !defined(KHAOS_OS_Solaris)
+  #define KHAOS_OS_Solaris 0
 #endif
-#if !defined( KHAOS_OS_VMS)
-#define KHAOS_OS_VMS 0
+#if !defined(KHAOS_OS_VMS)
+  #define KHAOS_OS_VMS 0
 #endif
-#if !defined( KHAOS_OS_Windows)
-#define KHAOS_OS_Windows 0
+#if !defined(KHAOS_OS_Windows)
+  #define KHAOS_OS_Windows 0
 #endif
-#if !defined( KHAOS_OS_BSD)
-#define KHAOS_OS_BSD 0
+#if !defined(KHAOS_OS_BSD)
+  #define KHAOS_OS_BSD 0
 #endif
-#if !defined( KHAOS_OS_BSD4p4)
-#define KHAOS_OS_BSD4p4 0
+#if !defined(KHAOS_OS_BSD4p4)
+  #define KHAOS_OS_BSD4p4 0
 #endif
-#if !defined( KHAOS_OS_BSD4p3)
-#define KHAOS_OS_BSD4p3 0
+#if !defined(KHAOS_OS_BSD4p3)
+  #define KHAOS_OS_BSD4p3 0
 #endif
-#if !defined( KHAOS_OS_BSD4p2)
-#define KHAOS_OS_BSD4p2 0
+#if !defined(KHAOS_OS_BSD4p2)
+  #define KHAOS_OS_BSD4p2 0
 #endif
-#if !defined( KHAOS_OS_UNIX)
-#define KHAOS_OS_UNIX 0
+#if !defined(KHAOS_OS_UNIX)
+  #define KHAOS_OS_UNIX 0
 #endif
-#if !defined( KHAOS_OS_SVR4)
-#define KHAOS_OS_SVR4 0
+#if !defined(KHAOS_OS_SVR4)
+  #define KHAOS_OS_SVR4 0
 #endif
 
 #if !defined(KHAOS_OS_VERSION)

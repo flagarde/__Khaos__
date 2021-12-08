@@ -1013,8 +1013,8 @@
   #endif
   #define KHAOS_COMPILER_NVCC KHAOS_NVCC_VERSION
 #else
-  #define KHAOS_COMPILER_NVCC 0
-  #define KHAOS_NVCC_VERSION KHAOS_SET_VERSION(0, 0, 0)
+  #define KHAOS_COMPILER_NVCC      0
+  #define KHAOS_NVCC_VERSION       KHAOS_SET_VERSION(0, 0, 0)
   #define KHAOS_NVCC_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0, 0, 0)
 #endif
 
@@ -1424,15 +1424,13 @@
 #endif
 #define KHAOS_GCC_EMULATED_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
 
-
 #if defined(__llvm__)
   #define KHAOS_COMPILER_LLVMEmulated 1
 #else
   #define KHAOS_COMPILER_LLVMEmulated 0
 #endif
-#define KHAOS_LLVM_EMULATED_VERSION KHAOS_SET_VERSION(0, 0, 0)
+#define KHAOS_LLVM_EMULATED_VERSION       KHAOS_SET_VERSION(0, 0, 0)
 #define KHAOS_LLVM_EMULATED_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK(0)
-
 
 //Set to 0 to avoid warning
 #if !defined(KHAOS_COMPILER_ACC)
@@ -1499,7 +1497,7 @@
   #define KHAOS_COMPILER_EKOPath 0
 #endif
 #if !defined(KHAOS_COMPILER_Emscripten)
-#define KHAOS_COMPILER_Emscripten 0
+  #define KHAOS_COMPILER_Emscripten 0
 #endif
 #if !defined(KHAOS_COMPILER_Fujitsu)
   #define KHAOS_COMPILER_Fujitsu 0

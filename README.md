@@ -14,7 +14,6 @@
   [![codecov](https://codecov.io/gh/flagarde/Khaos/branch/main/graph/badge.svg?token=9Z9NA4XXKF)](https://codecov.io/gh/flagarde/Khaos)
   [![CodeFactor](https://www.codefactor.io/repository/github/flagarde/khaos/badge)](https://www.codefactor.io/repository/github/flagarde/khaos)
   [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4e3a4bb02a0747a48147b15c848d02e1)](https://www.codacy.com/gh/flagarde/Khaos/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=flagarde/Khaos&amp;utm_campaign=Badge_Grade)
-  [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5412/badge)](https://bestpractices.coreinfrastructure.org/projects/5412)
 
 </h1>
 
