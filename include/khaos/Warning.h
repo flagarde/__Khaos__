@@ -1,6 +1,10 @@
 #ifndef KHAOS_WARNING_H
 #define KHAOS_WARNING_H
 
+/*! \file Warning.h
+    \brief Cross-compiler warning push and pop macros.
+*/
+
 #include "khaos/Compiler.h"
 #include "khaos/Pragma.h"
 

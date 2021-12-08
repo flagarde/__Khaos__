@@ -9,7 +9,7 @@ TEST_CASE("Testing the Compiler")
 {
 //Set to 0 to avoid warning
 #if COMPILER_IS(ACC)
-  std::cout << "Compiler : ACC, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : ACC, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(AltiumMicroblaze)
   std::cout << "Compiler : AltiumMicroblaze, Version : " << KHAOS_COMPILER_VERSION << std::endl;
@@ -216,45 +216,45 @@ TEST_CASE("Testing the Compiler")
   std::cout << "Compiler : Turbo, Version : " << KHAOS_COMPILER_VERSION << std::endl;
 #endif
 #if COMPILER_IS(Ultimate)
-  std::cout << "Compiler : Ultimate, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : Ultimate, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(USLC)
-  std::cout << "Compiler : USLC, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : USLC, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(VBCC)
-  std::cout << "Compiler : VBCC, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : VBCC, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(Watcom)
-  std::cout << "Compiler : Watcom, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : Watcom, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(Zortech)
-  std::cout << "Compiler : Zortech, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : Zortech, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(AppleClang)
-  std::cout << "Compiler : AppleClang, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : AppleClang, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(Clang)
-  std::cout << "Compiler : Clang, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : Clang, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(LLVM)
-  std::cout << "Compiler : LLVM, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : LLVM, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(GCC)
-  std::cout << "Compiler : GCC, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : GCC, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(Unknown)
-  std::cout << "Compiler : Unknown, Version : " << KHAOS_COMPILER_VERSION << std::endl;
+  std::cout << "Compiler : Unknown, Version : " << KHAOS_COMPILER_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(ClangEmulated)
-  std::cout << "Compiler : ClangEmulated, Version : " << KHAOS_CLANG_EMULATED_VERSION << std::endl;
+  std::cout << "Compiler : ClangEmulated, Version : " << KHAOS_CLANG_EMULATED_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(GCCEmulated)
-  std::cout << "Compiler : GCCEmulated, Version : " << KHAOS_GCC_EMULATED_VERSION << std::endl;
+  std::cout << "Compiler : GCCEmulated, Version : " << KHAOS_GCC_EMULATED_VERSION<< std::endl;
 #endif
 #if COMPILER_IS(LLVMEmulated)
-  std::cout << "Compiler : LLVMEmulated, Version : " << KHAOS_COMPILER_LLVMEmulated << std::endl;
+  std::cout << "Compiler : LLVMEmulated, Version : " << KHAOS_COMPILER_LLVMEmulated<< std::endl;
 #endif
 #if COMPILER_IS(NVCC)
-  std::cout << "Compiler : NVCC, Version : " << KHAOS_NVCC_VERSION << std::endl;
+  std::cout << "Compiler : NVCC, Version : " << KHAOS_NVCC_VERSION<< std::endl;
 #endif
 }
