@@ -1002,9 +1002,9 @@
  * \note check with NVCC and KHAOS_NVCC_VERSION
  *
  */
-#define COMPILER_IS(compiler) (KHAOS_COMPILER_##compiler > 0)
-#define COMPILER_IS_GREATER_EQUAL(compiler,major,minor,patch) ( KHAOS_COMPILER_##compiler >= KHAOS_SET_VERSION(major, minor, patch)  )
-#define COMPILER_IS_LOWER(compiler,major,minor,patch) ( KHAOS_COMPILER_##compiler < KHAOS_SET_VERSION(major, minor, patch)  )
+#define COMPILER_IS(compiler)                                    (KHAOS_COMPILER_##compiler > 0)
+#define COMPILER_IS_GREATER_EQUAL(compiler, major, minor, patch) (KHAOS_COMPILER_##compiler >= KHAOS_SET_VERSION(major, minor, patch))
+#define COMPILER_IS_LOWER(compiler, major, minor, patch)         (KHAOS_COMPILER_##compiler < KHAOS_SET_VERSION(major, minor, patch))
 
 #if defined(__NVCC__)
   // /warn https://github.com/boostorg/predef/blob/develop/include/boost/predef/compiler/nvcc.h
@@ -1095,7 +1095,7 @@
   #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__PATHCC__, __PATHCC_MINOR__, __PATHCC_PATCHLEVEL__)
   #define KHAOS_COMPILER_EKOPath KHAOS_COMPILER_VERSION
 #elif defined(__EMSCRIPTEN__)
-  #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__EMSCRIPTEN_major__, __EMSCRIPTEN_minor__, __EMSCRIPTEN_tiny__)
+  #define KHAOS_COMPILER_VERSION    KHAOS_SET_VERSION(__EMSCRIPTEN_major__, __EMSCRIPTEN_minor__, __EMSCRIPTEN_tiny__)
   #define KHAOS_COMPILER_Emscripten KHAOS_COMPILER_VERSION
 #elif defined(__FCC_VERSION)
   #define KHAOS_COMPILER_Fujitsu 1
@@ -1113,7 +1113,7 @@
 #elif defined(__HP_aCC)
   #if __HP_aCC > 1
     #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(((__HP_aCC) / 10000) % 100, ((__HP_aCC) / 100) % 100, (__HP_aCC) % 100)
-    #define KHAOS_COMPILER_HPaCC KHAOS_COMPILER_VERSION
+    #define KHAOS_COMPILER_HPaCC   KHAOS_COMPILER_VERSION
   #else
     #define KHAOS_COMPILER_HPaCC 1
   #endif
@@ -1142,7 +1142,7 @@
 #elif defined(__IBMC__) || defined(__IBMCPP__)
   #define KHAOS_COMPILER_VERSION       KHAOS_SET_VERSION((__COMPILER_VER__ & 0xF000000) >> 24, (__COMPILER_VER__ & 0xFF0000) >> 16, (__COMPILER_VER__ & 0xFF00) >> 8)
   #define KHAOS_COMPILER_VERSION_TWEAK KHAOS_SET_VERSION_TWEAK((__COMPILER_VER__ & 0xFF))
-  #define KHAOS_COMPILER_IBM KHAOS_COMPILER_VERSION
+  #define KHAOS_COMPILER_IBM           KHAOS_COMPILER_VERSION
   #if __COMPILER_VER__ & 0xF0000000)>> 28 == 0
     #define KHAOS_COMPILER_IBMC370 KHAOS_COMPILER_VERSION
   #elif __COMPILER_VER__ & 0xF0000000)>> 28 == 1
@@ -1213,7 +1213,7 @@
     #define COMP_MSVC_BUILD_PATCH 0
   #endif
   #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((_MSC_VER / 100) % 1000, (_MSC_VER) % 1000, COMP_MSVC_BUILD_PATCH)
-  #define KHAOS_COMPILER_MSVC KHAOS_COMPILER_VERSION
+  #define KHAOS_COMPILER_MSVC    KHAOS_COMPILER_VERSION
 #elif defined(_MRI)
   #define KHAOS_COMPILER_Microtec 1
 #elif defined(__NDPC__) || defined(__NDPX__)
@@ -1230,7 +1230,7 @@
 #elif defined(__MRC__) || defined(MPW_C) || defined(MPW_CPLUS)
   #if defined(__MRC__)
     #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__MRC__ & 0xFF00) >> 8, (__MRC__ & 0xFF), 0)
-    #define KHAOS_COMPILER_MPW KHAOS_COMPILER_VERSION
+    #define KHAOS_COMPILER_MPW     KHAOS_COMPILER_VERSION
   #else
     #define KHAOS_COMPILER_MPW 1
   #endif
@@ -1271,7 +1271,7 @@
   #define KHAOS_COMPILER_Pelles  KHAOS_COMPILER_VERSION
 #elif defined(__PGI)
   #if defined(__PGIC__) && defined(__PGIC_MINOR__) && defined(__PGIC_PATCHLEVEL__)
-    #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION(__PGIC__, __PGIC_MINOR__, __PGIC_PATCHLEVEL__)
+    #define KHAOS_COMPILER_VERSION  KHAOS_SET_VERSION(__PGIC__, __PGIC_MINOR__, __PGIC_PATCHLEVEL__)
     #define KHAOS_COMPILER_Portland KHAOS_COMPILER_VERSION
   #else
     #define KHAOS_COMPILER_Portland 1
@@ -1316,7 +1316,7 @@
 #elif defined(__TI_COMPILER_VERSION__) || defined(_TMS320C6X)
   #if defined(__TI_COMPILER_VERSION__)
     #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__TI_COMPILER_VERSION__ / 1000000) % 1000, (__TI_COMPILER_VERSION__ / 1000) % 1000, __TI_COMPILER_VERSION__ % 1000)
-    #define KHAOS_COMPILER_TI KHAOS_COMPILER_VERSION
+    #define KHAOS_COMPILER_TI      KHAOS_COMPILER_VERSION
   #else
     #define KHAOS_COMPILER_TI 1
   #endif
@@ -1332,7 +1332,7 @@
 #elif defined(__TURBOC__)
   #if __TURBOC__ < 0x295 || __TURBOC__ > 0x400
     #define KHAOS_COMPILER_VERSION KHAOS_SET_VERSION((__TURBOC__ & 0xFF00) >> 8, (__TURBOC__ & 0xFF), 0)
-    #define KHAOS_COMPILER_Turbo KHAOS_COMPILER_VERSION
+    #define KHAOS_COMPILER_Turbo   KHAOS_COMPILER_VERSION
   #else
     #define KHAOS_COMPILER_Turbo 1
   #endif
@@ -1357,7 +1357,7 @@
   #if defined(__apple_build_version__)
     #define KHAOS_COMPILER_AppleClang KHAOS_COMPILER_VERSION
   #endif
-  #define KHAOS_COMPILER_Clang   KHAOS_COMPILER_VERSION
+  #define KHAOS_COMPILER_Clang KHAOS_COMPILER_VERSION
 #elif defined(__llvm__)
   //Should be after clang because clang mimic llvm
   #define KHAOS_COMPILER_LLVM 1
@@ -1403,7 +1403,7 @@
     #define KHAOS_CLANG_EMULATED_VERSION KHAOS_SET_VERSION(__clang_major__, __clang_minor__, __clang_patchlevel__)
     #define KHAOS_COMPILER_ClangEmulated KHAOS_CLANG_EMULATED_VERSION
   #else
-     #define KHAOS_COMPILER_ClangEmulated 1
+    #define KHAOS_COMPILER_ClangEmulated 1
   #endif
 #else
   #define KHAOS_COMPILER_ClangEmulated 0
