@@ -1,7 +1,7 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 ci:
-  skip: [clang-tidy,oclint,cppcheck,cpplint,include-what-you-use]
+  skip: [clang-tidy,cppcheck,cpplint,include-what-you-use]
 
 fail_fast: false
 
@@ -51,7 +51,6 @@ repos:
   rev: v1.3.4
   hooks:
     - id: clang-tidy
-    - id: oclint
     - id: cppcheck
     - id: cpplint
     - id: include-what-you-use
