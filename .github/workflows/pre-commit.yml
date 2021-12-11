@@ -12,7 +12,10 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
     
-    - name: '${{ matrix.icon }} Install packages'
-      run: sudo apt-get install subversion git cmake lcov libssl-dev clang-tidy cppcheck iwyu
-    
+    - name: 'Install packages'
+      run: sudo apt-get install subversion git cmake lcov libssl-dev python-pip clang-tidy cppcheck iwyu clang clang-format cppcheck
+      
+    - name: 'Install packages with pip'
+      run: pip install --user cpplint
+      
     - uses: pre-commit/action@v2.0.3
