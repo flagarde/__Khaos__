@@ -13,11 +13,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
-    
+
     - name: 'Install packages'
       run: sudo apt-get install subversion git cmake lcov libssl-dev python3-pip clang-tidy cppcheck iwyu clang clang-format cppcheck
-      
+
     - name: 'Install packages with pip'
       run: pip install --user cpplint
-      
+
     - uses: pre-commit/action@v2.0.3
