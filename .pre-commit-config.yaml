@@ -1,7 +1,7 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 ci:
-  skip: [clang-tidy,oclint,uncrustify,cppcheck,cpplint,include-what-you-use]
+  skip: [clang-tidy,oclint,cppcheck,cpplint,include-what-you-use]
 
 fail_fast: false
 
