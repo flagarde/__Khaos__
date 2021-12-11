@@ -52,7 +52,6 @@ repos:
   hooks:
     - id: clang-tidy
     - id: oclint
-    - id: uncrustify
     - id: cppcheck
     - id: cpplint
     - id: include-what-you-use
