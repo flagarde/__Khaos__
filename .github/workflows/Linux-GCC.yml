@@ -45,9 +45,12 @@ jobs:
           cmake-version: '${{env.CMAKE_VERSION}}'
           github-api-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: '${{ matrix.icon }} Install ${{ matrix.cc }}'
+        run: sudo apt-get install ${{ matrix.cc }}
+        
       - name: '${{ matrix.icon }} Install packages'
         if: ${{ env.INSTALL_PACKAGES != '' }}
-        run: sudo apt-get install ${{env.INSTALL_PACKAGES}} ${{ matrix.cc }}
+        run: sudo apt-get install ${{env.INSTALL_PACKAGES}}
 
       - name: '🔧 Configure'
         env:
