@@ -13,12 +13,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { icon: '🟨', cc: clang-10, cxx: clang++-10, name: 'Clang 10' }
-          - { icon: '🟦', cc: clang-11, cxx: clang++-11, name: 'Clang 11' }
+          - { icon: '🟨', cc: clang-6, cxx: clang++-6, name: 'Clang 6' }
+          - { icon: '🟦', cc: clang-7, cxx: clang++-7, name: 'Clang 7' }
+          - { icon: '🟩', cc: clang-8, cxx: clang++-8, name: 'Clang 8' }
+          - { icon: '🟥', cc: clang-9, cxx: clang++-9, name: 'Clang 9' }
+          - { icon: '🟧', cc: clang-10, cxx: clang++-10, name: 'Clang 10' }
+          - { icon: '🟪', cc: clang-11, cxx: clang++-11, name: 'Clang 11' }
     name: '🚧 ${{ matrix.icon }} ${{ matrix.name }}'
 
     steps:
-
+    
+      - name: '🧰 Add toolchains'
+        run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && sudo apt-get update
+        
       - name: '🧰 Checkout'
         uses: actions/checkout@v2.4.0
 
@@ -41,6 +48,9 @@ jobs:
           cmake-version: '${{env.CMAKE_VERSION}}'
           github-api-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: '${{ matrix.icon }} Install ${{ matrix.cc }}'
+        run: sudo apt-get install ${{ matrix.cc }}
+        
       - name: '${{ matrix.icon }} Install packages'
         if: ${{ env.INSTALL_PACKAGES != '' }}
         run: sudo apt-get install ${{env.INSTALL_PACKAGES}}
