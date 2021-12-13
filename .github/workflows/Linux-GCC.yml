@@ -18,6 +18,9 @@ jobs:
     name: '🚧 ${{ matrix.icon }} ${{ matrix.name }}'
 
     steps:
+    
+      - name: '🧰 Add toolchains'
+        run: deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu focal main && deb-src http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu focal main && sudo add-apt-repository ppa:ubuntu-toolchain-r/test && sudo apt-get update
 
       - name: '🧰 Checkout'
         uses: actions/checkout@v2.4.0
