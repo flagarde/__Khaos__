@@ -21,7 +21,7 @@ jobs:
     steps:
     
       - name: '🧰 Add toolchains'
-        run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test && sudo apt-get update
+        run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && sudo apt-get update
 
       - name: '🧰 Checkout'
         uses: actions/checkout@v2.4.0
