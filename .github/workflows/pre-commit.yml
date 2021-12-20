@@ -13,13 +13,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
-    
+
     - name: '📥 Load .env file'
       if: hashFiles('.github/workflows/.env/.env') != ''
       uses: xom9ikk/dotenv@v1.0.2
       with:
         path: .github/workflows/.env
-        
+
     - name: '${{ matrix.icon }} Setup CMake'
       uses: jwlawson/actions-setup-cmake@v1.11
       with:
@@ -31,8 +31,8 @@ jobs:
 
     - name: 'Install packages with pip'
       run: pip install --user cpplint
-      
+
     - name: '🔧 Configure'
       run: cmake -S . -B ${{ env.CMAKE_BUILD_PREFIX }} -D CMAKE_BUILD_TYPE=${{ env.CMAKE_BUILD_TYPE }}  -DBUILD_TESTS=${{ env.BUILD_TESTS }} -DBUILD_DOCS=${{ env.BUILD_DOCS }} -DBUILD_EXAMPLES=${{ env.BUILD_EXAMPLES }} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-        
+
     - uses: pre-commit/action@v2.0.3
