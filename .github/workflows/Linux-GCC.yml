@@ -20,7 +20,7 @@ jobs:
     name: '🚧 ${{ matrix.icon }} ${{ matrix.name }}'
 
     steps:
-    
+
       - name: '🧰 Add toolchains'
         run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && sudo apt-get update
 
@@ -48,7 +48,7 @@ jobs:
 
       - name: '${{ matrix.icon }} Install ${{ matrix.cc }}'
         run: sudo apt-get install ${{ matrix.cc }} ${{ matrix.gpp }}
-        
+
       - name: '${{ matrix.icon }} Install packages'
         if: ${{ env.INSTALL_PACKAGES != '' }}
         run: sudo apt-get install ${{env.INSTALL_PACKAGES}}
