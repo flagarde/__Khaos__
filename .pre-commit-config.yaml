@@ -56,12 +56,12 @@ repos:
     - id: include-what-you-use
 
 - repo: https://github.com/sirosen/check-jsonschema
-  rev: 0.8.2
+  rev: 0.9.1
   hooks:
     - id: check-github-workflows
 
 - repo: https://github.com/jackdewinter/pymarkdown
-  rev: 0.9.2
+  rev: 0.9.3
   hooks:
     - id: pymarkdown
       args: ['--config=.pymarkdown.json','scan']
