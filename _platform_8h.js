@@ -1,0 +1,25 @@
+var _platform_8h =
+[
+    [ "KHAOS_MINGW_VERSION", "_platform_8h.html#a85b0b747998c70ffedcad0bf29567731", null ],
+    [ "KHAOS_MINGW_VERSION_TWEAK", "_platform_8h.html#addfa6cba746124f2a8e7cab21d0fd6f3", null ],
+    [ "KHAOS_PLATFORM_Android", "_platform_8h.html#a9757225ef3f90364fb578737b9f154c4", null ],
+    [ "KHAOS_PLATFORM_CloudABI", "_platform_8h.html#aa785a0433059784f8f9974d64e3ae9b2", null ],
+    [ "KHAOS_PLATFORM_iOSIphone", "_platform_8h.html#a5344ea437eb28481faea13185b449777", null ],
+    [ "KHAOS_PLATFORM_iOSSimulator", "_platform_8h.html#a3e2779646645ba744da853e9c33fd516", null ],
+    [ "KHAOS_PLATFORM_iOSTarget", "_platform_8h.html#ae16347c96d6e396c846000874a692cc6", null ],
+    [ "KHAOS_PLATFORM_MINGW", "_platform_8h.html#acdf09c6698efd8573e413dc14db1d129", null ],
+    [ "KHAOS_PLATFORM_MINGW32", "_platform_8h.html#afa2777a8dfb435471faa5918a926574b", null ],
+    [ "KHAOS_PLATFORM_MINGW32Emulated", "_platform_8h.html#a8978f8558ebda812a32acc709e81a613", null ],
+    [ "KHAOS_PLATFORM_MINGW64", "_platform_8h.html#a1d230c444496a5ccc6cdefd3818258ac", null ],
+    [ "KHAOS_PLATFORM_MINGW64Emulated", "_platform_8h.html#ade46955d46fd5afbc6c4088aef0956b9", null ],
+    [ "KHAOS_PLATFORM_MINGWEmulated", "_platform_8h.html#a1f1b88479cf0bb0a8833b20a8131249a", null ],
+    [ "KHAOS_PLATFORM_UWP", "_platform_8h.html#aea8b1b385398e0c3ff35abc5ca068f07", null ],
+    [ "KHAOS_PLATFORM_VERSION", "_platform_8h.html#a6e88e5e9e3655d062768b1c1c4be2660", null ],
+    [ "KHAOS_PLATFORM_VERSION_TWEAK", "_platform_8h.html#a190ac15d8435a1acc8865fbb72acc05c", null ],
+    [ "KHAOS_PLATFORM_WindowsDesktop", "_platform_8h.html#a80accada12c4da7813c41b0cdf851076", null ],
+    [ "KHAOS_PLATFORM_WindowsPhone", "_platform_8h.html#a2fe80328c901e9b8e616512a33be41de", null ],
+    [ "KHAOS_PLATFORM_WindowsServer", "_platform_8h.html#af1feca3cc82a5c0bd55fbd81efa419ac", null ],
+    [ "KHAOS_PLATFORM_WindowsStore", "_platform_8h.html#adc2c8ed73aca15deef983ec9ad71afda", null ],
+    [ "KHAOS_PLATFORM_WindowsSystem", "_platform_8h.html#a38b24c679400d75d282869958b8a46f6", null ],
+    [ "PLATFORM_IS", "_platform_8h.html#a0abe2a732ce4824cbec69dcc56156b10", null ]
+];
