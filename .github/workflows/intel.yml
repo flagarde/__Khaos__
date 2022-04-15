@@ -1,3 +1,11 @@
+name: Intel OneAPI build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
 jobs:
 
   linux-intel-oneapi:
