@@ -30,7 +30,7 @@ jobs:
       run: sudo apt-get install intel-oneapi-compiler-fortran intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic intel-oneapi-mpi intel-oneapi-mpi-devel intel-oneapi-mkl ninja-build
 
     - name: checkout project code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.1.0
 
     - name: Setup Intel oneAPI environment
       run: |
